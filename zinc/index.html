@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>锌矿企业季度跟踪看板</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="../switcher.css">
+</head>
+<body class="company-dashboard">
+  <header class="tracker-switcher">
+    <div class="tracker-switcher__inner">
+      <a class="tracker-switcher__brand" href="../" aria-label="返回企业季报跟踪首页">
+        <span class="tracker-switcher__mark" aria-hidden="true"></span>
+        <span>企业季报跟踪</span>
+      </a>
+      <nav class="tracker-switcher__nav" aria-label="矿企跟踪面板">
+        <a class="tracker-switcher__link" href="../copper/">铜矿企业</a>
+        <a class="tracker-switcher__link" href="./" aria-current="page">锌矿企业</a>
+      </nav>
+    </div>
+  </header>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand-block">
+        <span class="zn-mark" aria-hidden="true">Zn</span>
+        <div>
+          <p class="eyebrow">ZINC MINING OPERATING REVIEW</p>
+          <h1>锌矿企业季度跟踪</h1>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span><b id="header-as-of">--</b> 共同完整季度</span>
+        <span><b id="header-company-count">--</b> 家企业</span>
+      </div>
+    </header>
+
+    <nav class="tab-bar" aria-label="看板视图" role="tablist">
+      <button type="button" class="tab-button is-active" id="tab-guidance" role="tab" aria-selected="true" aria-controls="panel-guidance" data-tab="guidance">产量指引与完成度</button>
+      <button type="button" class="tab-button" id="tab-company" role="tab" aria-selected="false" aria-controls="panel-company" data-tab="company">企业</button>
+      <button type="button" class="tab-button" id="tab-mine" role="tab" aria-selected="false" aria-controls="panel-mine" data-tab="mine">矿山</button>
+    </nav>
+
+    <main>
+      <section class="tab-panel is-active" id="panel-guidance" role="tabpanel" aria-labelledby="tab-guidance">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">GUIDANCE MONITOR</p>
+            <h2>2026年产量指引与完成度</h2>
+          </div>
+          <p>公司披露口径及明确代理口径</p>
+        </div>
+
+        <div class="kpi-grid" id="guidance-summary"></div>
+
+        <div class="data-panel guidance-panel">
+          <div class="table-toolbar">
+            <label class="search-field">
+              <span>企业筛选</span>
+              <input type="search" id="guidance-search" placeholder="输入企业名称" autocomplete="off">
+            </label>
+            <span class="result-count" id="guidance-count"></span>
+          </div>
+          <div class="table-scroll">
+            <table class="guidance-table">
+              <thead>
+                <tr>
+                  <th><button type="button" class="sort-button" data-sort="company">企业 <span aria-hidden="true">↕</span></button></th>
+                  <th><button type="button" class="sort-button" data-sort="guidance">2026产量指引 <span aria-hidden="true">↕</span></button></th>
+                  <th><button type="button" class="sort-button" data-sort="prior">上年对应实际产量 <span aria-hidden="true">↕</span></button></th>
+                  <th><button type="button" class="sort-button" data-sort="delta">指引中点同比 <span aria-hidden="true">↕</span></button></th>
+                  <th><button type="button" class="sort-button" data-sort="actual">对应期累计产量 <span aria-hidden="true">↕</span></button></th>
+                  <th><button type="button" class="sort-button" data-sort="completion">指引完成度 <span aria-hidden="true">↕</span></button></th>
+                  <th><button type="button" class="sort-button is-sorted" data-sort="period">季报时间 <span aria-hidden="true">↓</span></button></th>
+                  <th><button type="button" class="sort-button" data-sort="basis">口径 <span aria-hidden="true">↕</span></button></th>
+                </tr>
+              </thead>
+              <tbody id="guidance-body"></tbody>
+            </table>
+          </div>
+          <p class="method-note">指引完成度 = 同口径累计产量 / 指引中点。自然年按Q1-Q4累计，跨财年按公司财年Q1-Q4累计；同口径锌铅合计可计算自身完成度，但不纳入纯锌总览合计。</p>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="panel-company" role="tabpanel" aria-labelledby="tab-company" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">COMPANY REVIEW</p>
+            <h2>企业季度经营与产量指引</h2>
+          </div>
+          <p>公司自身披露口径</p>
+        </div>
+
+        <div class="company-mobile-picker">
+          <button type="button" class="icon-button" id="company-prev" title="上一家企业" aria-label="上一家企业">‹</button>
+          <label>
+            <span class="sr-only">选择企业</span>
+            <select id="company-select"></select>
+          </label>
+          <button type="button" class="icon-button" id="company-next" title="下一家企业" aria-label="下一家企业">›</button>
+        </div>
+
+        <div class="company-layout">
+          <aside class="company-rail" aria-label="企业列表">
+            <div class="rail-heading"><span>跟踪企业</span><b id="rail-count">24</b></div>
+            <div class="company-list" id="company-list"></div>
+          </aside>
+
+          <div class="company-content">
+            <div class="company-title-row">
+              <div>
+                <p id="company-period" class="section-kicker"></p>
+                <h3 id="company-name"></h3>
+              </div>
+              <span class="basis-badge" id="company-basis-group"></span>
+            </div>
+
+            <div class="kpi-grid company-kpis" id="company-kpis"></div>
+
+            <div class="data-panel seasonal-panel">
+              <div class="panel-heading">
+                <div>
+                  <h4>季度产量季节性</h4>
+                  <p id="company-metric"></p>
+                </div>
+                <span>单位：万吨</span>
+              </div>
+              <div class="seasonal-chart" id="company-seasonal-chart"></div>
+              <div class="basis-strip"><b>产量口径</b><span id="company-basis"></span></div>
+            </div>
+
+            <div class="analysis-grid">
+              <article class="analysis-panel">
+                <h4>当季经营解释</h4>
+                <h5>产量</h5>
+                <p id="production-explanation"></p>
+              </article>
+
+              <article class="analysis-panel">
+                <h4>年度及中期指引</h4>
+                <p class="guidance-summary-text" id="company-guidance-summary"></p>
+                <div class="future-guidance-list" id="future-guidance-list"></div>
+                <p class="scope-note" id="guidance-history-note" hidden></p>
+              </article>
+
+              <article class="analysis-panel">
+                <h4>披露与口径</h4>
+                <div class="disclosure-list" id="disclosure-list"></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="panel-mine" role="tabpanel" aria-labelledby="tab-mine" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">MINE CONTRIBUTION</p>
+            <h2 id="mine-title">矿山当年累计贡献与季度趋势</h2>
+          </div>
+          <p>矿山100%含锌量去重</p>
+        </div>
+
+        <div class="kpi-grid" id="mine-summary"></div>
+
+        <div class="mine-trend-grid">
+          <section class="data-panel mine-chart-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">SAMPLE OUTPUT</p>
+                <h4>整体矿山季度产量</h4>
+              </div>
+              <span>单位：万吨</span>
+            </div>
+            <div class="mine-chart" id="mine-seasonal-chart"></div>
+          </section>
+
+          <section class="data-panel mine-chart-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">YEAR-ON-YEAR</p>
+                <h4>季度同比增减量</h4>
+              </div>
+              <span>单位：万吨</span>
+            </div>
+            <div class="mine-chart" id="mine-yoy-chart"></div>
+            <div class="mine-insights" id="mine-yoy-insights"></div>
+          </section>
+        </div>
+
+        <div class="mine-grid">
+          <section class="data-panel contribution-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">POSITIVE CONTRIBUTORS</p>
+                <h4 id="positive-title">当年累计同比增量前十大矿山</h4>
+              </div>
+              <span>与上年同期比较</span>
+            </div>
+            <div class="contribution-list" id="positive-mines"></div>
+          </section>
+
+          <section class="data-panel contribution-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker negative-kicker">NEGATIVE CONTRIBUTORS</p>
+                <h4 id="negative-title">当年累计同比减量后十大矿山</h4>
+              </div>
+              <span>与上年同期比较</span>
+            </div>
+            <div class="contribution-list" id="negative-mines"></div>
+          </section>
+        </div>
+        <p class="method-note mine-note">贡献榜按共同完整季度的当年累计值与上年同期比较；季度季节性和季度同比趋势直接沿用PPT数据。矿山100%含锌量按mine_id去重，并沿用固定优先来源、收购前回填和出售后剔除规则。</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

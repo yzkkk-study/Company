@@ -1,0 +1,206 @@
+:root {
+  --tracker-ink: #161616;
+  --tracker-muted: #525252;
+  --tracker-line: #e0e0e0;
+  --tracker-surface: #ffffff;
+  --tracker-blue: #0f62fe;
+}
+
+.tracker-switcher {
+  min-width: 320px;
+  min-height: 48px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  color: var(--tracker-ink);
+  background: var(--tracker-surface);
+  border-bottom: 1px solid var(--tracker-line);
+  font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+.tracker-switcher__inner {
+  width: min(1280px, calc(100% - 40px));
+  min-height: 48px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.tracker-switcher__brand,
+.tracker-switcher__link {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.tracker-switcher__brand {
+  gap: 10px;
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.tracker-switcher__mark {
+  width: 14px;
+  height: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.tracker-switcher__mark::before,
+.tracker-switcher__mark::after {
+  content: "";
+  background: var(--tracker-blue);
+}
+
+.tracker-switcher__nav {
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.tracker-switcher__link {
+  position: relative;
+  padding: 0 16px;
+  color: var(--tracker-muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.tracker-switcher__link:hover {
+  color: var(--tracker-ink);
+  background: #f4f4f4;
+}
+
+.tracker-switcher__link[aria-current="page"] {
+  color: var(--tracker-ink);
+  font-weight: 650;
+}
+
+.tracker-switcher__link[aria-current="page"]::after {
+  content: "";
+  height: 3px;
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+  left: 16px;
+  background: var(--tracker-blue);
+}
+
+.tracker-switcher a:focus-visible {
+  outline: 3px solid var(--tracker-blue);
+  outline-offset: -3px;
+}
+
+.tracker-switcher + .app-shell .tab-bar {
+  top: 48px;
+}
+
+body.company-dashboard {
+  background: #f4f4f4;
+  color: #161616;
+  font-family: "IBM Plex Sans", "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+.company-dashboard .app-shell {
+  --workspace: #f4f4f4;
+  --surface: #ffffff;
+  --surface-muted: #f4f4f4;
+  --ink: #161616;
+  --ink-soft: #525252;
+  --muted: #8d8d8d;
+  --line: #e0e0e0;
+  --line-soft: #e8e8e8;
+  --charcoal: #161616;
+  --shadow: none;
+}
+
+.company-dashboard .app-header {
+  border-bottom-width: 3px;
+}
+
+.company-dashboard .header-meta span,
+.company-dashboard .data-panel,
+.company-dashboard .analysis-panel,
+.company-dashboard .company-rail,
+.company-dashboard .company-mobile-picker select,
+.company-dashboard .search-field input,
+.company-dashboard .basis-badge,
+.company-dashboard .period-label,
+.company-dashboard .icon-button {
+  border-radius: 0;
+}
+
+.company-dashboard .kpi-cell,
+.company-dashboard .data-panel,
+.company-dashboard .analysis-panel,
+.company-dashboard .company-rail {
+  box-shadow: none;
+}
+
+.company-dashboard .search-field input,
+.company-dashboard .company-mobile-picker select {
+  border: 0;
+  border-bottom: 1px solid #8d8d8d;
+  background: #f4f4f4;
+}
+
+.company-dashboard .guidance-table thead,
+.company-dashboard .rail-heading {
+  background: #262626;
+}
+
+.company-dashboard .tab-bar {
+  scrollbar-width: none;
+}
+
+.company-dashboard .tab-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.company-dashboard .search-field input:focus,
+.company-dashboard .company-mobile-picker select:focus,
+.company-dashboard .tab-button:focus-visible,
+.company-dashboard .icon-button:focus-visible,
+.company-dashboard .company-option:focus-visible,
+.company-dashboard .sort-button:focus-visible {
+  outline: 3px solid #0f62fe;
+  outline-offset: -1px;
+}
+
+@media (max-width: 560px) {
+  .tracker-switcher__inner {
+    width: calc(100% - 24px);
+    gap: 8px;
+  }
+
+  .tracker-switcher__brand {
+    font-size: 0;
+  }
+
+  .tracker-switcher__mark {
+    width: 16px;
+    height: 16px;
+  }
+
+  .tracker-switcher__link {
+    padding: 0 11px;
+    font-size: 12px;
+  }
+
+  .tracker-switcher__link[aria-current="page"]::after {
+    right: 11px;
+    left: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tracker-switcher * { scroll-behavior: auto; }
+}
