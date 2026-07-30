@@ -70,10 +70,8 @@
 
   function basisLabel(guidance, profile) {
     const metric = String(guidance?.metric || "");
-    if (profile?.company_id === "sandfire") return "铜当量=含铜量";
-    if (profile?.company_id === "freeport_mcmoran") return "产量/销量指引";
-    if (/equivalent/i.test(metric)) return "铜当量口径";
-    if (/sales/i.test(metric)) return "铜销量口径";
+    if (/equivalent|铜当量/i.test(metric)) return "铜当量口径";
+    if (/sales|销量/i.test(metric)) return "铜销量口径";
     if (/anode|blister/i.test(metric)) return "阳极铜或粗铜口径";
     return guidance?.basis_tag || profile?.basis_group || "公司产量口径";
   }
@@ -112,60 +110,9 @@
     setTab(hashTab || stored || "guidance", false);
   }
 
-  function companyProductionActual(companyId, year, throughQuarter = 4) {
-    const rows = D.company_seasonal.filter((row) => (
-      row.company_id === companyId
-      && Number(row.year) === Number(year)
-      && Number(String(row.quarter).replace("Q", "")) <= throughQuarter
-    ));
-    if (!rows.length) return null;
-    return Number(rows.reduce((sum, row) => sum + Number(row.kt || 0), 0).toFixed(1));
-  }
-
-  function statusFromCompletion(completion, expectedShare) {
-    if (completion == null) return "unavailable";
-    if (completion > expectedShare + 0.03) return "ahead";
-    if (completion < expectedShare - 0.03) return "behind";
-    return "on_track";
-  }
-
   function dashboardGuidance(profile) {
     const source = profile.current_guidance || D.guidance_overview.find((row) => row.company_id === profile.company_id) || { available: false };
-    const guidance = { ...source };
-    if (!guidance.available) return guidance;
-
-    if (profile.company_id === "sandfire") {
-      const priorActual = companyProductionActual(profile.company_id, guidance.target_year - 1);
-      guidance.prior_actual_kt = priorActual;
-      guidance.guidance_delta_kt = priorActual == null ? null : Number((guidance.midpoint_kt - priorActual).toFixed(1));
-      guidance.guidance_delta_pct = priorActual ? Number(((guidance.midpoint_kt / priorActual - 1) * 100).toFixed(1)) : null;
-      guidance.comparable = priorActual != null;
-      guidance.exclusion_reason = null;
-      guidance.basis_tag = "铜当量=含铜量";
-    }
-
-    if (profile.company_id === "freeport_mcmoran") {
-      const latestQuarter = Number(String(profile.latest_period).replace(/^.*Q/, ""));
-      const actualYtd = companyProductionActual(profile.company_id, guidance.target_year, latestQuarter);
-      const priorActual = companyProductionActual(profile.company_id, guidance.target_year - 1);
-      const completion = actualYtd == null || !guidance.midpoint_kt ? null : actualYtd / guidance.midpoint_kt;
-      guidance.metric = "合并铜产量/销量指引";
-      guidance.actual_ytd_kt = actualYtd;
-      guidance.prior_actual_kt = priorActual;
-      guidance.completion_mid = completion;
-      guidance.completion_to_low = actualYtd == null || !guidance.low_kt ? null : actualYtd / guidance.low_kt;
-      guidance.completion_to_high = actualYtd == null || !guidance.high_kt ? null : actualYtd / guidance.high_kt;
-      guidance.progress_status = statusFromCompletion(completion, guidance.expected_share);
-      guidance.guidance_delta_kt = priorActual == null ? null : Number((guidance.midpoint_kt - priorActual).toFixed(1));
-      guidance.guidance_delta_pct = priorActual ? Number(((guidance.midpoint_kt / priorActual - 1) * 100).toFixed(1)) : null;
-      guidance.actual_note = "产量累计";
-      guidance.completion_basis_note = "产量/销量指引";
-      guidance.basis_tag = "产量/销量指引";
-      guidance.is_proxy = false;
-      guidance.comparable = actualYtd != null && priorActual != null;
-      guidance.exclusion_reason = null;
-    }
-    return guidance;
+    return { ...source };
   }
 
   const guidanceRows = profiles.map((profile) => ({ profile, guidance: dashboardGuidance(profile) }));

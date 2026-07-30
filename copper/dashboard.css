@@ -1123,8 +1123,16 @@ main {
 
   .contribution-row {
     min-height: 58px;
-    grid-template-columns: 22px minmax(118px, 1fr) 72px;
+    grid-template-columns: 22px minmax(118px, 1fr) 78px;
     gap: 6px;
+  }
+
+  .mine-label strong {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.25;
   }
 
   .bar-track {

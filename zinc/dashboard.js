@@ -461,8 +461,8 @@
     renderSeasonalChart($("#company-seasonal-chart"), seasonal, profile.latest_period);
     $("#production-explanation").textContent = profile.production_summary_cn || "当季报告未提供可稳定提取的产量变化解释。";
 
-    let guidanceSummary = profile.guidance_status_note || "未提取到当前有效的年度数值产量指引。";
-    if (!profile.guidance_status_note && guidance?.available) {
+    let guidanceSummary;
+    if (guidance?.available) {
       if (guidance.completion_mid == null) {
         guidanceSummary = `${guidanceRange(guidance)}；${completionContext || "未形成同口径累计产量，无法计算完成度"}。`;
       } else {
@@ -472,6 +472,8 @@
       guidanceSummary += guidance.comparable
         ? `指引中点较上年对应实际${signedWan(guidance.guidance_delta_kt)}。`
         : "不纳入总览可比合计。";
+    } else {
+      guidanceSummary = profile.guidance_status_note || "未提取到当前有效的年度数值产量指引。";
     }
     $("#company-guidance-summary").textContent = guidanceSummary;
     const seenGuidance = new Set();

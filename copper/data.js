@@ -2,7 +2,7 @@ window.DECK_DATA = {
   "meta": {
     "as_of": "2026Q1",
     "company_count": 24,
-    "quarter_count": 30,
+    "quarter_count": 29,
     "backfill_rows": 91
   },
   "seasonal_totals": [
@@ -295,16 +295,6 @@ window.DECK_DATA = {
       "backfill_count": 0,
       "yoy_kt": -98.2,
       "yoy_pct": -3.7
-    },
-    {
-      "period": "2026Q2",
-      "year": 2026,
-      "quarter": "Q2",
-      "kt": 1714.0,
-      "mine_count": 46,
-      "backfill_count": 0,
-      "yoy_kt": -1100.1,
-      "yoy_pct": -39.1
     }
   ],
   "company_seasonal": [
@@ -10491,7 +10481,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2019Q1",
       "year": 2019,
       "quarter": "Q1",
@@ -11440,7 +11430,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2019Q2",
       "year": 2019,
       "quarter": "Q2",
@@ -12389,7 +12379,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2019Q3",
       "year": 2019,
       "quarter": "Q3",
@@ -13338,7 +13328,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2019Q4",
       "year": 2019,
       "quarter": "Q4",
@@ -14287,7 +14277,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2020Q1",
       "year": 2020,
       "quarter": "Q1",
@@ -15236,7 +15226,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2020Q2",
       "year": 2020,
       "quarter": "Q2",
@@ -16185,7 +16175,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2020Q3",
       "year": 2020,
       "quarter": "Q3",
@@ -17134,7 +17124,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2020Q4",
       "year": 2020,
       "quarter": "Q4",
@@ -18083,7 +18073,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2021Q1",
       "year": 2021,
       "quarter": "Q1",
@@ -18590,7 +18580,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2021Q2",
       "year": 2021,
       "quarter": "Q2",
@@ -19045,7 +19035,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2021Q2",
       "year": 2021,
       "quarter": "Q2",
@@ -19552,7 +19542,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2021Q3",
       "year": 2021,
       "quarter": "Q3",
@@ -20007,7 +19997,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2021Q3",
       "year": 2021,
       "quarter": "Q3",
@@ -20514,7 +20504,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2021Q4",
       "year": 2021,
       "quarter": "Q4",
@@ -20969,7 +20959,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2021Q4",
       "year": 2021,
       "quarter": "Q4",
@@ -21476,7 +21466,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2022Q1",
       "year": 2022,
       "quarter": "Q1",
@@ -21957,7 +21947,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2022Q1",
       "year": 2022,
       "quarter": "Q1",
@@ -22464,7 +22454,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2022Q2",
       "year": 2022,
       "quarter": "Q2",
@@ -22945,7 +22935,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2022Q2",
       "year": 2022,
       "quarter": "Q2",
@@ -23452,7 +23442,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2022Q3",
       "year": 2022,
       "quarter": "Q3",
@@ -23920,7 +23910,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2022Q3",
       "year": 2022,
       "quarter": "Q3",
@@ -24427,7 +24417,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2022Q4",
       "year": 2022,
       "quarter": "Q4",
@@ -24882,7 +24872,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2022Q4",
       "year": 2022,
       "quarter": "Q4",
@@ -25389,7 +25379,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2023Q1",
       "year": 2023,
       "quarter": "Q1",
@@ -25883,7 +25873,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2023Q1",
       "year": 2023,
       "quarter": "Q1",
@@ -26403,7 +26393,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2023Q2",
       "year": 2023,
       "quarter": "Q2",
@@ -26910,7 +26900,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2023Q2",
       "year": 2023,
       "quarter": "Q2",
@@ -27417,7 +27407,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2023Q3",
       "year": 2023,
       "quarter": "Q3",
@@ -27885,7 +27875,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2023Q3",
       "year": 2023,
       "quarter": "Q3",
@@ -28392,7 +28382,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2023Q4",
       "year": 2023,
       "quarter": "Q4",
@@ -28860,7 +28850,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2023Q4",
       "year": 2023,
       "quarter": "Q4",
@@ -29380,7 +29370,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2024Q1",
       "year": 2024,
       "quarter": "Q1",
@@ -29848,7 +29838,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2024Q1",
       "year": 2024,
       "quarter": "Q1",
@@ -30368,7 +30358,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2024Q2",
       "year": 2024,
       "quarter": "Q2",
@@ -30836,7 +30826,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2024Q2",
       "year": 2024,
       "quarter": "Q2",
@@ -31356,7 +31346,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2024Q3",
       "year": 2024,
       "quarter": "Q3",
@@ -31824,7 +31814,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2024Q3",
       "year": 2024,
       "quarter": "Q3",
@@ -32344,7 +32334,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2024Q4",
       "year": 2024,
       "quarter": "Q4",
@@ -32812,7 +32802,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2024Q4",
       "year": 2024,
       "quarter": "Q4",
@@ -33332,7 +33322,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2025Q1",
       "year": 2025,
       "quarter": "Q1",
@@ -33800,7 +33790,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2025Q1",
       "year": 2025,
       "quarter": "Q1",
@@ -34320,7 +34310,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2025Q2",
       "year": 2025,
       "quarter": "Q2",
@@ -34788,7 +34778,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2025Q2",
       "year": 2025,
       "quarter": "Q2",
@@ -35308,7 +35298,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2025Q3",
       "year": 2025,
       "quarter": "Q3",
@@ -35776,7 +35766,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2025Q3",
       "year": 2025,
       "quarter": "Q3",
@@ -36296,7 +36286,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2025Q4",
       "year": 2025,
       "quarter": "Q4",
@@ -36764,7 +36754,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2025Q4",
       "year": 2025,
       "quarter": "Q4",
@@ -37284,7 +37274,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2026Q1",
       "year": 2026,
       "quarter": "Q1",
@@ -37752,7 +37742,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2026Q1",
       "year": 2026,
       "quarter": "Q1",
@@ -38064,7 +38054,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "period": "2026Q2",
       "year": 2026,
       "quarter": "Q2",
@@ -38350,7 +38340,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "period": "2026Q2",
       "year": 2026,
       "quarter": "Q2",
@@ -38888,7 +38878,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "zaldivar",
-      "mine": "Zaldivar",
+      "mine": "Zaldívar",
       "company": "Antofagasta",
       "current_kt": 16.6,
       "prior_kt": 18.0,
@@ -39128,7 +39118,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "company": "Ivanhoe",
       "current_kt": 71.4,
       "prior_kt": 133.1,
@@ -39549,7 +39539,7 @@ window.DECK_DATA = {
     },
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "2025_kt": 388.0,
       "2019_kt": 0.0,
       "change_kt": 388.0
@@ -39600,7 +39590,7 @@ window.DECK_DATA = {
   "mine_changes": [
     {
       "mine_id": "kamoa_kakula",
-      "mine": "Kamoa-Kakula Copper Complex",
+      "mine": "Kamoa-Kakula",
       "2025_kt": 388.0,
       "2019_kt": 0.0,
       "change_kt": 388.0
@@ -39702,15 +39692,6 @@ window.DECK_DATA = {
       "scope": "Consolidated copper"
     },
     {
-      "company_id": "ivanhoe",
-      "company": "Ivanhoe",
-      "period": "2026Q1",
-      "value": 2.58,
-      "metric": "Cash cost (C1) per pound of payable copper produced",
-      "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula 100% project basis"
-    },
-    {
       "company_id": "capstone",
       "company": "Capstone",
       "period": "2026Q1",
@@ -39718,6 +39699,15 @@ window.DECK_DATA = {
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
       "scope": "Consolidated"
+    },
+    {
+      "company_id": "ivanhoe",
+      "company": "Ivanhoe",
+      "period": "2026Q2",
+      "value": 2.84,
+      "metric": "Cash cost (C1) per pound of payable copper produced",
+      "category": "cash_cost_actual",
+      "scope": "Kamoa-Kakula 100% project basis"
     }
   ],
   "cost_series": [
@@ -41294,6 +41284,18 @@ window.DECK_DATA = {
       "unit": "USD/lb"
     },
     {
+      "company_id": "ivanhoe",
+      "company": "Ivanhoe",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "value": 2.84,
+      "metric": "Cash cost (C1) per pound of payable copper produced",
+      "category": "cash_cost_actual",
+      "scope": "Kamoa-Kakula 100% project basis",
+      "unit": "USD/lb"
+    },
+    {
       "company_id": "lundin_mining",
       "company": "Lundin Mining",
       "period": "2025Q1",
@@ -41456,18 +41458,6 @@ window.DECK_DATA = {
       "year": 2021,
       "quarter": "Q1",
       "value": 4.3,
-      "metric": "Net cash unit costs after by-product margins",
-      "category": "net_cash_cost_actual",
-      "scope": "Copper business unit; QB excluded while in construction/ramp-up where stated",
-      "unit": "USD/lb"
-    },
-    {
-      "company_id": "teck",
-      "company": "Teck",
-      "period": "2021Q2",
-      "year": 2021,
-      "quarter": "Q2",
-      "value": 1.37,
       "metric": "Net cash unit costs after by-product margins",
       "category": "net_cash_cost_actual",
       "scope": "Copper business unit; QB excluded while in construction/ramp-up where stated",
@@ -47032,7 +47022,7 @@ window.DECK_DATA = {
       "value": 1.37,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47046,7 +47036,7 @@ window.DECK_DATA = {
       "value": 1.28,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47060,7 +47050,7 @@ window.DECK_DATA = {
       "value": 1.21,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47074,7 +47064,7 @@ window.DECK_DATA = {
       "value": 1.42,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47088,7 +47078,7 @@ window.DECK_DATA = {
       "value": 1.43,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47102,7 +47092,7 @@ window.DECK_DATA = {
       "value": 1.42,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47116,7 +47106,7 @@ window.DECK_DATA = {
       "value": 1.42,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47130,7 +47120,7 @@ window.DECK_DATA = {
       "value": 1.41,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47144,7 +47134,7 @@ window.DECK_DATA = {
       "value": 1.46,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47158,7 +47148,7 @@ window.DECK_DATA = {
       "value": 1.53,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47172,7 +47162,7 @@ window.DECK_DATA = {
       "value": 1.57,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47186,7 +47176,7 @@ window.DECK_DATA = {
       "value": 1.52,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47200,7 +47190,7 @@ window.DECK_DATA = {
       "value": 1.69,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47214,7 +47204,7 @@ window.DECK_DATA = {
       "value": 1.75,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47228,7 +47218,7 @@ window.DECK_DATA = {
       "value": 1.69,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47242,7 +47232,7 @@ window.DECK_DATA = {
       "value": 1.89,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47256,7 +47246,7 @@ window.DECK_DATA = {
       "value": 2.62,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47270,7 +47260,7 @@ window.DECK_DATA = {
       "value": 2.99,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -47284,7 +47274,21 @@ window.DECK_DATA = {
       "value": 2.58,
       "metric": "Cash cost (C1) per pound of payable copper produced",
       "category": "cash_cost_actual",
-      "scope": "Kamoa-Kakula Copper Complex",
+      "scope": "Kamoa-Kakula",
+      "unit": "USD/lb"
+    },
+    {
+      "company_id": "ivanhoe",
+      "company": "Ivanhoe",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "period_basis": "quarterly",
+      "stamp": "2026-07-29",
+      "value": 2.84,
+      "metric": "Cash cost (C1) per pound of payable copper produced",
+      "category": "cash_cost_actual",
+      "scope": "Kamoa-Kakula",
       "unit": "USD/lb"
     },
     {
@@ -48308,7 +48312,7 @@ window.DECK_DATA = {
           "stamp": "2026-04-28"
         }
       ],
-      "production_summary_cn": "产量同比小幅增长，Los Bronces和Collahuasi处理量提升形成支撑，Quellaveco按计划品位下降抵消了部分增量。",
+      "production_summary_cn": "2026Q2公司主口径产量同比减少0.01万吨（-0.1%）。Los Bronces吞吐量提升，但Collahuasi处理低品位库存矿、Quellaveco按计划处理较低品位矿石，增减相抵后产量同比基本持平。",
       "projects": [
         {
           "company_id": "anglo_american",
@@ -48363,7 +48367,7 @@ window.DECK_DATA = {
         "latest_value": 1.36,
         "prior_value": 1.12,
         "change": 0.24,
-        "explanation_cn": "Net cash costs同比上升0.24美元/磅。基础现金成本受低产量、智利比索升值及电力和柴油价格上涨影响，但黄金产量及黄金、钼价格提高使副产品抵扣翻倍，推动净现金成本下降。"
+        "explanation_cn": "Net cash costs同比上升0.24美元/磅。公司表内显示副产品前现金成本由2.77升至2.94美元/磅，净现金成本由1.12升至1.36美元/磅；当期结构化来源未进一步拆分集团净成本上升的单项贡献。"
       },
       "quarter_stats": {
         "current_kt": 142.0,
@@ -48830,7 +48834,7 @@ window.DECK_DATA = {
           "stamp": "2026-04-15"
         }
       ],
-      "production_summary_cn": "产量同比下降，主要受Antucoya减产拖累；Los Pelambres约0.7万吨铜因在制品增加延后确认，抵消了部分矿山运营改善。",
+      "production_summary_cn": "2026Q2公司主口径产量同比减少1.81万吨（-11.3%）。Antucoya减产；Los Pelambres约0.7万吨铜因在制品增加延后确认，抵消了部分矿山运营改善。",
       "projects": [
         {
           "company_id": "antofagasta",
@@ -49834,7 +49838,7 @@ window.DECK_DATA = {
           "stamp": "2026-04-22"
         }
       ],
-      "production_summary_cn": "产量同比下降，核心拖累来自Escondida按计划降低选矿入料品位；集团披露口径同时包含合并矿山和权益法项目归属量。",
+      "production_summary_cn": "2026Q2公司主口径产量同比减少2.43万吨（-4.7%）。Escondida计划性选矿入料品位下降及Spence复杂矿石、堆浸品位下降形成拖累，Antamina较高入料品位和运营改善部分抵消。",
       "projects": [
         {
           "company_id": "bhp",
@@ -50440,7 +50444,7 @@ window.DECK_DATA = {
           "stamp": "2026-02-05"
         }
       ],
-      "production_summary_cn": "Lumwana因计划内衬板更换停机导致处理量下降，检修已于2月完成；当季产量同比变化同时受上年同期基数影响。",
+      "production_summary_cn": "2026Q1公司主口径产量同比增加0.50万吨（+11.4%）。Lumwana因计划内衬板更换停机导致处理量下降，检修已于2月完成；当季产量同比变化同时受上年同期基数影响。",
       "projects": [
         {
           "company_id": "barrick_gold",
@@ -50813,7 +50817,7 @@ window.DECK_DATA = {
           "stamp": "2026-04-27"
         }
       ],
-      "production_summary_cn": "精矿含铜量同比增长53%，主要来自Somincor和Zinkgruvan并表，Aitik与Kevitsa生产保持强劲；环比小幅下降则受Aitik品位降低及Somincor强降雨停机影响。",
+      "production_summary_cn": "2026Q2公司主口径产量同比增加0.19万吨（+6.8%）。Aitik和Somincor磨矿量强劲，推动铜精矿含铜量同比及环比增长；Aitik较高磨矿量抵消了同比较低品位的影响，Kevitsa输送带故障及铜品位下降形成部分拖累。",
       "projects": [
         {
           "company_id": "boliden",
@@ -51053,16 +51057,16 @@ window.DECK_DATA = {
           "target_year": 2019,
           "target_label": "2019",
           "metric": "Consolidated copper production",
-          "low": 140.0,
-          "high": 155.0,
+          "low": 145.0,
+          "high": 160.0,
           "unit": "million lb",
-          "disclosed_period": "2020Q1",
+          "disclosed_period": "2019Q4",
           "revision_status": "as reported",
           "scope": null,
           "source_page": "Guidance section",
           "source_section": "Guidance",
-          "excerpt": "a discontinued operation in the comparative period until the point of its sale on June 3, 2019. Consolidated Production of 35.5 million pounds was at the lower end of the original guidance range of 140 to 155 million pounds. Production levels are expected to ramp up through the year as Pinto Valley mined a lower grade area of the upper portion of the pit during the quarter. A focus on maximizing mill",
-          "stamp": "2020-03-31"
+          "excerpt": "ent exploration success will ensure it stays that way for at least the next 10 years.” Q4 2019 HIGHLIGHTS AND SIGNIFICANT ITEMS Capstone achieves higher than the mid-point of 2019 production guidance and delivers costs below the low end of C1 cash costs 1 guidance. 2019 production of 153.4 million pounds of copper is in the top half of the guidance range of 145-160 million pounds and consolidated C1 cash costs 1 of $1.78 per payable pound of copper is lower than guidance of $1.80-$2.00 per payable pound. Q4 2019 copper production of 35.4 million pounds and",
+          "stamp": "2020-02-12"
         },
         {
           "company_id": "capstone",
@@ -51071,16 +51075,16 @@ window.DECK_DATA = {
           "target_year": 2020,
           "target_label": "2020",
           "metric": "Consolidated copper production",
-          "low": 50.0,
-          "high": 65.0,
-          "unit": "kt",
-          "disclosed_period": "2021Q1",
+          "low": 140.0,
+          "high": 155.0,
+          "unit": "million lb",
+          "disclosed_period": "2020Q4",
           "revision_status": "as reported",
           "scope": null,
           "source_page": "Guidance section",
           "source_section": "Guidance",
-          "excerpt": "ncrease. The copper production for 2021 is expected to align with the new technical report which includes a ramp up to 3,780 tpd at average copper grade of 1.77%. 2021 midpoint of production guidance is 5 0.5 million pounds which shows a growth of 33% versus 2020 full year production of 37.9 million pounds. Compared to previous mine plans, the 2021 plan shows a longer mine life of 10 years with higher average production in the range of 50 to 65 million copper pounds per year. This mine plan includes throughput 1 These are alternative performance measures. Refer to the MD&A section entitled “Alternative Performance Measure",
-          "stamp": "2021-03-31"
+          "excerpt": "prior period alternative performance measures have been restated to conform with current period classification. Page 5 Q4 2020 Highlights and Significant Items Results Exceed 2020 Production and Cost Guidance Capstone exceeded both production and cost guidance for 2020 ; finishing the year at 156.9 million pounds of copper production above the guidance range of 140 to 155 million pounds, at consolidated C1 cash costs1 of $1.84 per payable pound of copper, below the guidance range of $1.85 to $2.00 per pound. Q4 2020 Financial and Operational Highlights • Strong f",
+          "stamp": "2020-12-31"
         },
         {
           "company_id": "capstone",
@@ -51123,7 +51127,7 @@ window.DECK_DATA = {
           "company": "Capstone",
           "guidance_type": "production",
           "target_year": 2023,
-          "target_label": "2023",
+          "target_label": "2023H2",
           "metric": "Consolidated copper production",
           "low": 83000.0,
           "high": 93000.0,
@@ -51131,9 +51135,9 @@ window.DECK_DATA = {
           "disclosed_period": "2023Q3",
           "revision_status": "as reported",
           "scope": null,
-          "source_page": "Guidance section",
-          "source_section": "Guidance",
-          "excerpt": "notified Lara Exploration Ltd. (\"Lara\") of the intent to relinquish the Planalto Option Agreement and fully exit the project. 2.1 2023 Outlook The Company re-affirms its H2 copper production guidance of 83,000 to 93,000 tonnes. C1 cash costs1 are trending towards the upper end of the H2 guidance range of $2.55/lb to $2.75/lb per payable pound of copper produced due to additional unplanned maintenance ex",
+          "source_page": "13",
+          "source_section": "2023 Outlook",
+          "excerpt": "ent to Q3 2023, Capstone notified Lara Exploration Ltd. (\"Lara\") of the intent to relinquish the Planalto Option Agreement and fully exit the project. 2.1 2023 Outlook The Company re-affirms its H2 copper production guidance of 83,000 to 93,000 tonnes. C1 cash costs1 are trending towards the upper end of the H2 guidance range of $2.55/lb to $2.75/lb per payable pound of copper produced due to additional unplanned maintenance ex",
           "stamp": "2023-09-30"
         },
         {
@@ -51143,16 +51147,16 @@ window.DECK_DATA = {
           "target_year": 2024,
           "target_label": "2024",
           "metric": "Consolidated copper production",
-          "low": 220.0,
-          "high": 255.0,
-          "unit": "kt",
-          "disclosed_period": "2024Q4",
+          "low": 190000.0,
+          "high": 220000.0,
+          "unit": "t",
+          "disclosed_period": "2024Q3",
           "revision_status": "as reported",
           "scope": null,
           "source_page": "Guidance section",
           "source_section": "Guidance",
-          "excerpt": "80 $1.25 - $1.55 Total Sulphides 185 - 215 $1.85 - $2.15 Cathode Business Mantos Blancos 6 - 8 $3.40 - $3.70 Mantoverde3 29 - 32 $4.10 - $4.40 Total Cathodes 35 - 40 $3.95 - $4.25 Consolidated Copper 220 - 255 $2.20 - $2.50 2 Pinto Valley production and C1 include immaterial cathode production. 3 Mantoverde shown on a 100% basis. Key C1 Cash costs input assumptions: CLP/USD: 900:1 MXN/U",
-          "stamp": "2024-12-31"
+          "excerpt": "and $377.0 million of undrawn amounts on the corporate revolving credit facility. • The Company notes that 2024 consolidated production is expected to finish at the low end of the guidance range of 190,000 to 220,000 tonnes of copper. 2024 consolidated C1 cash costs1 guidance has been revised to $2.60/lb to $2.80/lb mainly due to the ramp-ups at Mantoverde and Mantos Blancos occurring later in the ye",
+          "stamp": "2024-09-30"
         },
         {
           "company_id": "capstone",
@@ -51161,16 +51165,16 @@ window.DECK_DATA = {
           "target_year": 2025,
           "target_label": "2025",
           "metric": "Consolidated copper production",
-          "low": 200.0,
-          "high": 230.0,
-          "unit": "kt",
-          "disclosed_period": "2025Q4",
+          "low": 220000.0,
+          "high": 255000.0,
+          "unit": "t",
+          "disclosed_period": "2025Q3",
           "revision_status": "as reported",
           "scope": null,
           "source_page": "Guidance section",
           "source_section": "Guidance",
-          "excerpt": " $1.55 - $1.85 Total Sulphides 165 - 190 $2.10 - $2.40 Cathode Business Mantoverde2 25 - 28 $4.60 - $4.95 Mantos Blancos 10 - 12 $2.80 - $3.10 Total Cathodes 35 - 40 $4.10 - $4.40 Consolidated Copper 200 - 230 $2.45 - $2.75 1 Pinto Valley production and C1 include immaterial cathode production. 2 Mantoverde shown on a 100% basis. Key C1 Cash costs input assumptions: CLP/USD: 875:1 MXN/U",
-          "stamp": "2025-12-31"
+          "excerpt": "ed of $310.1 million of cash and short-term investments, and $761.0 million of undrawn amounts on the $1 billion corporate revolving credit facility. • The Company reiterates 2025 guidance, noting consolidated copper production is trending towards the lower half of the guidance range of 220,000 to 255,000 tonnes and 2025 consolidated cash costs1 are trending towards the upper half of the guidance range of $2.20 to $2.50 per payable pound. • Mantoverde Optimized (“MV Optimized”) project sa",
+          "stamp": "2025-09-30"
         },
         {
           "company_id": "capstone",
@@ -51264,7 +51268,7 @@ window.DECK_DATA = {
       ],
       "guidance_history": [],
       "explanations": [],
-      "production_summary_cn": "产量同比下降11%，主要因Mantoverde罢工35天压低处理量并限制高品位硫化矿供应；Mantos Blancos和Cozamin按矿序品位下降，Pinto Valley非计划检修亦形成拖累。",
+      "production_summary_cn": "2026Q1公司主口径产量同比减少0.58万吨（-10.8%）。产量同比下降11%，主要因Mantoverde罢工35天压低处理量并限制高品位硫化矿供应；Mantos Blancos和Cozamin按矿序品位下降，Pinto Valley非计划检修亦形成拖累。",
       "projects": [
         {
           "company_id": "capstone",
@@ -51672,7 +51676,7 @@ window.DECK_DATA = {
           "stamp": "2026-07-06"
         }
       ],
-      "production_summary_cn": "自有矿及含联营归属量的合并产量均同比下降；Radomiro Tomic和Salvador实现增长，但不足以抵消其他矿区减量。",
+      "production_summary_cn": "2026Q1公司主口径产量同比减少2.43万吨（-7.5%）。自有矿及含联营归属量的合并产量均同比下降；Radomiro Tomic和Salvador实现增长，但不足以抵消其他矿区减量。",
       "projects": [
         {
           "company_id": "codelco",
@@ -51727,7 +51731,7 @@ window.DECK_DATA = {
         "latest_value": 4.12,
         "prior_value": 3.11,
         "change": 1.01,
-        "explanation_cn": "C3 total cost同比上升1.01美元/磅。C3上升的底层驱动包括铜产量下降和赞比亚克瓦查升值推高C1，并叠加更高折旧、特许权费用及递延剥采；黄金副产品价格上涨仅部分抵消。"
+        "explanation_cn": "C3 total cost同比上升1.01美元/磅。同期C1由2.00升至2.54美元/磅，AISC由3.28升至4.27美元/磅；C3、C1和AISC均保留公司非GAAP定义，不跨公司调整。"
       },
       "quarter_stats": {
         "current_kt": 100.5,
@@ -52288,7 +52292,7 @@ window.DECK_DATA = {
           "stamp": "2026-03-31"
         }
       ],
-      "production_summary_cn": "产量同比下降，主要由于处理的库存矿石品位降低。",
+      "production_summary_cn": "2026Q2公司主口径产量同比增加0.94万吨（+10.3%）。Kansanshi S3装置强劲运行、Sentinel品位和回收率提高，以及Cobre Panamá启动库存矿处理；Guelb Moghrein品位与回收率下降及Çayeli出售前仅贡献至4月部分抵消。",
       "projects": [
         {
           "company_id": "first_quantum",
@@ -52343,7 +52347,7 @@ window.DECK_DATA = {
         "latest_value": 1.97,
         "prior_value": 1.13,
         "change": 0.84,
-        "explanation_cn": "Unit net cash costs per pound同比上升0.84美元/磅。单位现场生产与交付成本因Grasberg低负荷运行而上升，但金价显著上涨强化副产品抵扣，令净现金成本下降；该指标已剔除Grasberg泥石涌事故的闲置和修复费用。"
+        "explanation_cn": "Unit net cash costs per pound同比上升0.84美元/磅。Grasberg低负荷运行期间，现场生产及交付成本由2.71升至3.28美元/磅；净现金成本已剔除2025年9月事故相关闲置设施和修复费用。"
       },
       "quarter_stats": {
         "current_kt": 356.5,
@@ -52657,12 +52661,12 @@ window.DECK_DATA = {
         "low_kt": 1406.1,
         "high_kt": 1406.1,
         "midpoint_kt": 1406.1,
-        "actual_ytd_kt": null,
-        "completion_mid": null,
-        "completion_to_low": null,
-        "completion_to_high": null,
+        "actual_ytd_kt": 620.1,
+        "completion_mid": 0.441,
+        "completion_to_low": 0.441,
+        "completion_to_high": 0.441,
         "expected_share": 0.5,
-        "progress_status": "unavailable",
+        "progress_status": "behind",
         "prior_actual_kt": 1623.4,
         "guidance_delta_kt": -217.3,
         "guidance_delta_pct": -13.4,
@@ -52750,7 +52754,7 @@ window.DECK_DATA = {
           "stamp": "2026-05-08"
         }
       ],
-      "production_summary_cn": "可回收铜产量同比减少9.34万吨，几乎全部来自Grasberg：2025年9月泥石涌事故后地下矿暂停，2026年3月底才启动分阶段复产；北美小幅增产仅抵消部分南美减量。",
+      "production_summary_cn": "2026Q2公司主口径产量同比减少8.03万吨（-18.4%）。Grasberg在2025年9月泥石涌事故后仍处于地下矿分阶段复产，产量同比减少1.54亿磅，是集团减产的主要原因，北美和南美产量亦小幅下降。",
       "projects": [
         {
           "company_id": "freeport_mcmoran",
@@ -53153,7 +53157,7 @@ window.DECK_DATA = {
           "stamp": "2026-04-30"
         }
       ],
-      "production_summary_cn": "自产铜同比增长，主要受非洲铜业务品位改善及Antamina处理量和品位提升推动，Mount Isa停止采铜形成部分抵消。",
+      "production_summary_cn": "2026Q2公司主口径产量同比增加2.14万吨（+12.2%）。上半年自产铜同比增加，主要因非洲铜业务采矿率和品位提升、Antamina铜品位提高，Mount Isa铜矿按计划停产部分抵消；单季产量由半年累计值减一季度得出。",
       "projects": [
         {
           "company_id": "glencore",
@@ -53208,7 +53212,7 @@ window.DECK_DATA = {
         "latest_value": 1.8,
         "prior_value": 2.03,
         "change": -0.23,
-        "explanation_cn": "Consolidated all-in sustaining cash cost同比下降0.23美元/磅。金价上涨显著扩大副产品抵扣，配合三地业务成本控制，使综合AISC下降；股价上涨导致股份支付重估、公司管理费用增加，形成部分抵消。"
+        "explanation_cn": "Consolidated all-in sustaining cash cost同比下降0.23美元/磅。展示层仅比较该公司同一成本指标；当前最新期未保留可复核的中文驱动拆分。"
       },
       "quarter_stats": {
         "current_kt": 28.3,
@@ -53789,16 +53793,16 @@ window.DECK_DATA = {
           "target_year": 2020,
           "target_label": "2020",
           "metric": "Peru copper production guidance",
-          "low": 80000.0,
-          "high": 95000.0,
+          "low": 65000.0,
+          "high": 75000.0,
           "unit": "t",
-          "disclosed_period": "2019Q4",
+          "disclosed_period": "2020Q3",
           "revision_status": "as reported",
           "scope": "constancia_complex",
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
-          "excerpt": "80,000 - 95,000",
-          "stamp": "2020-02-24"
+          "excerpt": "65,000 - 75,000",
+          "stamp": "2020-11-04"
         },
         {
           "company_id": "hudbay",
@@ -54305,7 +54309,7 @@ window.DECK_DATA = {
           "stamp": "2026-05-01"
         }
       ],
-      "production_summary_cn": "产量同比减少0.30万吨；Constancia处理量提升使秘鲁产量略增，但Copper Mountain按计划开采低品位矿、Manitoba入选铜品位下降，合计抵消秘鲁增量。",
+      "production_summary_cn": "2026Q2公司主口径产量同比减少0.17万吨（-5.7%）。二季度铜产量环比提高并符合季度节奏；秘鲁在计划检修下仍符合预期，不列颠哥伦比亚符合预期，Manitoba略低于季度节奏。",
       "projects": [
         {
           "company_id": "hudbay",
@@ -54341,11 +54345,11 @@ window.DECK_DATA = {
       "growth_kt": 388.0,
       "growth_pct": null,
       "cost": {
-        "value": 2.58,
+        "value": 2.84,
         "metric": "Cash cost (C1) per pound of payable copper produced",
         "category": "cash_cost_actual",
-        "scope": "Kamoa-Kakula Copper Complex",
-        "period": "2026Q1",
+        "scope": "Kamoa-Kakula",
+        "period": "2026Q2",
         "period_basis": "quarterly",
         "unit": "USD/lb"
       },
@@ -54353,14 +54357,14 @@ window.DECK_DATA = {
         "available": true,
         "metric": "Cash cost (C1) per pound of payable copper produced",
         "category": "cash_cost_actual",
-        "scope": "Kamoa-Kakula Copper Complex",
+        "scope": "Kamoa-Kakula",
         "unit": "USD/lb",
-        "latest_period": "2026Q1",
+        "latest_period": "2026Q2",
         "period_basis": "quarterly",
-        "latest_value": 2.58,
-        "prior_value": 1.69,
-        "change": 0.89,
-        "explanation_cn": "Cash cost (C1) per pound of payable copper produced同比上升0.89美元/磅。同比看，矿石品位和产量下降推高采矿、选矿及管理单位成本；环比则受自有冶炼节约、硫酸副产品抵扣及物流费用下降改善。"
+        "latest_value": 2.84,
+        "prior_value": 1.89,
+        "change": 0.95,
+        "explanation_cn": "Cash cost (C1) per pound of payable copper produced同比上升0.95美元/磅。展示层仅比较该公司同一成本指标；当前最新期未保留可复核的中文驱动拆分。"
       },
       "quarter_stats": {
         "current_kt": 64.3,
@@ -54450,13 +54454,13 @@ window.DECK_DATA = {
           "low": 1100.0,
           "high": 1400.0,
           "unit": "USD million",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": "kamoa_kakula",
-          "source_page": "14",
+          "source_page": "17",
           "source_section": "Kamoa-Kakula guidance",
-          "excerpt": "14 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 330,000 380,000 – 420,000 Cash cost (C1) ($ per payable pound of copper in saleable product produced) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assumptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other factors that may cause the actual results to differ materially. Although mining of the Kakula orebody has restarted, risk factors remain, including the integrity of underground infrastructure, once fully dewatered, the ability to ramp up underground operations in line with expectations, and the ability to access new mining areas in the required time. Guidance for Kamoa- Kakula is based on an assessment of these factors that management believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026, includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next two years to complete more peripheral development around the Kakula Mine before stoping of the newly developed areas begin. Ivanhoe Mines targets annualized copper anode or blister production to return to over 500,000 tonnes from 2028, at a target cash cost (C1) of less than $2.00/lb. Production guidance from 2026 is reported as contained tonnes of copper in anode o",
-          "stamp": "2026-05-06"
+          "excerpt": "17 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 310,000 (1) 380,000 – 420,000 Cash cost (C1) ($ per lb.)(2) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 (1)2026 production guidance previously 290,000 to 330,000 tonnes of copper in anode or blister (2) U.S. dollars per payable pound of copper in saleable product produced Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assu mptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other fact ors that may cause the actual results to differ materially. The turnaround of the Kakula Mine is advancing; however , risk factors remain. The risk factors including the integrity of underground infrastructure. Construc tion of new de-watering infrastructure is now underway and will be required for access to new mining ar eas within the required timeline and to deliver the planned ramp-up of underground operations in line with expectations. Guidance for Kamoa-Kakula is based on an assessment of these factors that managem ent believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026 includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next 12 to 18 months to complete more peripher al development around the Kakula Mine before stoping of the newly developed areas begin. Stoping start",
+          "stamp": "2026-07-29"
         },
         {
           "company_id": "ivanhoe",
@@ -54468,13 +54472,13 @@ window.DECK_DATA = {
           "low": 750.0,
           "high": 950.0,
           "unit": "USD million",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": "kamoa_kakula",
-          "source_page": "14",
+          "source_page": "17",
           "source_section": "Kamoa-Kakula guidance",
-          "excerpt": "14 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 330,000 380,000 – 420,000 Cash cost (C1) ($ per payable pound of copper in saleable product produced) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assumptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other factors that may cause the actual results to differ materially. Although mining of the Kakula orebody has restarted, risk factors remain, including the integrity of underground infrastructure, once fully dewatered, the ability to ramp up underground operations in line with expectations, and the ability to access new mining areas in the required time. Guidance for Kamoa- Kakula is based on an assessment of these factors that management believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026, includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next two years to complete more peripheral development around the Kakula Mine before stoping of the newly developed areas begin. Ivanhoe Mines targets annualized copper anode or blister production to return to over 500,000 tonnes from 2028, at a target cash cost (C1) of less than $2.00/lb. Production guidance from 2026 is reported as contained tonnes of copper in anode o",
-          "stamp": "2026-05-06"
+          "excerpt": "17 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 310,000 (1) 380,000 – 420,000 Cash cost (C1) ($ per lb.)(2) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 (1)2026 production guidance previously 290,000 to 330,000 tonnes of copper in anode or blister (2) U.S. dollars per payable pound of copper in saleable product produced Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assu mptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other fact ors that may cause the actual results to differ materially. The turnaround of the Kakula Mine is advancing; however , risk factors remain. The risk factors including the integrity of underground infrastructure. Construc tion of new de-watering infrastructure is now underway and will be required for access to new mining ar eas within the required timeline and to deliver the planned ramp-up of underground operations in line with expectations. Guidance for Kamoa-Kakula is based on an assessment of these factors that managem ent believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026 includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next 12 to 18 months to complete more peripher al development around the Kakula Mine before stoping of the newly developed areas begin. Stoping start",
+          "stamp": "2026-07-29"
         },
         {
           "company_id": "ivanhoe",
@@ -54592,15 +54596,15 @@ window.DECK_DATA = {
           "target_label": "2026",
           "metric": "Kamoa-Kakula Contained copper in anode or blister guidance",
           "low": 290000.0,
-          "high": 330000.0,
+          "high": 310000.0,
           "unit": "t",
           "disclosed_period": "2026Q2",
-          "revision_status": "as reported",
+          "revision_status": "narrowed from 290,000-330,000 t",
           "scope": "kamoa_kakula",
-          "source_page": "3",
+          "source_page": "17",
           "source_section": "Kamoa-Kakula guidance",
-          "excerpt": "3 Copper held in inventory remained unchanged during the quarter at approximately 40,000 tonnes of copper. The planned destocking of up to 10,000 tonnes of copper held in inventory will now take place during H2 2026. At the start of 2026, approximately 50,000 tonnes of copper were in inventory on- site at Kamoa-Kakula and at LCS. At the end of the second quarter, there were approximately 40,000 tonnes of contained copper in inventory, which was unchanged from the end of the first quarter. Kamoa-Kakula management is targeting a year-end inventory of between 25,000 and 30,000 tonnes of copper. Figure 1. Planned growth in quarterly copper production at Kamoa-Kakula (‘000 tonnes). Notes: Figures shown on a 100% basis. Bars in grey are an indication of forecasted quarterly copper production and are not official guidance (1) At the start of 2026, there were approximately 50,000 tonnes of copper contained in concentrate held in inventory. Excess inventory to be destocked during 2026. (2) 2025 production is reported as contained copper in concentrate. Production reported from 2026 onwards is reported as copper in anode, blister or slag concentrate held for sale. Copper production in H2 2026 is set to increase following improved mining rates at Kamoa; additional mined ore to supply Phase 1 and 2 concentrators 2026 production guidance is maintained at 290,000 to 330,000 tonnes of copper in anode or blister. Copper production in H2 2026 is expected to be boosted by both higher mining rates across the Kamoa mines (Kamoa 1 and Kansoko), as well as the destocking of copper concentrates held in inventory.",
-          "stamp": "2026-07-08"
+          "excerpt": "17 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 310,000 (1) 380,000 – 420,000 Cash cost (C1) ($ per lb.)(2) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 (1)2026 production guidance previously 290,000 to 330,000 tonnes of copper in anode or blister (2) U.S. dollars per payable pound of copper in saleable product produced Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assu mptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other fact ors that may cause the actual results to differ materially. The turnaround of the Kakula Mine is advancing; however , risk factors remain. The risk factors including the integrity of underground infrastructure. Construc tion of new de-watering infrastructure is now underway and will be required for access to new mining ar eas within the required timeline and to deliver the planned ramp-up of underground operations in line with expectations. Guidance for Kamoa-Kakula is based on an assessment of these factors that managem ent believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026 includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next 12 to 18 months to complete more peripher al development around the Kakula Mine before stoping of the newly developed areas begin. Stoping start",
+          "stamp": "2026-07-29"
         },
         {
           "company_id": "ivanhoe",
@@ -54630,13 +54634,13 @@ window.DECK_DATA = {
           "low": 380000.0,
           "high": 420000.0,
           "unit": "t",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": "kamoa_kakula",
-          "source_page": "14",
+          "source_page": "17",
           "source_section": "Kamoa-Kakula guidance",
-          "excerpt": "14 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 330,000 380,000 – 420,000 Cash cost (C1) ($ per payable pound of copper in saleable product produced) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assumptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other factors that may cause the actual results to differ materially. Although mining of the Kakula orebody has restarted, risk factors remain, including the integrity of underground infrastructure, once fully dewatered, the ability to ramp up underground operations in line with expectations, and the ability to access new mining areas in the required time. Guidance for Kamoa- Kakula is based on an assessment of these factors that management believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026, includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next two years to complete more peripheral development around the Kakula Mine before stoping of the newly developed areas begin. Ivanhoe Mines targets annualized copper anode or blister production to return to over 500,000 tonnes from 2028, at a target cash cost (C1) of less than $2.00/lb. Production guidance from 2026 is reported as contained tonnes of copper in anode o",
-          "stamp": "2026-05-06"
+          "excerpt": "17 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 310,000 (1) 380,000 – 420,000 Cash cost (C1) ($ per lb.)(2) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 (1)2026 production guidance previously 290,000 to 330,000 tonnes of copper in anode or blister (2) U.S. dollars per payable pound of copper in saleable product produced Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assu mptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other fact ors that may cause the actual results to differ materially. The turnaround of the Kakula Mine is advancing; however , risk factors remain. The risk factors including the integrity of underground infrastructure. Construc tion of new de-watering infrastructure is now underway and will be required for access to new mining ar eas within the required timeline and to deliver the planned ramp-up of underground operations in line with expectations. Guidance for Kamoa-Kakula is based on an assessment of these factors that managem ent believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026 includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next 12 to 18 months to complete more peripher al development around the Kakula Mine before stoping of the newly developed areas begin. Stoping start",
+          "stamp": "2026-07-29"
         }
       ],
       "current_guidance": {
@@ -54646,23 +54650,23 @@ window.DECK_DATA = {
         "available": true,
         "metric": "Kamoa-Kakula阳极铜或粗铜指引",
         "low_kt": 290.0,
-        "high_kt": 330.0,
-        "midpoint_kt": 310.0,
+        "high_kt": 310.0,
+        "midpoint_kt": 300.0,
         "actual_ytd_kt": 135.7,
-        "completion_mid": 0.4379,
+        "completion_mid": 0.4525,
         "completion_to_low": 0.4681,
-        "completion_to_high": 0.4113,
+        "completion_to_high": 0.4379,
         "expected_share": 0.5,
         "progress_status": "behind",
         "prior_actual_kt": 388.0,
-        "guidance_delta_kt": -78.0,
-        "guidance_delta_pct": -20.1,
+        "guidance_delta_kt": -88.0,
+        "guidance_delta_pct": -22.7,
         "comparable": false,
         "exclusion_reason": "2026年指引为阳极铜或粗铜，2025年实际为精矿含铜，产品阶段不可比",
         "basis_tag": "阳极铜或粗铜口径",
         "is_proxy": false,
         "disclosed_period": "2026Q2",
-        "revision_status": "as reported",
+        "revision_status": "narrowed from 290,000-330,000 t",
         "actual_note": "完成度按2026年阳极铜或粗铜同口径计算；2025年实际为精矿含铜，不参与同比指引增量合计",
         "components": [
           "Kamoa-Kakula Contained copper in anode or blister guidance"
@@ -54679,13 +54683,13 @@ window.DECK_DATA = {
           "low": 1100.0,
           "high": 1400.0,
           "unit": "USD million",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": "kamoa_kakula",
-          "source_page": "14",
+          "source_page": "17",
           "source_section": "Kamoa-Kakula guidance",
-          "excerpt": "14 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 330,000 380,000 – 420,000 Cash cost (C1) ($ per payable pound of copper in saleable product produced) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assumptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other factors that may cause the actual results to differ materially. Although mining of the Kakula orebody has restarted, risk factors remain, including the integrity of underground infrastructure, once fully dewatered, the ability to ramp up underground operations in line with expectations, and the ability to access new mining areas in the required time. Guidance for Kamoa- Kakula is based on an assessment of these factors that management believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026, includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next two years to complete more peripheral development around the Kakula Mine before stoping of the newly developed areas begin. Ivanhoe Mines targets annualized copper anode or blister production to return to over 500,000 tonnes from 2028, at a target cash cost (C1) of less than $2.00/lb. Production guidance from 2026 is reported as contained tonnes of copper in anode o",
-          "stamp": "2026-05-06"
+          "excerpt": "17 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 310,000 (1) 380,000 – 420,000 Cash cost (C1) ($ per lb.)(2) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 (1)2026 production guidance previously 290,000 to 330,000 tonnes of copper in anode or blister (2) U.S. dollars per payable pound of copper in saleable product produced Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assu mptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other fact ors that may cause the actual results to differ materially. The turnaround of the Kakula Mine is advancing; however , risk factors remain. The risk factors including the integrity of underground infrastructure. Construc tion of new de-watering infrastructure is now underway and will be required for access to new mining ar eas within the required timeline and to deliver the planned ramp-up of underground operations in line with expectations. Guidance for Kamoa-Kakula is based on an assessment of these factors that managem ent believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026 includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next 12 to 18 months to complete more peripher al development around the Kakula Mine before stoping of the newly developed areas begin. Stoping start",
+          "stamp": "2026-07-29"
         }
       ],
       "future_guidance": [
@@ -54694,7 +54698,7 @@ window.DECK_DATA = {
           "target": "2026",
           "metric": "Kamoa-Kakula阳极铜或粗铜指引",
           "low": 290.0,
-          "high": 330.0,
+          "high": 310.0,
           "unit": "kt",
           "disclosed_period": "2026Q2",
           "note": "阳极铜或粗铜口径"
@@ -54703,13 +54707,13 @@ window.DECK_DATA = {
           "kind": "成本",
           "target": "2026",
           "metric": "Kamoa-Kakula cash cost (C1) guidance",
-          "low": 2.6,
-          "high": 3.0,
+          "low": 2.1,
+          "high": 2.5,
           "unit": "USD/lb",
-          "disclosed_period": "2026Q1",
-          "note": "Kamoa-Kakula Copper Complex",
+          "disclosed_period": "2026Q2",
+          "note": "Kamoa-Kakula",
           "target_year": 2026,
-          "stamp": "2026-05-06"
+          "stamp": "2026-07-29"
         },
         {
           "kind": "资本开支",
@@ -54718,7 +54722,7 @@ window.DECK_DATA = {
           "low": 1100.0,
           "high": 1400.0,
           "unit": "USD million",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "note": "保留公司披露币种和范围"
         },
         {
@@ -54728,7 +54732,7 @@ window.DECK_DATA = {
           "low": 380.0,
           "high": 420.0,
           "unit": "kt",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "note": "阳极铜或粗铜口径"
         },
         {
@@ -54739,7 +54743,7 @@ window.DECK_DATA = {
           "high": 2.5,
           "unit": "USD/lb",
           "disclosed_period": "2026Q1",
-          "note": "Kamoa-Kakula Copper Complex",
+          "note": "Kamoa-Kakula",
           "target_year": 2027,
           "stamp": "2026-05-06"
         },
@@ -54750,19 +54754,19 @@ window.DECK_DATA = {
           "low": 750.0,
           "high": 950.0,
           "unit": "USD million",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "note": "保留公司披露币种和范围"
         }
       ],
       "guidance_history": [],
       "explanations": [
         {
-          "element_type": "production_explanation",
-          "summary": "2 Kamoa-Kakula produced 64,328 tonnes of copper in Q2 2026; improved mining rates and destocking of copper inventories set to significantly boost H2 2026 copper production Summary of quarterly production data from Kamoa-Kakula Phase 1 & 2 concentrators Q2 2025 Q3 2025 Q4 2025 Q1 2026 Q2 2026 Ore milled (000’s tonnes) 1,991 1,838 1,712 1,534 1,387 Feed grade of ore processed (% copper) 4.12% 2.50% 2.32% 2.35% 2.59% Copper recovery (%) 85.4% 81.3% 83.2% 84.1% 86.6% Copper in concentrate produced (tonnes) 71,401 37,744 34,602 30,527 30,211 Phase 3 concentrators Ore tonnes milled (000’s tonnes) 1,631 1,618 1,662 1,574 1,582 Feed grade of ore processed (% copper) 2.92% 2.44% 2.38% 2.28% 2.22% Copper recovery (%) 85.5% 84.2% 88.2% 87.2% 88.2% Copper in concentrate produced (tonnes) 40,608 33,522 34,814 31,379 30,923 Combined Phase 1, 2, and 3 concentrators Ore tonnes milled (000’s tonnes) 3,622 3,456 3,374 3,108 2,968 Feed grade of ore processed (% copper) 3.58% 2.47% 2.35% 2.32% 2.39% Copper recovery (%) 85.4% 82.7% 85.7% 85.6% 87.4% Copper in concentrate produced (tonnes) 112,009 71,266 69,419 61,906 61,134 Smelter(1) Contained copper in anode, blister or concentrate for sale (000's tonnes) 71,417 64,328 High-strength sulphuric acid (000's tonnes) 117,871 112,307 Data in bold denotes a quarterly record. (1) copper production from Kamoa-Kakula’s on-site smelter, as well as Kamoa-Kak",
-          "source_page": "2",
+          "element_type": "production_and_cost_explanation",
+          "summary": "7 KAMOA-KAKULA COPPER COMPLEX The Kamoa-Kakula Copper Complex is operated as the Kamoa Holding joint venture between Ivanhoe Mines and Zijin Mining. The complex covers a licence area of 400 square kilometres and is approximately 25 kilometres southw est of the town of Kolwezi on the far western edge of the Central African Copperbelt. Kamoa Holding holds an 80% interest in Kamoa-Kakula with the DRC government holding the remaining 20% interest. Ivanhoe and Zijin Mining, therefore, each hold an indirect 39.6% interest in Kamoa-Kakula, with Crystal River holding an indirect 0.8% interes t. Kamoa-Kakula’s full-tim e employee workforce is over 7,481, and over 90% are Congolese. Copper production at Kamoa-Kakula commenced in May 2021 from the Phase 1 concentrator, which was delivered ahead-of-schedule. Two further conc entrator expansions were also subsequently successfully delivered, also ahead of schedule, as well as an on-site 500,000-tonne-per-annum, direct- to-blister copper smelter that produced the first batch of 99.7%- pure copper anodes in late 2025. Kamoa-Kakula ranks among the largest and highest-grade copper complexes globally. Kamoa-Kakula summary of operating and financial data Q2 2026 Q1 2026 Q4 2025 Q3 2025 Q2 2025 Ore tonnes milled (000’s tonnes) 2,968 3,108 3,374 (4) 3,456 3,622 Copper ore grade processed (%) 2.39% 2.32% 2.35% 2.47% 3.58% Copper recovery (%) 87.4% 8",
+          "source_page": "7",
           "source_section": "Kamoa-Kakula operating data",
           "period": "2026Q2",
-          "stamp": "2026-07-08"
+          "stamp": "2026-07-29"
         },
         {
           "element_type": "production_and_cost_explanation",
@@ -54773,7 +54777,7 @@ window.DECK_DATA = {
           "stamp": "2026-05-06"
         }
       ],
-      "production_summary_cn": "Lualaba冶炼厂计划停机56天压低当季外部冶炼量，约1万吨精矿库存去化延后至下半年；2026年改按阳极铜或粗铜披露，因此同比需谨慎比较。",
+      "production_summary_cn": "2026Q2公司主口径产量同比减少4.77万吨（-42.6%）。Kakula当前以外围开发为主，处理量和入选品位低于上年同期；LCS季度内停产56天也压低最终阳极及粗铜产出。",
       "projects": [
         {
           "company_id": "ivanhoe",
@@ -55225,7 +55229,7 @@ window.DECK_DATA = {
           "stamp": "2025-12-31"
         }
       ],
-      "production_summary_cn": "应付铜产量同比增长，波兰业务受益于生产线可用率提升；Sierra Gorda回收率和处理量下降、Robinson减产及Sudbury资产处置构成拖累。",
+      "production_summary_cn": "2026Q1公司主口径产量同比增加0.67万吨（+4.0%）。应付铜产量同比增长，波兰业务受益于生产线可用率提升；Sierra Gorda回收率和处理量下降、Robinson减产及Sudbury资产处置构成拖累。",
       "projects": [
         {
           "company_id": "kghm",
@@ -56460,7 +56464,7 @@ window.DECK_DATA = {
           "stamp": "2025-12-31"
         }
       ],
-      "production_summary_cn": "产量受到计划内低品位和SAG磨机非计划检修影响；部分后续检修提前完成，全年产量仍维持在指引轨道。",
+      "production_summary_cn": "2026Q1公司主口径产量同比减少0.40万吨（-4.8%）。产量受到计划内低品位和SAG磨机非计划检修影响；部分后续检修提前完成，全年产量仍维持在指引轨道。",
       "projects": [
         {
           "company_id": "lundin_mining",
@@ -56965,7 +56969,7 @@ window.DECK_DATA = {
           "stamp": "2026-02-11"
         }
       ],
-      "production_summary_cn": "铜产量同比下降，主要由于上年同期高基数及商品铜产品在季度间重新分配；Bystrinsky受处理量和入选品位提升推动实现增长。",
+      "production_summary_cn": "2026Q1公司主口径产量同比减少1.07万吨（-9.8%）。铜产量同比下降，主要由于上年同期高基数及商品铜产品在季度间重新分配；Bystrinsky受处理量和入选品位提升推动实现增长。",
       "projects": [
         {
           "company_id": "nornickel",
@@ -57456,7 +57460,7 @@ window.DECK_DATA = {
           "stamp": "2026-03-31"
         }
       ],
-      "production_summary_cn": "Kennecott受计划检修、地质管理及冶炼炉停机影响，Escondida入选品位下降；Oyu Tolgoi地下矿持续爬坡和品位改善抵消了部分减量。",
+      "production_summary_cn": "2026Q2公司主口径产量同比减少1.53万吨（-6.7%）。Kennecott受计划检修、地质管理及冶炼炉停机影响，Escondida入选品位下降；Oyu Tolgoi地下矿持续爬坡和品位改善抵消了部分减量。",
       "projects": [
         {
           "company_id": "rio_tinto",
@@ -57901,7 +57905,7 @@ window.DECK_DATA = {
           "stamp": "2025-12-31"
         }
       ],
-      "production_summary_cn": "MATSA受更高铜矿品位、回收率和创纪录处理量推动，Motheo则受A4高品位露天矿商业投产、处理量及回收率提升带动。",
+      "production_summary_cn": "2026Q2公司主口径产量同比增加0.50万吨（+17.1%）。MATSA更高铜矿品位、回收率及创纪录处理量推动增产，Motheo受A4高品位露天矿商业投产、处理量和回收率提升带动。",
       "projects": [
         {
           "company_id": "sandfire",
@@ -57956,7 +57960,7 @@ window.DECK_DATA = {
         "latest_value": 0.046,
         "prior_value": 0.63,
         "change": -0.584,
-        "explanation_cn": "Operating cash cost per pound net of by-product revenues同比下降0.58美元/磅。铜产量下降和生产费用上升使副产品前现金成本增加，但银、钼和锌副产品收入/磅上升87%，净现金成本由正成本转为负成本。"
+        "explanation_cn": "Operating cash cost per pound net of by-product revenues同比下降0.58美元/磅。副产品前现金成本由2.112升至2.288美元/磅，但每磅副产品收入由1.481升至2.242美元，使单季净现金成本降至0.046美元/磅，仍为正值；上半年累计口径为负值。"
       },
       "quarter_stats": {
         "current_kt": 230.7,
@@ -58268,7 +58272,7 @@ window.DECK_DATA = {
           "stamp": "2026-04-30"
         }
       ],
-      "production_summary_cn": "矿产铜同比下降，Cuajone入选品位和磨矿量下降是主要拖累，Toquepala品位回落亦有影响，La Caridad形成部分抵消。",
+      "production_summary_cn": "2026Q2公司主口径产量同比减少0.83万吨（-3.5%）。墨西哥业务产量同比增长3.2%，但秘鲁矿山产量下降12.0%并形成主要拖累，年初至今秘鲁减产主要来自入选品位下降。",
       "projects": [
         {
           "company_id": "southern_copper",
@@ -58761,7 +58765,7 @@ window.DECK_DATA = {
           "stamp": "2025-12-31"
         }
       ],
-      "production_summary_cn": "Gibraltar品位和回收率改善，Florence于2月启动并产出首批阴极铜；公司总量从本季开始同时包含Gibraltar和Florence。",
+      "production_summary_cn": "2026Q1公司主口径产量同比增加0.52万吨（+57.1%）。Gibraltar品位和回收率改善，Florence于2月启动并产出首批阴极铜；公司总量从本季开始同时包含Gibraltar和Florence。",
       "projects": [
         {
           "company_id": "taseko_mines",
@@ -60447,7 +60451,7 @@ window.DECK_DATA = {
           "stamp": "2026-03-31"
         }
       ],
-      "production_summary_cn": "公司口径产量同比增加3.39万吨：QB上年同期长停机形成低基数，HVC处理量和品位提升，Antamina按矿序切换至更高品位铜矿石；Carmen de Andacollo品位和回收率亦改善。",
+      "production_summary_cn": "2026Q2公司主口径产量同比增加2.67万吨（+24.5%）。四项铜业务均实现增产，HVC和Antamina受益于较高品位，Antamina同比还受上年同期事故停产低基数影响，QB保持稳定运行。",
       "projects": [
         {
           "company_id": "teck",
@@ -60796,7 +60800,7 @@ window.DECK_DATA = {
           "stamp": "2026-04-17"
         }
       ],
-      "production_summary_cn": "巴西资产表现强劲，Salobo创二季度产量纪录，Sossego和Voisey's Bay增产；Sudbury下游计划检修及春季融雪影响部分抵消。",
+      "production_summary_cn": "2026Q2公司主口径产量同比增加0.58万吨（+6.3%）。巴西资产表现强劲，Salobo创二季度产量纪录，Sossego和Voisey's Bay增产；Sudbury下游计划检修及春季融雪影响部分抵消。",
       "projects": [
         {
           "company_id": "vale",
@@ -61393,7 +61397,7 @@ window.DECK_DATA = {
           "stamp": "2026-01-22"
         }
       ],
-      "production_summary_cn": "总铜产量同比增长，Las Bambas和Kinsevere贡献主要增量，Khoemacau总体稳定；公司口径为各资产100%产量加总。",
+      "production_summary_cn": "2026Q1公司主口径产量同比增加1.05万吨（+8.9%）。总铜产量同比增长，Las Bambas和Kinsevere贡献主要增量，Khoemacau总体稳定；公司口径为各资产100%产量加总。",
       "projects": [
         {
           "company_id": "mmg",
@@ -61788,7 +61792,7 @@ window.DECK_DATA = {
           "stamp": "2025-03-22"
         }
       ],
-      "production_summary_cn": "当季铜产量18.79万吨，同比增加1.73万吨（+10.15%）。公司仅概括为生产运营管理能力提升及主要产品产销量增长，未拆分TFM与KFM贡献，也未披露品位、处理量、回收率或扩产因素。",
+      "production_summary_cn": "2026Q1公司主口径产量同比增加1.73万吨（+10.1%）。当季铜产量18.79万吨，同比增加1.73万吨（+10.15%）。公司仅概括为生产运营管理能力提升及主要产品产销量增长，未拆分TFM与KFM贡献，也未披露品位、处理量、回收率或扩产因素。",
       "projects": [
         {
           "company_id": "cmoc",
@@ -62137,7 +62141,7 @@ window.DECK_DATA = {
           "stamp": "2026-04-22"
         }
       ],
-      "production_summary_cn": "矿产铜同比下降，主要受卡莫阿权益铜产量下滑影响；冶炼铜单独披露，不计入矿山产量。",
+      "production_summary_cn": "2026Q1公司主口径产量同比减少2.84万吨（-9.9%）。报告原文：矿产铜同比下降主要受卡莫阿权益铜产量下滑影响。",
       "projects": [
         {
           "company_id": "zijin_mining",
@@ -62379,13 +62383,13 @@ window.DECK_DATA = {
       "company": "Capstone",
       "target_year": 2019,
       "snapshot": "latest",
-      "disclosed_period": "2020Q1",
-      "low": 140.0,
-      "high": 155.0,
+      "disclosed_period": "2019Q4",
+      "low": 145.0,
+      "high": 160.0,
       "actual": 153.5,
       "unit": "million lb",
       "status": "within",
-      "ratio": 1.0407,
+      "ratio": 1.0066,
       "point_tolerance": false
     },
     {
@@ -62396,10 +62400,10 @@ window.DECK_DATA = {
       "disclosed_period": "2020Q2",
       "low": 140.0,
       "high": 155.0,
-      "actual": 71.17,
-      "unit": "kt",
-      "status": "below",
-      "ratio": 0.4825,
+      "actual": 156.9,
+      "unit": "million lb",
+      "status": "above",
+      "ratio": 1.0637,
       "point_tolerance": false
     },
     {
@@ -62407,13 +62411,13 @@ window.DECK_DATA = {
       "company": "Capstone",
       "target_year": 2020,
       "snapshot": "latest",
-      "disclosed_period": "2021Q1",
-      "low": 50.0,
-      "high": 65.0,
-      "actual": 71.17,
-      "unit": "kt",
+      "disclosed_period": "2020Q4",
+      "low": 140.0,
+      "high": 155.0,
+      "actual": 156.9,
+      "unit": "million lb",
       "status": "above",
-      "ratio": 1.2377,
+      "ratio": 1.0637,
       "point_tolerance": false
     },
     {
@@ -62421,7 +62425,7 @@ window.DECK_DATA = {
       "company": "Capstone",
       "target_year": 2021,
       "snapshot": "first",
-      "disclosed_period": "2021Q2",
+      "disclosed_period": "2021Q1",
       "low": 175.0,
       "high": 190.0,
       "actual": 187.1,
@@ -62533,7 +62537,7 @@ window.DECK_DATA = {
       "company": "Capstone",
       "target_year": 2025,
       "snapshot": "first",
-      "disclosed_period": "2025Q1",
+      "disclosed_period": "2024Q4",
       "low": 220000.0,
       "high": 255000.0,
       "actual": 224765.0,
@@ -65491,16 +65495,16 @@ window.DECK_DATA = {
       "target_year": 2019,
       "target_label": "2019",
       "metric": "Consolidated copper production",
-      "low": 140.0,
-      "high": 155.0,
+      "low": 145.0,
+      "high": 160.0,
       "unit": "million lb",
-      "disclosed_period": "2020Q1",
+      "disclosed_period": "2019Q4",
       "revision_status": "as reported",
       "scope": null,
       "source_page": "Guidance section",
       "source_section": "Guidance",
-      "excerpt": "a discontinued operation in the comparative period until the point of its sale on June 3, 2019. Consolidated Production of 35.5 million pounds was at the lower end of the original guidance range of 140 to 155 million pounds. Production levels are expected to ramp up through the year as Pinto Valley mined a lower grade area of the upper portion of the pit during the quarter. A focus on maximizing mill",
-      "stamp": "2020-03-31"
+      "excerpt": "ent exploration success will ensure it stays that way for at least the next 10 years.” Q4 2019 HIGHLIGHTS AND SIGNIFICANT ITEMS Capstone achieves higher than the mid-point of 2019 production guidance and delivers costs below the low end of C1 cash costs 1 guidance. 2019 production of 153.4 million pounds of copper is in the top half of the guidance range of 145-160 million pounds and consolidated C1 cash costs 1 of $1.78 per payable pound of copper is lower than guidance of $1.80-$2.00 per payable pound. Q4 2019 copper production of 35.4 million pounds and",
+      "stamp": "2020-02-12"
     },
     {
       "company_id": "capstone",
@@ -65509,16 +65513,16 @@ window.DECK_DATA = {
       "target_year": 2020,
       "target_label": "2020",
       "metric": "Consolidated copper production",
-      "low": 50.0,
-      "high": 65.0,
-      "unit": "kt",
-      "disclosed_period": "2021Q1",
+      "low": 140.0,
+      "high": 155.0,
+      "unit": "million lb",
+      "disclosed_period": "2020Q4",
       "revision_status": "as reported",
       "scope": null,
       "source_page": "Guidance section",
       "source_section": "Guidance",
-      "excerpt": "ncrease. The copper production for 2021 is expected to align with the new technical report which includes a ramp up to 3,780 tpd at average copper grade of 1.77%. 2021 midpoint of production guidance is 5 0.5 million pounds which shows a growth of 33% versus 2020 full year production of 37.9 million pounds. Compared to previous mine plans, the 2021 plan shows a longer mine life of 10 years with higher average production in the range of 50 to 65 million copper pounds per year. This mine plan includes throughput 1 These are alternative performance measures. Refer to the MD&A section entitled “Alternative Performance Measure",
-      "stamp": "2021-03-31"
+      "excerpt": "prior period alternative performance measures have been restated to conform with current period classification. Page 5 Q4 2020 Highlights and Significant Items Results Exceed 2020 Production and Cost Guidance Capstone exceeded both production and cost guidance for 2020 ; finishing the year at 156.9 million pounds of copper production above the guidance range of 140 to 155 million pounds, at consolidated C1 cash costs1 of $1.84 per payable pound of copper, below the guidance range of $1.85 to $2.00 per pound. Q4 2020 Financial and Operational Highlights • Strong f",
+      "stamp": "2020-12-31"
     },
     {
       "company_id": "capstone",
@@ -65561,7 +65565,7 @@ window.DECK_DATA = {
       "company": "Capstone",
       "guidance_type": "production",
       "target_year": 2023,
-      "target_label": "2023",
+      "target_label": "2023H2",
       "metric": "Consolidated copper production",
       "low": 83000.0,
       "high": 93000.0,
@@ -65569,9 +65573,9 @@ window.DECK_DATA = {
       "disclosed_period": "2023Q3",
       "revision_status": "as reported",
       "scope": null,
-      "source_page": "Guidance section",
-      "source_section": "Guidance",
-      "excerpt": "notified Lara Exploration Ltd. (\"Lara\") of the intent to relinquish the Planalto Option Agreement and fully exit the project. 2.1 2023 Outlook The Company re-affirms its H2 copper production guidance of 83,000 to 93,000 tonnes. C1 cash costs1 are trending towards the upper end of the H2 guidance range of $2.55/lb to $2.75/lb per payable pound of copper produced due to additional unplanned maintenance ex",
+      "source_page": "13",
+      "source_section": "2023 Outlook",
+      "excerpt": "ent to Q3 2023, Capstone notified Lara Exploration Ltd. (\"Lara\") of the intent to relinquish the Planalto Option Agreement and fully exit the project. 2.1 2023 Outlook The Company re-affirms its H2 copper production guidance of 83,000 to 93,000 tonnes. C1 cash costs1 are trending towards the upper end of the H2 guidance range of $2.55/lb to $2.75/lb per payable pound of copper produced due to additional unplanned maintenance ex",
       "stamp": "2023-09-30"
     },
     {
@@ -65581,16 +65585,16 @@ window.DECK_DATA = {
       "target_year": 2024,
       "target_label": "2024",
       "metric": "Consolidated copper production",
-      "low": 220.0,
-      "high": 255.0,
-      "unit": "kt",
-      "disclosed_period": "2024Q4",
+      "low": 190000.0,
+      "high": 220000.0,
+      "unit": "t",
+      "disclosed_period": "2024Q3",
       "revision_status": "as reported",
       "scope": null,
       "source_page": "Guidance section",
       "source_section": "Guidance",
-      "excerpt": "80 $1.25 - $1.55 Total Sulphides 185 - 215 $1.85 - $2.15 Cathode Business Mantos Blancos 6 - 8 $3.40 - $3.70 Mantoverde3 29 - 32 $4.10 - $4.40 Total Cathodes 35 - 40 $3.95 - $4.25 Consolidated Copper 220 - 255 $2.20 - $2.50 2 Pinto Valley production and C1 include immaterial cathode production. 3 Mantoverde shown on a 100% basis. Key C1 Cash costs input assumptions: CLP/USD: 900:1 MXN/U",
-      "stamp": "2024-12-31"
+      "excerpt": "and $377.0 million of undrawn amounts on the corporate revolving credit facility. • The Company notes that 2024 consolidated production is expected to finish at the low end of the guidance range of 190,000 to 220,000 tonnes of copper. 2024 consolidated C1 cash costs1 guidance has been revised to $2.60/lb to $2.80/lb mainly due to the ramp-ups at Mantoverde and Mantos Blancos occurring later in the ye",
+      "stamp": "2024-09-30"
     },
     {
       "company_id": "capstone",
@@ -65599,16 +65603,16 @@ window.DECK_DATA = {
       "target_year": 2025,
       "target_label": "2025",
       "metric": "Consolidated copper production",
-      "low": 200.0,
-      "high": 230.0,
-      "unit": "kt",
-      "disclosed_period": "2025Q4",
+      "low": 220000.0,
+      "high": 255000.0,
+      "unit": "t",
+      "disclosed_period": "2025Q3",
       "revision_status": "as reported",
       "scope": null,
       "source_page": "Guidance section",
       "source_section": "Guidance",
-      "excerpt": " $1.55 - $1.85 Total Sulphides 165 - 190 $2.10 - $2.40 Cathode Business Mantoverde2 25 - 28 $4.60 - $4.95 Mantos Blancos 10 - 12 $2.80 - $3.10 Total Cathodes 35 - 40 $4.10 - $4.40 Consolidated Copper 200 - 230 $2.45 - $2.75 1 Pinto Valley production and C1 include immaterial cathode production. 2 Mantoverde shown on a 100% basis. Key C1 Cash costs input assumptions: CLP/USD: 875:1 MXN/U",
-      "stamp": "2025-12-31"
+      "excerpt": "ed of $310.1 million of cash and short-term investments, and $761.0 million of undrawn amounts on the $1 billion corporate revolving credit facility. • The Company reiterates 2025 guidance, noting consolidated copper production is trending towards the lower half of the guidance range of 220,000 to 255,000 tonnes and 2025 consolidated cash costs1 are trending towards the upper half of the guidance range of $2.20 to $2.50 per payable pound. • Mantoverde Optimized (“MV Optimized”) project sa",
+      "stamp": "2025-09-30"
     },
     {
       "company_id": "capstone",
@@ -66913,16 +66917,16 @@ window.DECK_DATA = {
       "target_year": 2020,
       "target_label": "2020",
       "metric": "Peru copper production guidance",
-      "low": 80000.0,
-      "high": 95000.0,
+      "low": 65000.0,
+      "high": 75000.0,
       "unit": "t",
-      "disclosed_period": "2019Q4",
+      "disclosed_period": "2020Q3",
       "revision_status": "as reported",
       "scope": "constancia_complex",
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
-      "excerpt": "80,000 - 95,000",
-      "stamp": "2020-02-24"
+      "excerpt": "65,000 - 75,000",
+      "stamp": "2020-11-04"
     },
     {
       "company_id": "hudbay",
@@ -67348,13 +67352,13 @@ window.DECK_DATA = {
       "low": 1100.0,
       "high": 1400.0,
       "unit": "USD million",
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "scope": "kamoa_kakula",
-      "source_page": "14",
+      "source_page": "17",
       "source_section": "Kamoa-Kakula guidance",
-      "excerpt": "14 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 330,000 380,000 – 420,000 Cash cost (C1) ($ per payable pound of copper in saleable product produced) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assumptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other factors that may cause the actual results to differ materially. Although mining of the Kakula orebody has restarted, risk factors remain, including the integrity of underground infrastructure, once fully dewatered, the ability to ramp up underground operations in line with expectations, and the ability to access new mining areas in the required time. Guidance for Kamoa- Kakula is based on an assessment of these factors that management believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026, includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next two years to complete more peripheral development around the Kakula Mine before stoping of the newly developed areas begin. Ivanhoe Mines targets annualized copper anode or blister production to return to over 500,000 tonnes from 2028, at a target cash cost (C1) of less than $2.00/lb. Production guidance from 2026 is reported as contained tonnes of copper in anode o",
-      "stamp": "2026-05-06"
+      "excerpt": "17 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 310,000 (1) 380,000 – 420,000 Cash cost (C1) ($ per lb.)(2) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 (1)2026 production guidance previously 290,000 to 330,000 tonnes of copper in anode or blister (2) U.S. dollars per payable pound of copper in saleable product produced Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assu mptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other fact ors that may cause the actual results to differ materially. The turnaround of the Kakula Mine is advancing; however , risk factors remain. The risk factors including the integrity of underground infrastructure. Construc tion of new de-watering infrastructure is now underway and will be required for access to new mining ar eas within the required timeline and to deliver the planned ramp-up of underground operations in line with expectations. Guidance for Kamoa-Kakula is based on an assessment of these factors that managem ent believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026 includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next 12 to 18 months to complete more peripher al development around the Kakula Mine before stoping of the newly developed areas begin. Stoping start",
+      "stamp": "2026-07-29"
     },
     {
       "company_id": "ivanhoe",
@@ -67366,13 +67370,13 @@ window.DECK_DATA = {
       "low": 750.0,
       "high": 950.0,
       "unit": "USD million",
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "scope": "kamoa_kakula",
-      "source_page": "14",
+      "source_page": "17",
       "source_section": "Kamoa-Kakula guidance",
-      "excerpt": "14 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 330,000 380,000 – 420,000 Cash cost (C1) ($ per payable pound of copper in saleable product produced) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assumptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other factors that may cause the actual results to differ materially. Although mining of the Kakula orebody has restarted, risk factors remain, including the integrity of underground infrastructure, once fully dewatered, the ability to ramp up underground operations in line with expectations, and the ability to access new mining areas in the required time. Guidance for Kamoa- Kakula is based on an assessment of these factors that management believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026, includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next two years to complete more peripheral development around the Kakula Mine before stoping of the newly developed areas begin. Ivanhoe Mines targets annualized copper anode or blister production to return to over 500,000 tonnes from 2028, at a target cash cost (C1) of less than $2.00/lb. Production guidance from 2026 is reported as contained tonnes of copper in anode o",
-      "stamp": "2026-05-06"
+      "excerpt": "17 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 310,000 (1) 380,000 – 420,000 Cash cost (C1) ($ per lb.)(2) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 (1)2026 production guidance previously 290,000 to 330,000 tonnes of copper in anode or blister (2) U.S. dollars per payable pound of copper in saleable product produced Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assu mptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other fact ors that may cause the actual results to differ materially. The turnaround of the Kakula Mine is advancing; however , risk factors remain. The risk factors including the integrity of underground infrastructure. Construc tion of new de-watering infrastructure is now underway and will be required for access to new mining ar eas within the required timeline and to deliver the planned ramp-up of underground operations in line with expectations. Guidance for Kamoa-Kakula is based on an assessment of these factors that managem ent believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026 includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next 12 to 18 months to complete more peripher al development around the Kakula Mine before stoping of the newly developed areas begin. Stoping start",
+      "stamp": "2026-07-29"
     },
     {
       "company_id": "ivanhoe",
@@ -67490,15 +67494,15 @@ window.DECK_DATA = {
       "target_label": "2026",
       "metric": "Kamoa-Kakula Contained copper in anode or blister guidance",
       "low": 290000.0,
-      "high": 330000.0,
+      "high": 310000.0,
       "unit": "t",
       "disclosed_period": "2026Q2",
-      "revision_status": "as reported",
+      "revision_status": "narrowed from 290,000-330,000 t",
       "scope": "kamoa_kakula",
-      "source_page": "3",
+      "source_page": "17",
       "source_section": "Kamoa-Kakula guidance",
-      "excerpt": "3 Copper held in inventory remained unchanged during the quarter at approximately 40,000 tonnes of copper. The planned destocking of up to 10,000 tonnes of copper held in inventory will now take place during H2 2026. At the start of 2026, approximately 50,000 tonnes of copper were in inventory on- site at Kamoa-Kakula and at LCS. At the end of the second quarter, there were approximately 40,000 tonnes of contained copper in inventory, which was unchanged from the end of the first quarter. Kamoa-Kakula management is targeting a year-end inventory of between 25,000 and 30,000 tonnes of copper. Figure 1. Planned growth in quarterly copper production at Kamoa-Kakula (‘000 tonnes). Notes: Figures shown on a 100% basis. Bars in grey are an indication of forecasted quarterly copper production and are not official guidance (1) At the start of 2026, there were approximately 50,000 tonnes of copper contained in concentrate held in inventory. Excess inventory to be destocked during 2026. (2) 2025 production is reported as contained copper in concentrate. Production reported from 2026 onwards is reported as copper in anode, blister or slag concentrate held for sale. Copper production in H2 2026 is set to increase following improved mining rates at Kamoa; additional mined ore to supply Phase 1 and 2 concentrators 2026 production guidance is maintained at 290,000 to 330,000 tonnes of copper in anode or blister. Copper production in H2 2026 is expected to be boosted by both higher mining rates across the Kamoa mines (Kamoa 1 and Kansoko), as well as the destocking of copper concentrates held in inventory.",
-      "stamp": "2026-07-08"
+      "excerpt": "17 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 310,000 (1) 380,000 – 420,000 Cash cost (C1) ($ per lb.)(2) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 (1)2026 production guidance previously 290,000 to 330,000 tonnes of copper in anode or blister (2) U.S. dollars per payable pound of copper in saleable product produced Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assu mptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other fact ors that may cause the actual results to differ materially. The turnaround of the Kakula Mine is advancing; however , risk factors remain. The risk factors including the integrity of underground infrastructure. Construc tion of new de-watering infrastructure is now underway and will be required for access to new mining ar eas within the required timeline and to deliver the planned ramp-up of underground operations in line with expectations. Guidance for Kamoa-Kakula is based on an assessment of these factors that managem ent believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026 includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next 12 to 18 months to complete more peripher al development around the Kakula Mine before stoping of the newly developed areas begin. Stoping start",
+      "stamp": "2026-07-29"
     },
     {
       "company_id": "ivanhoe",
@@ -67528,13 +67532,13 @@ window.DECK_DATA = {
       "low": 380000.0,
       "high": 420000.0,
       "unit": "t",
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "scope": "kamoa_kakula",
-      "source_page": "14",
+      "source_page": "17",
       "source_section": "Kamoa-Kakula guidance",
-      "excerpt": "14 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 330,000 380,000 – 420,000 Cash cost (C1) ($ per payable pound of copper in saleable product produced) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assumptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other factors that may cause the actual results to differ materially. Although mining of the Kakula orebody has restarted, risk factors remain, including the integrity of underground infrastructure, once fully dewatered, the ability to ramp up underground operations in line with expectations, and the ability to access new mining areas in the required time. Guidance for Kamoa- Kakula is based on an assessment of these factors that management believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026, includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next two years to complete more peripheral development around the Kakula Mine before stoping of the newly developed areas begin. Ivanhoe Mines targets annualized copper anode or blister production to return to over 500,000 tonnes from 2028, at a target cash cost (C1) of less than $2.00/lb. Production guidance from 2026 is reported as contained tonnes of copper in anode o",
-      "stamp": "2026-05-06"
+      "excerpt": "17 COPPER PRODUCTION, CASH COST AND CAPITAL EXPENDITURE GUIDANCE Kamoa-Kakula Guidance 2026 2027 Contained copper in anode or blister (tonnes) 290,000 – 310,000 (1) 380,000 – 420,000 Cash cost (C1) ($ per lb.)(2) 2.60 – 3.00 2.10 – 2.50 Capital expenditure ($ million) 1,100 – 1,400 750 – 950 (1)2026 production guidance previously 290,000 to 330,000 tonnes of copper in anode or blister (2) U.S. dollars per payable pound of copper in saleable product produced Guidance figures are on a 100% project basis and metal reported in concentrate is before refining losses associated with smelter terms. Kamoa-Kakula’s guidance is based on several assu mptions and estimates. It involves estimates of known and unknown risks, uncertainties, and other fact ors that may cause the actual results to differ materially. The turnaround of the Kakula Mine is advancing; however , risk factors remain. The risk factors including the integrity of underground infrastructure. Construc tion of new de-watering infrastructure is now underway and will be required for access to new mining ar eas within the required timeline and to deliver the planned ramp-up of underground operations in line with expectations. Guidance for Kamoa-Kakula is based on an assessment of these factors that managem ent believes are reasonable at this time, given all available information. 2026 and 2027 production and cash cost (C1) guidance, which was revised on March 31, 2026 includes updated mine designs at both the Kamoa and Kakula mines which include a longer period of up-front development to support a more sustainable future rate of mining. Development will be focused over the next 12 to 18 months to complete more peripher al development around the Kakula Mine before stoping of the newly developed areas begin. Stoping start",
+      "stamp": "2026-07-29"
     },
     {
       "company_id": "kghm",
@@ -72387,12 +72391,12 @@ window.DECK_DATA = {
       "low_kt": 1406.1,
       "high_kt": 1406.1,
       "midpoint_kt": 1406.1,
-      "actual_ytd_kt": null,
-      "completion_mid": null,
-      "completion_to_low": null,
-      "completion_to_high": null,
+      "actual_ytd_kt": 620.1,
+      "completion_mid": 0.441,
+      "completion_to_low": 0.441,
+      "completion_to_high": 0.441,
       "expected_share": 0.5,
-      "progress_status": "unavailable",
+      "progress_status": "behind",
       "prior_actual_kt": 1623.4,
       "guidance_delta_kt": -217.3,
       "guidance_delta_pct": -13.4,
@@ -72472,23 +72476,23 @@ window.DECK_DATA = {
       "available": true,
       "metric": "Kamoa-Kakula阳极铜或粗铜指引",
       "low_kt": 290.0,
-      "high_kt": 330.0,
-      "midpoint_kt": 310.0,
+      "high_kt": 310.0,
+      "midpoint_kt": 300.0,
       "actual_ytd_kt": 135.7,
-      "completion_mid": 0.4379,
+      "completion_mid": 0.4525,
       "completion_to_low": 0.4681,
-      "completion_to_high": 0.4113,
+      "completion_to_high": 0.4379,
       "expected_share": 0.5,
       "progress_status": "behind",
       "prior_actual_kt": 388.0,
-      "guidance_delta_kt": -78.0,
-      "guidance_delta_pct": -20.1,
+      "guidance_delta_kt": -88.0,
+      "guidance_delta_pct": -22.7,
       "comparable": false,
       "exclusion_reason": "2026年指引为阳极铜或粗铜，2025年实际为精矿含铜，产品阶段不可比",
       "basis_tag": "阳极铜或粗铜口径",
       "is_proxy": false,
       "disclosed_period": "2026Q2",
-      "revision_status": "as reported",
+      "revision_status": "narrowed from 290,000-330,000 t",
       "actual_note": "完成度按2026年阳极铜或粗铜同口径计算；2025年实际为精矿含铜，不参与同比指引增量合计",
       "components": [
         "Kamoa-Kakula Contained copper in anode or blister guidance"
@@ -72803,8 +72807,8 @@ window.DECK_DATA = {
       "company": "Capstone",
       "years": 7,
       "hit_rate": 42.9,
-      "below": 3,
-      "above": 1
+      "below": 2,
+      "above": 2
     },
     {
       "company_id": "bhp",
