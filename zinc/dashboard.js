@@ -118,7 +118,7 @@
   }
 
   function dashboardGuidance(profile) {
-    const source = profile.current_guidance || D.guidance_overview.find((row) => row.company_id === profile.company_id) || { available: false };
+    const source = D.guidance_overview.find((row) => row.company_id === profile.company_id) || profile.current_guidance || { available: false };
     return { ...source };
   }
 
@@ -154,7 +154,7 @@
       delta: guidance.guidance_delta_pct,
       actual: guidance.actual_ytd_kt,
       completion: guidance.completion_mid,
-      period: profile.latest_period,
+      period: guidance.calculation_as_of || profile.latest_period,
       basis: basisLabel(guidance, profile),
     }[key];
   }
@@ -192,13 +192,13 @@
         <td><strong class="cell-main">${esc(guidanceRange(guidance))}</strong><span class="cell-sub">${esc(guidance.metric || shorten(guidance.status_note || "未提取到可用指引", 52))}</span></td>
         <td><strong class="cell-main">${esc(wan(guidance.prior_actual_kt))}</strong><span class="cell-sub">${esc(guidance.prior_actual_label || "同口径全年实际")}</span></td>
         <td><strong class="cell-main ${classForValue(guidance.guidance_delta_pct)}">${esc(delta)}</strong><span class="cell-sub">${esc(deltaNote)}</span></td>
-        <td><strong class="cell-main">${esc(wan(guidance.actual_ytd_kt))}</strong><span class="cell-sub">${esc(guidance.completion_basis_note || guidance.actual_note || `${D.meta.as_of}同口径累计`)}</span></td>
+        <td><strong class="cell-main">${esc(wan(guidance.actual_ytd_kt))}</strong><span class="cell-sub">${esc(guidance.completion_basis_note || guidance.actual_note || `${guidance.calculation_as_of || D.meta.as_of}同口径累计`)}</span></td>
         <td>
           <div class="completion-value"><span>${esc(pct(completion))}</span><span>${esc(progressLabel(guidance.progress_status))}</span></div>
           <div class="progress-track"><i class="${progressClass(guidance.progress_status)}" style="width:${completionWidth}%"></i></div>
           <span class="cell-sub">${esc(completionNote)}</span>
         </td>
-        <td><span class="period-label">${esc(profile.latest_period || guidance.disclosed_period || "—")}</span><span class="cell-sub">最新产量期</span></td>
+        <td><span class="period-label">${esc(guidance.calculation_as_of || profile.latest_period || guidance.disclosed_period || "—")}</span><span class="cell-sub">完成度截至</span></td>
         <td><span class="basis-label">${esc(basis)}</span><span class="cell-sub">${esc(guidance.exclusion_reason || guidance.metric || profile.basis || "")}</span></td>
       </tr>`;
     }).join("") || '<tr><td colspan="8"><div class="empty-state">没有符合筛选条件的企业。</div></td></tr>';
@@ -440,18 +440,21 @@
     activeRailItem?.scrollIntoView({ block: "nearest" });
 
     const stats = profile.quarter_stats;
-    const guidance = guidanceByCompany.get(profile.company_id) || profile.current_guidance;
+    const guidance = profile.current_guidance || guidanceByCompany.get(profile.company_id);
     $("#company-period").textContent = `数据截至 ${profile.latest_period}`;
     $("#company-name").textContent = profile.company;
     $("#company-basis-group").textContent = profile.basis_group || "公司披露口径";
     $("#company-metric").textContent = `${profile.metric || "公司主口径"} · 公司自身时间序列`;
     $("#company-basis").textContent = profile.basis || "未披露";
-    const completionContext = guidance?.completion_basis_note || guidance?.exclusion_reason || guidance?.actual_note;
+    const completionContext = guidance?.completion_basis_note
+      || guidance?.exclusion_reason
+      || guidance?.actual_note
+      || (guidance?.calculation_as_of ? `${guidance.calculation_as_of}同口径` : null);
     $("#company-kpis").innerHTML = [
       kpi("当季度产量", wan(stats.current_kt), profile.metric || "公司主口径"),
       kpi("单季同比增减", signedWan(stats.quarter_change_kt), signedPct(stats.quarter_change_pct), classForValue(stats.quarter_change_kt)),
       kpi(stats.is_fiscal ? "财年累计同比增减" : "累计同比增减", signedWan(stats.ytd_change_kt), signedPct(stats.ytd_change_pct), classForValue(stats.ytd_change_kt)),
-      kpi(completionContext ? "指引完成度（对应期）" : "指引完成度（公共期）", pct(guidance?.completion_mid), completionContext || `${D.meta.as_of}同口径`),
+      kpi("指引完成度（最新期）", pct(guidance?.completion_mid), completionContext || `${profile.latest_period}同口径`),
     ].join("");
 
     const seasonal = D.company_seasonal.filter((row) => row.company_id === profile.company_id);
@@ -463,7 +466,7 @@
       if (guidance.completion_mid == null) {
         guidanceSummary = `${guidanceRange(guidance)}；${completionContext || "未形成同口径累计产量，无法计算完成度"}。`;
       } else {
-        const completionBasis = guidance.completion_basis_note || `公共总览期${D.meta.as_of}`;
+        const completionBasis = guidance.completion_basis_note || `截至${guidance.calculation_as_of || profile.latest_period}`;
         guidanceSummary = `${guidanceRange(guidance)}；按${completionBasis}完成${pct(guidance.completion_mid)}，${progressLabel(guidance.progress_status)}。`;
       }
       guidanceSummary += guidance.comparable

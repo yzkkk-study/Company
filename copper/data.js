@@ -300,11 +300,11 @@ window.DECK_DATA = {
       "period": "2026Q2",
       "year": 2026,
       "quarter": "Q2",
-      "kt": 1590.6,
-      "mine_count": 37,
+      "kt": 1714.0,
+      "mine_count": 46,
       "backfill_count": 0,
-      "yoy_kt": -1223.5,
-      "yoy_pct": -43.5
+      "yoy_kt": -1100.1,
+      "yoy_pct": -39.1
     }
   ],
   "company_seasonal": [
@@ -9432,6 +9432,32 @@ window.DECK_DATA = {
       "basis": "Consolidated; North America is net of joint venture interests",
       "metric": "Company copper production",
       "product_stage": "recoverable_copper",
+      "derived": false
+    },
+    {
+      "company_id": "glencore",
+      "company": "Glencore",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 197.4,
+      "basis_group": "混合口径",
+      "basis": "Mixed reporting basis: controlled assets generally 100%; joint ventures at attributable share",
+      "metric": "Production from own sources - Total copper",
+      "product_stage": "own_sourced_copper_mixed",
+      "derived": true
+    },
+    {
+      "company_id": "hudbay",
+      "company": "HudBay",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 28.3,
+      "basis_group": "100%/合并口径",
+      "basis": "Consolidated company-reported production; Copper Mountain is included at 100% where applicable",
+      "metric": "Contained copper produced",
+      "product_stage": "copper_concentrate_contained",
       "derived": false
     },
     {
@@ -37751,6 +37777,19 @@ window.DECK_DATA = {
       "backfill": false
     },
     {
+      "mine_id": "glencore_african_copper",
+      "mine": "African Copper (Katanga, Mutanda, Mopani)",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 70.5,
+      "company": "Glencore",
+      "source_count": 1,
+      "selection_stage": "copper_metal",
+      "derived": true,
+      "backfill": false
+    },
+    {
       "mine_id": "aitik",
       "mine": "Aitik",
       "period": "2026Q2",
@@ -37771,7 +37810,7 @@ window.DECK_DATA = {
       "quarter": "Q2",
       "kt": 108.5,
       "company": "Teck",
-      "source_count": 2,
+      "source_count": 3,
       "selection_stage": "copper_concentrate_contained",
       "derived": false,
       "backfill": false
@@ -37862,9 +37901,35 @@ window.DECK_DATA = {
       "quarter": "Q2",
       "kt": 96.8,
       "company": "Anglo American",
-      "source_count": 1,
+      "source_count": 2,
       "selection_stage": "copper_concentrate_contained",
       "derived": true,
+      "backfill": false
+    },
+    {
+      "mine_id": "constancia_complex",
+      "mine": "Constancia Operations (including Pampacancha)",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 19.4,
+      "company": "HudBay",
+      "source_count": 1,
+      "selection_stage": "copper_concentrate_contained",
+      "derived": false,
+      "backfill": false
+    },
+    {
+      "mine_id": "copper_mountain",
+      "mine": "Copper Mountain",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 6.5,
+      "company": "HudBay",
+      "source_count": 1,
+      "selection_stage": "copper_concentrate_contained",
+      "derived": false,
       "backfill": false
     },
     {
@@ -37920,6 +37985,32 @@ window.DECK_DATA = {
       "backfill": false
     },
     {
+      "mine_id": "glencore_australia_copper",
+      "mine": "Glencore Australia copper assets",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 0.0,
+      "company": "Glencore",
+      "source_count": 1,
+      "selection_stage": "mine_copper_mixed",
+      "derived": true,
+      "backfill": false
+    },
+    {
+      "mine_id": "glencore_zinc_north_america",
+      "mine": "Glencore North America zinc assets - copper",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 2.3,
+      "company": "Glencore",
+      "source_count": 1,
+      "selection_stage": "copper_concentrate_contained",
+      "derived": true,
+      "backfill": false
+    },
+    {
       "mine_id": "grasberg",
       "mine": "Grasberg minerals district",
       "period": "2026Q2",
@@ -37959,6 +38050,19 @@ window.DECK_DATA = {
       "backfill": false
     },
     {
+      "mine_id": "glencore_ino",
+      "mine": "Integrated Nickel Operations - copper",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 2.9,
+      "company": "Glencore",
+      "source_count": 1,
+      "selection_stage": "copper_metal",
+      "derived": true,
+      "backfill": false
+    },
+    {
       "mine_id": "kamoa_kakula",
       "mine": "Kamoa-Kakula Copper Complex",
       "period": "2026Q2",
@@ -37981,6 +38085,19 @@ window.DECK_DATA = {
       "company": "First Quantum",
       "source_count": 1,
       "selection_stage": "mine_total",
+      "derived": true,
+      "backfill": false
+    },
+    {
+      "mine_id": "kazzinc",
+      "mine": "Kazzinc",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 4.5,
+      "company": "Glencore",
+      "source_count": 1,
+      "selection_stage": "copper_metal",
       "derived": true,
       "backfill": false
     },
@@ -38050,6 +38167,19 @@ window.DECK_DATA = {
       "backfill": false
     },
     {
+      "mine_id": "manitoba_operations",
+      "mine": "Manitoba Operations",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 2.4,
+      "company": "HudBay",
+      "source_count": 1,
+      "selection_stage": "copper_concentrate_contained",
+      "derived": false,
+      "backfill": false
+    },
+    {
       "mine_id": "motheo",
       "mine": "Motheo Copper Mine",
       "period": "2026Q2",
@@ -38073,6 +38203,19 @@ window.DECK_DATA = {
       "source_count": 1,
       "selection_stage": "copper_concentrate_contained",
       "derived": false,
+      "backfill": false
+    },
+    {
+      "mine_id": "glencore_other_south_america",
+      "mine": "Other South America (Antapaccay, Lomas Bayas)",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 14.9,
+      "company": "Glencore",
+      "source_count": 1,
+      "selection_stage": "copper_metal",
+      "derived": true,
       "backfill": false
     },
     {
@@ -44309,7 +44452,7 @@ window.DECK_DATA = {
       "year": 2019,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2019-08-08",
+      "stamp": "2019-08-09",
       "value": 2.26,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44323,7 +44466,7 @@ window.DECK_DATA = {
       "year": 2019,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2019-11-11",
+      "stamp": "2019-11-12",
       "value": 1.9,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44337,7 +44480,7 @@ window.DECK_DATA = {
       "year": 2019,
       "quarter": "Q4",
       "period_basis": "quarterly",
-      "stamp": "2020-02-20",
+      "stamp": "2020-02-24",
       "value": 2.55,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44351,7 +44494,7 @@ window.DECK_DATA = {
       "year": 2020,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2020-03-31",
+      "stamp": "2020-05-15",
       "value": 2.4,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44365,7 +44508,7 @@ window.DECK_DATA = {
       "year": 2020,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2020-08-11",
+      "stamp": "2020-08-12",
       "value": 2.26,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44379,7 +44522,7 @@ window.DECK_DATA = {
       "year": 2020,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2020-11-03",
+      "stamp": "2020-11-04",
       "value": 2.25,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44393,7 +44536,7 @@ window.DECK_DATA = {
       "year": 2020,
       "quarter": "Q4",
       "period_basis": "quarterly",
-      "stamp": "2021-02-18",
+      "stamp": "2021-02-19",
       "value": 2.24,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44407,7 +44550,7 @@ window.DECK_DATA = {
       "year": 2021,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2021-03-31",
+      "stamp": "2021-05-12",
       "value": 2.37,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44421,7 +44564,7 @@ window.DECK_DATA = {
       "year": 2021,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2021-08-09",
+      "stamp": "2021-08-10",
       "value": 2.48,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44435,7 +44578,7 @@ window.DECK_DATA = {
       "year": 2021,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2021-11-03",
+      "stamp": "2021-11-04",
       "value": 2.18,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44449,7 +44592,7 @@ window.DECK_DATA = {
       "year": 2021,
       "quarter": "Q4",
       "period_basis": "quarterly",
-      "stamp": "2022-02-23",
+      "stamp": "2022-02-24",
       "value": 2.2,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44463,7 +44606,7 @@ window.DECK_DATA = {
       "year": 2022,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2022-03-31",
+      "stamp": "2022-05-10",
       "value": 2.54,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44477,7 +44620,7 @@ window.DECK_DATA = {
       "year": 2022,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2022-08-08",
+      "stamp": "2022-08-09",
       "value": 1.93,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44491,7 +44634,7 @@ window.DECK_DATA = {
       "year": 2022,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2022-11-02",
+      "stamp": "2022-11-03",
       "value": 2.16,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44505,7 +44648,7 @@ window.DECK_DATA = {
       "year": 2022,
       "quarter": "Q4",
       "period_basis": "quarterly",
-      "stamp": "2023-02-23",
+      "stamp": "2023-02-24",
       "value": 2.41,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44519,7 +44662,7 @@ window.DECK_DATA = {
       "year": 2023,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2023-03-31",
+      "stamp": "2023-05-09",
       "value": 2.07,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44533,7 +44676,7 @@ window.DECK_DATA = {
       "year": 2023,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2023-08-08",
+      "stamp": "2023-08-09",
       "value": 2.98,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44547,7 +44690,7 @@ window.DECK_DATA = {
       "year": 2023,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2023-11-08",
+      "stamp": "2023-11-09",
       "value": 2.04,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44561,7 +44704,7 @@ window.DECK_DATA = {
       "year": 2023,
       "quarter": "Q4",
       "period_basis": "quarterly",
-      "stamp": "2024-02-22",
+      "stamp": "2024-02-26",
       "value": 1.31,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44575,7 +44718,7 @@ window.DECK_DATA = {
       "year": 2024,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2024-03-31",
+      "stamp": "2024-05-14",
       "value": 1.32,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44589,7 +44732,7 @@ window.DECK_DATA = {
       "year": 2024,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2024-08-12",
+      "stamp": "2024-08-13",
       "value": 3.07,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44603,7 +44746,7 @@ window.DECK_DATA = {
       "year": 2024,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2024-11-12",
+      "stamp": "2024-11-14",
       "value": 1.95,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44617,7 +44760,7 @@ window.DECK_DATA = {
       "year": 2024,
       "quarter": "Q4",
       "period_basis": "quarterly",
-      "stamp": "2025-02-18",
+      "stamp": "2025-02-20",
       "value": 1.53,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44631,7 +44774,7 @@ window.DECK_DATA = {
       "year": 2025,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2025-03-31",
+      "stamp": "2025-05-13",
       "value": 0.97,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44645,7 +44788,7 @@ window.DECK_DATA = {
       "year": 2025,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2025-08-12",
+      "stamp": "2025-08-14",
       "value": 2.03,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44659,7 +44802,7 @@ window.DECK_DATA = {
       "year": 2025,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2025-11-11",
+      "stamp": "2025-11-13",
       "value": 2.78,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44673,7 +44816,7 @@ window.DECK_DATA = {
       "year": 2025,
       "quarter": "Q4",
       "period_basis": "quarterly",
-      "stamp": "2026-02-19",
+      "stamp": "2026-02-23",
       "value": 1.43,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
@@ -44687,8 +44830,22 @@ window.DECK_DATA = {
       "year": 2026,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2026-03-31",
+      "stamp": "2026-05-01",
       "value": 0.73,
+      "metric": "Consolidated all-in sustaining cash cost",
+      "category": "aisc_actual",
+      "scope": "Consolidated",
+      "unit": "USD/lb"
+    },
+    {
+      "company_id": "hudbay",
+      "company": "HudBay",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "period_basis": "quarterly",
+      "stamp": "2026-07-29",
+      "value": 1.8,
       "metric": "Consolidated all-in sustaining cash cost",
       "category": "aisc_actual",
       "scope": "Consolidated",
@@ -52621,8 +52778,8 @@ window.DECK_DATA = {
     {
       "company_id": "glencore",
       "company": "Glencore",
-      "latest_period": "2026Q1",
-      "latest_kt": 199.6,
+      "latest_period": "2026Q2",
+      "latest_kt": 197.4,
       "basis_group": "混合口径",
       "basis": "Mixed reporting basis: controlled assets generally 100%; joint ventures at attributable share",
       "metric": "Production from own sources - Total copper",
@@ -52651,15 +52808,15 @@ window.DECK_DATA = {
         "explanation_cn": "Net unit cash cost同比上升0.30美元/磅。该指标为铜业务扣除副产品及定制冶金业务抵扣后的净单位现金成本；2025年新增贵金属streaming影响和部门管理费用，形成口径断点。"
       },
       "quarter_stats": {
-        "current_kt": 199.6,
-        "prior_kt": 167.9,
-        "quarter_change_kt": 31.7,
-        "quarter_change_pct": 18.9,
-        "ytd_kt": 199.6,
-        "prior_ytd_kt": 167.9,
-        "ytd_change_kt": 31.7,
-        "ytd_change_pct": 18.9,
-        "show_ytd": false
+        "current_kt": 197.4,
+        "prior_kt": 176.0,
+        "quarter_change_kt": 21.4,
+        "quarter_change_pct": 12.2,
+        "ytd_kt": 397.0,
+        "prior_ytd_kt": 343.9,
+        "ytd_change_kt": 53.1,
+        "ytd_change_pct": 15.4,
+        "show_ytd": true
       },
       "capex": [
         {
@@ -52890,13 +53047,13 @@ window.DECK_DATA = {
           "low": 810.0,
           "high": 870.0,
           "unit": "kt",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported at period end",
           "scope": null,
-          "source_page": "1",
+          "source_page": "2",
           "source_section": "Production guidance",
           "excerpt": "Copper current guidance 810-870 kt",
-          "stamp": "2026-04-30"
+          "stamp": "2026-07-29"
         }
       ],
       "current_guidance": {
@@ -52908,11 +53065,11 @@ window.DECK_DATA = {
         "low_kt": 810.0,
         "high_kt": 870.0,
         "midpoint_kt": 840.0,
-        "actual_ytd_kt": 199.6,
-        "completion_mid": 0.2376,
-        "completion_to_low": 0.2464,
-        "completion_to_high": 0.2294,
-        "expected_share": 0.25,
+        "actual_ytd_kt": 397.0,
+        "completion_mid": 0.4726,
+        "completion_to_low": 0.4901,
+        "completion_to_high": 0.4563,
+        "expected_share": 0.5,
         "progress_status": "on_track",
         "prior_actual_kt": 851.6,
         "guidance_delta_kt": -11.6,
@@ -52921,7 +53078,7 @@ window.DECK_DATA = {
         "exclusion_reason": null,
         "basis_tag": "公司产量口径",
         "is_proxy": false,
-        "disclosed_period": "2026Q1",
+        "disclosed_period": "2026Q2",
         "revision_status": "as reported at period end",
         "actual_note": null,
         "components": [
@@ -52937,7 +53094,7 @@ window.DECK_DATA = {
           "low": 810.0,
           "high": 870.0,
           "unit": "kt",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "note": null
         },
         {
@@ -52981,19 +53138,19 @@ window.DECK_DATA = {
       "explanations": [
         {
           "element_type": "production_explanation",
-          "summary": "Own sourced copper production of 199,600 tonnes was 31,700 tonnes (19%) above Q1 2025, primarily due to improved grades at African copper (27,400 tonnes) and higher throughput and grades at Antamina (13,500 tonnes), partly offset by cessation of copper mining at Mount Isa in 2025 (8,900 tonnes). • Own sourced cobalt production of 5,800 tonnes was 3,700 tonnes (39%) lower than Q1 2025, mainly due to the introduction of the DRC’s export quota system in late 2025, as a result of which our DRC assets are now prioritising copper production as existing finished cobalt inventories are sufficient to fully deliver into near-term quota levels.",
+          "summary": "Own sourced copper production of 397,000 tonnes was 53,100 tonnes (15%) above H1 2025, reflecting various higher contributions across the portfolio, primarily due to increased mining rates and improved grades at African Copper (55,000 tonnes) and higher grades at Antamina (27,700 tonnes), partly offset by the planned closure of the Mount Isa copper mine in July 2025 (20,400 tonnes).",
+          "source_page": "1",
+          "source_section": "Production highlights",
+          "period": "2026Q2",
+          "stamp": "2026-07-29"
+        },
+        {
+          "element_type": "production_explanation",
+          "summary": "Own sourced copper production of 199,600 tonnes was 31,700 tonnes (19%) above Q1 2025, primarily due to improved grades at African copper (27,400 tonnes) and higher throughput and grades at Antamina (13,500 tonnes), partly offset by cessation of copper mining at Mount Isa in 2025 (8,900 tonnes).",
           "source_page": "1",
           "source_section": "Production highlights",
           "period": "2026Q1",
           "stamp": "2026-04-30"
-        },
-        {
-          "element_type": "production_explanation",
-          "summary": "Own sourced copper production of 851,600 tonnes was 100,000 tonnes (11%) below 2024, primarily due to lower head grades and recoveries associated with mine sequencing and resultant ore feedstock to the plants, contributing to the reductions at Collahuasi (68,100 tonnes), Antamina (14,600 tonnes) and Antapaccay (9,900 tonnes). Copper production from the Mount Isa complex (recorded as part of the Zinc department) reduced by 13,300 tonnes reflecting closure of the MICO mine in mid-2025.",
-          "source_page": "1",
-          "source_section": "Production highlights",
-          "period": "2025Q4",
-          "stamp": "2026-01-29"
         }
       ],
       "production_summary_cn": "自产铜同比增长，主要受非洲铜业务品位改善及Antamina处理量和品位提升推动，Mount Isa停止采铜形成部分抵消。",
@@ -53002,7 +53159,7 @@ window.DECK_DATA = {
           "company_id": "glencore",
           "company": "Glencore",
           "project": "Collahuasi desalination plant - reverse osmosis line",
-          "stage": "Nearing completion / commissioning",
+          "stage": "Permitting review / operating",
           "summary_cn": "接近完工并进入调试，预计2026Q2末完成投运。"
         },
         {
@@ -53024,19 +53181,19 @@ window.DECK_DATA = {
     {
       "company_id": "hudbay",
       "company": "HudBay",
-      "latest_period": "2026Q1",
-      "latest_kt": 27.9,
+      "latest_period": "2026Q2",
+      "latest_kt": 28.3,
       "basis_group": "100%/合并口径",
       "basis": "Consolidated company-reported production; Copper Mountain is included at 100% where applicable",
       "metric": "Contained copper produced",
       "growth_kt": -19.0,
       "growth_pct": -13.8,
       "cost": {
-        "value": 0.73,
+        "value": 1.8,
         "metric": "Consolidated all-in sustaining cash cost",
         "category": "aisc_actual",
         "scope": "Consolidated",
-        "period": "2026Q1",
+        "period": "2026Q2",
         "period_basis": "quarterly",
         "unit": "USD/lb"
       },
@@ -53046,23 +53203,23 @@ window.DECK_DATA = {
         "category": "aisc_actual",
         "scope": "Consolidated",
         "unit": "USD/lb",
-        "latest_period": "2026Q1",
+        "latest_period": "2026Q2",
         "period_basis": "quarterly",
-        "latest_value": 0.73,
-        "prior_value": 0.97,
-        "change": -0.24,
-        "explanation_cn": "Consolidated all-in sustaining cash cost同比下降0.24美元/磅。金价上涨显著扩大副产品抵扣，配合三地业务成本控制，使综合AISC下降；股价上涨导致股份支付重估、公司管理费用增加，形成部分抵消。"
+        "latest_value": 1.8,
+        "prior_value": 2.03,
+        "change": -0.23,
+        "explanation_cn": "Consolidated all-in sustaining cash cost同比下降0.23美元/磅。金价上涨显著扩大副产品抵扣，配合三地业务成本控制，使综合AISC下降；股价上涨导致股份支付重估、公司管理费用增加，形成部分抵消。"
       },
       "quarter_stats": {
-        "current_kt": 27.9,
-        "prior_kt": 31.0,
-        "quarter_change_kt": -3.1,
-        "quarter_change_pct": -10.0,
-        "ytd_kt": 27.9,
-        "prior_ytd_kt": 31.0,
-        "ytd_change_kt": -3.1,
-        "ytd_change_pct": -10.0,
-        "show_ytd": false
+        "current_kt": 28.3,
+        "prior_kt": 30.0,
+        "quarter_change_kt": -1.7,
+        "quarter_change_pct": -5.7,
+        "ytd_kt": 56.2,
+        "prior_ytd_kt": 61.0,
+        "ytd_change_kt": -4.8,
+        "ytd_change_pct": -7.9,
+        "show_ytd": true
       },
       "capex": [
         {
@@ -53173,7 +53330,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total sustaining capital expenditures: 195 USD million",
-          "stamp": "2019-11-11"
+          "stamp": "2019-11-12"
         },
         {
           "company_id": "hudbay",
@@ -53191,7 +53348,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total exploration expenditures: 25 USD million",
-          "stamp": "2020-02-20"
+          "stamp": "2020-02-24"
         },
         {
           "company_id": "hudbay",
@@ -53209,7 +53366,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total growth capital: 170 USD million",
-          "stamp": "2020-02-20"
+          "stamp": "2020-02-24"
         },
         {
           "company_id": "hudbay",
@@ -53227,7 +53384,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total sustaining capital expenditures: 180 USD million",
-          "stamp": "2020-11-03"
+          "stamp": "2020-11-04"
         },
         {
           "company_id": "hudbay",
@@ -53245,7 +53402,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total exploration expenditures: 40 USD million",
-          "stamp": "2021-02-18"
+          "stamp": "2021-02-19"
         },
         {
           "company_id": "hudbay",
@@ -53263,7 +53420,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total growth capital: 100 USD million",
-          "stamp": "2021-02-18"
+          "stamp": "2021-02-19"
         },
         {
           "company_id": "hudbay",
@@ -53281,7 +53438,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total sustaining capital expenditures: 225 USD million",
-          "stamp": "2021-11-03"
+          "stamp": "2021-11-04"
         },
         {
           "company_id": "hudbay",
@@ -53299,7 +53456,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total exploration expenditures: 65 USD million",
-          "stamp": "2022-02-23"
+          "stamp": "2022-02-24"
         },
         {
           "company_id": "hudbay",
@@ -53317,7 +53474,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total growth capital: 95 USD million",
-          "stamp": "2022-02-23"
+          "stamp": "2022-02-24"
         },
         {
           "company_id": "hudbay",
@@ -53335,7 +53492,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total sustaining capital expenditures: 220 USD million",
-          "stamp": "2022-11-02"
+          "stamp": "2022-11-03"
         },
         {
           "company_id": "hudbay",
@@ -53353,7 +53510,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total exploration expenditures: 30 USD million",
-          "stamp": "2023-02-23"
+          "stamp": "2023-02-24"
         },
         {
           "company_id": "hudbay",
@@ -53371,7 +53528,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total growth capital: 55 USD million",
-          "stamp": "2023-02-23"
+          "stamp": "2023-02-24"
         },
         {
           "company_id": "hudbay",
@@ -53389,7 +53546,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total sustaining capital expenditures: 243 USD million",
-          "stamp": "2023-11-08"
+          "stamp": "2023-11-09"
         },
         {
           "company_id": "hudbay",
@@ -53407,7 +53564,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total exploration expenditures: 43 USD million",
-          "stamp": "2024-02-22"
+          "stamp": "2024-02-26"
         },
         {
           "company_id": "hudbay",
@@ -53425,7 +53582,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total growth capital: 37 USD million",
-          "stamp": "2024-02-22"
+          "stamp": "2024-02-26"
         },
         {
           "company_id": "hudbay",
@@ -53443,7 +53600,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total sustaining capital expenditures: 290 USD million",
-          "stamp": "2024-11-12"
+          "stamp": "2024-11-14"
         },
         {
           "company_id": "hudbay",
@@ -53461,7 +53618,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total exploration expenditures: 50 USD million",
-          "stamp": "2025-02-18"
+          "stamp": "2025-02-20"
         },
         {
           "company_id": "hudbay",
@@ -53479,7 +53636,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total growth capital: 205 USD million",
-          "stamp": "2025-02-18"
+          "stamp": "2025-02-20"
         },
         {
           "company_id": "hudbay",
@@ -53497,7 +53654,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total sustaining capital expenditures: 365 USD million",
-          "stamp": "2025-11-11"
+          "stamp": "2025-11-13"
         },
         {
           "company_id": "hudbay",
@@ -53515,7 +53672,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total exploration expenditures: 85 USD million",
-          "stamp": "2026-02-19"
+          "stamp": "2026-02-23"
         },
         {
           "company_id": "hudbay",
@@ -53524,16 +53681,16 @@ window.DECK_DATA = {
           "target_year": 2026,
           "target_label": "2026",
           "metric": "Total growth capital expenditure guidance",
-          "low": 140.0,
-          "high": 140.0,
+          "low": 170.0,
+          "high": 170.0,
           "unit": "USD million",
-          "disclosed_period": "2025Q4",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": null,
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
-          "excerpt": "Total growth capital - excl. Copper World JV: 140 USD million",
-          "stamp": "2026-02-19"
+          "excerpt": "Total growth capital expenditures - excluding Copper World: 170 USD million",
+          "stamp": "2026-07-29"
         },
         {
           "company_id": "hudbay",
@@ -53545,13 +53702,13 @@ window.DECK_DATA = {
           "low": 435.0,
           "high": 435.0,
           "unit": "USD million",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": null,
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
           "excerpt": "Total sustaining capital expenditures: 435 USD million",
-          "stamp": "2026-03-31"
+          "stamp": "2026-07-29"
         },
         {
           "company_id": "hudbay",
@@ -53569,7 +53726,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "22,000 - 25,000",
-          "stamp": "2019-11-11"
+          "stamp": "2019-11-12"
         },
         {
           "company_id": "hudbay",
@@ -53587,7 +53744,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "100,000 - 125,000",
-          "stamp": "2019-11-11"
+          "stamp": "2019-11-12"
         },
         {
           "company_id": "hudbay",
@@ -53605,7 +53762,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "83,000 - 97,000",
-          "stamp": "2020-08-11"
+          "stamp": "2020-08-12"
         },
         {
           "company_id": "hudbay",
@@ -53623,7 +53780,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "18,000 - 22,000",
-          "stamp": "2020-11-03"
+          "stamp": "2020-11-04"
         },
         {
           "company_id": "hudbay",
@@ -53641,7 +53798,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "80,000 - 95,000",
-          "stamp": "2020-02-20"
+          "stamp": "2020-02-24"
         },
         {
           "company_id": "hudbay",
@@ -53659,7 +53816,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "92,000 - 112,000",
-          "stamp": "2021-03-31"
+          "stamp": "2021-05-12"
         },
         {
           "company_id": "hudbay",
@@ -53677,7 +53834,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "20,000 - 24,000",
-          "stamp": "2021-11-03"
+          "stamp": "2021-11-04"
         },
         {
           "company_id": "hudbay",
@@ -53695,7 +53852,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "72,000 - 88,000",
-          "stamp": "2021-11-03"
+          "stamp": "2021-11-04"
         },
         {
           "company_id": "hudbay",
@@ -53713,7 +53870,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "101,000 - 131,000",
-          "stamp": "2022-02-23"
+          "stamp": "2022-02-24"
         },
         {
           "company_id": "hudbay",
@@ -53731,7 +53888,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "12,000 - 16,000",
-          "stamp": "2022-11-02"
+          "stamp": "2022-11-03"
         },
         {
           "company_id": "hudbay",
@@ -53749,7 +53906,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "89,000 - 115,000",
-          "stamp": "2022-11-02"
+          "stamp": "2022-11-03"
         },
         {
           "company_id": "hudbay",
@@ -53767,7 +53924,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "18,500 - 20,500",
-          "stamp": "2023-11-08"
+          "stamp": "2023-11-09"
         },
         {
           "company_id": "hudbay",
@@ -53785,7 +53942,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "100,000 - 128,000",
-          "stamp": "2023-03-31"
+          "stamp": "2023-05-09"
         },
         {
           "company_id": "hudbay",
@@ -53803,7 +53960,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "9,000 - 12,000",
-          "stamp": "2023-11-08"
+          "stamp": "2023-11-09"
         },
         {
           "company_id": "hudbay",
@@ -53821,7 +53978,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "91,000 - 116,000",
-          "stamp": "2023-11-08"
+          "stamp": "2023-11-09"
         },
         {
           "company_id": "hudbay",
@@ -53839,7 +53996,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "30,000 - 44,000",
-          "stamp": "2024-11-12"
+          "stamp": "2024-11-14"
         },
         {
           "company_id": "hudbay",
@@ -53857,7 +54014,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "137,000 - 176,000",
-          "stamp": "2024-03-31"
+          "stamp": "2024-05-14"
         },
         {
           "company_id": "hudbay",
@@ -53875,7 +54032,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "9,000 - 12,000",
-          "stamp": "2024-11-12"
+          "stamp": "2024-11-14"
         },
         {
           "company_id": "hudbay",
@@ -53893,7 +54050,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "98,000 - 120,000",
-          "stamp": "2024-11-12"
+          "stamp": "2024-11-14"
         },
         {
           "company_id": "hudbay",
@@ -53911,7 +54068,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "28,000 - 41,000",
-          "stamp": "2025-11-11"
+          "stamp": "2025-11-13"
         },
         {
           "company_id": "hudbay",
@@ -53929,7 +54086,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "117,000 - 149,000",
-          "stamp": "2025-11-11"
+          "stamp": "2025-11-13"
         },
         {
           "company_id": "hudbay",
@@ -53947,7 +54104,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "9,000 - 11,000",
-          "stamp": "2025-11-11"
+          "stamp": "2025-11-13"
         },
         {
           "company_id": "hudbay",
@@ -53965,7 +54122,7 @@ window.DECK_DATA = {
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "80,000 - 97,000",
-          "stamp": "2025-11-11"
+          "stamp": "2025-11-13"
         },
         {
           "company_id": "hudbay",
@@ -53977,13 +54134,13 @@ window.DECK_DATA = {
           "low": 25000.0,
           "high": 35000.0,
           "unit": "t",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": "copper_mountain",
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "25,000 - 35,000",
-          "stamp": "2026-03-31"
+          "stamp": "2026-07-29"
         },
         {
           "company_id": "hudbay",
@@ -53995,13 +54152,13 @@ window.DECK_DATA = {
           "low": 110000.0,
           "high": 138000.0,
           "unit": "t",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": null,
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "110,000 - 138,000",
-          "stamp": "2026-03-31"
+          "stamp": "2026-07-29"
         },
         {
           "company_id": "hudbay",
@@ -54013,13 +54170,13 @@ window.DECK_DATA = {
           "low": 10000.0,
           "high": 13000.0,
           "unit": "t",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": "manitoba_operations",
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "10,000 - 13,000",
-          "stamp": "2026-03-31"
+          "stamp": "2026-07-29"
         },
         {
           "company_id": "hudbay",
@@ -54031,13 +54188,13 @@ window.DECK_DATA = {
           "low": 75000.0,
           "high": 90000.0,
           "unit": "t",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": "constancia_complex",
           "source_page": "SEC HTML",
           "source_section": "Production guidance",
           "excerpt": "75,000 - 90,000",
-          "stamp": "2026-03-31"
+          "stamp": "2026-07-29"
         }
       ],
       "current_guidance": {
@@ -54049,12 +54206,12 @@ window.DECK_DATA = {
         "low_kt": 110.0,
         "high_kt": 138.0,
         "midpoint_kt": 124.0,
-        "actual_ytd_kt": 27.9,
-        "completion_mid": 0.2252,
-        "completion_to_low": 0.2539,
-        "completion_to_high": 0.2024,
-        "expected_share": 0.25,
-        "progress_status": "on_track",
+        "actual_ytd_kt": 56.2,
+        "completion_mid": 0.4532,
+        "completion_to_low": 0.5109,
+        "completion_to_high": 0.4072,
+        "expected_share": 0.5,
+        "progress_status": "behind",
         "prior_actual_kt": 118.2,
         "guidance_delta_kt": 5.8,
         "guidance_delta_pct": 4.9,
@@ -54062,7 +54219,7 @@ window.DECK_DATA = {
         "exclusion_reason": null,
         "basis_tag": "公司产量口径",
         "is_proxy": false,
-        "disclosed_period": "2026Q1",
+        "disclosed_period": "2026Q2",
         "revision_status": "as reported",
         "actual_note": null,
         "components": [
@@ -54076,17 +54233,17 @@ window.DECK_DATA = {
           "guidance_type": "capital_expenditure",
           "target_year": 2026,
           "target_label": "2026",
-          "metric": "Total sustaining capital expenditure guidance",
-          "low": 435.0,
-          "high": 435.0,
+          "metric": "Total growth capital expenditure guidance",
+          "low": 170.0,
+          "high": 170.0,
           "unit": "USD million",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": null,
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
-          "excerpt": "Total sustaining capital expenditures: 435 USD million",
-          "stamp": "2026-03-31"
+          "excerpt": "Total growth capital expenditures - excluding Copper World: 170 USD million",
+          "stamp": "2026-07-29"
         },
         {
           "company_id": "hudbay",
@@ -54094,17 +54251,17 @@ window.DECK_DATA = {
           "guidance_type": "capital_expenditure",
           "target_year": 2026,
           "target_label": "2026",
-          "metric": "Total exploration expenditure guidance",
-          "low": 85.0,
-          "high": 85.0,
+          "metric": "Total sustaining capital expenditure guidance",
+          "low": 435.0,
+          "high": 435.0,
           "unit": "USD million",
-          "disclosed_period": "2025Q4",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": null,
           "source_page": "SEC HTML",
           "source_section": "Capital Expenditures",
-          "excerpt": "Total exploration expenditures: 85 USD million",
-          "stamp": "2026-02-19"
+          "excerpt": "Total sustaining capital expenditures: 435 USD million",
+          "stamp": "2026-07-29"
         }
       ],
       "future_guidance": [
@@ -54115,17 +54272,17 @@ window.DECK_DATA = {
           "low": 110.0,
           "high": 138.0,
           "unit": "kt",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "note": null
         },
         {
           "kind": "资本开支",
           "target": "2026",
-          "metric": "Total sustaining capital expenditure guidance",
-          "low": 435.0,
-          "high": 435.0,
+          "metric": "Total growth capital expenditure guidance",
+          "low": 170.0,
+          "high": 170.0,
           "unit": "USD million",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "note": "保留公司披露币种和范围"
         }
       ],
@@ -54133,19 +54290,19 @@ window.DECK_DATA = {
       "explanations": [
         {
           "element_type": "production_explanation",
+          "summary": "consolidated copper and gold production of 28,267 tonnes and 51,234 ounces, respectively, with higher copper production in line with quarterly cadence expectations while gold production was slightly lower than quarterly cadence expectations.",
+          "source_page": "SEC HTML",
+          "source_section": "Quarterly overview",
+          "period": "2026Q2",
+          "stamp": "2026-07-29"
+        },
+        {
+          "element_type": "production_explanation",
           "summary": "consolidated average annual copper production over the next three years, a four year mine life extension in Snow Lake to 2041 and a two year mine life extension at Copper Mountain to 2045.",
           "source_page": "SEC HTML",
           "source_section": "Quarterly overview",
           "period": "2026Q1",
-          "stamp": "2026-03-31"
-        },
-        {
-          "element_type": "production_explanation",
-          "summary": "consolidated copper production guidance, since Constancia declared commercial production, and the 5th consecutive year achieving its annual consolidated gold production guidance, since establishing standalone gold production guidance 4 .",
-          "source_page": "SEC HTML",
-          "source_section": "Quarterly overview",
-          "period": "2025Q4",
-          "stamp": "2026-02-19"
+          "stamp": "2026-05-01"
         }
       ],
       "production_summary_cn": "产量同比减少0.30万吨；Constancia处理量提升使秘鲁产量略增，但Copper Mountain按计划开采低品位矿、Manitoba入选铜品位下降，合计抵消秘鲁增量。",
@@ -66273,13 +66430,13 @@ window.DECK_DATA = {
       "low": 810.0,
       "high": 870.0,
       "unit": "kt",
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported at period end",
       "scope": null,
-      "source_page": "1",
+      "source_page": "2",
       "source_section": "Production guidance",
       "excerpt": "Copper current guidance 810-870 kt",
-      "stamp": "2026-04-30"
+      "stamp": "2026-07-29"
     },
     {
       "company_id": "hudbay",
@@ -66297,7 +66454,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total sustaining capital expenditures: 195 USD million",
-      "stamp": "2019-11-11"
+      "stamp": "2019-11-12"
     },
     {
       "company_id": "hudbay",
@@ -66315,7 +66472,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total exploration expenditures: 25 USD million",
-      "stamp": "2020-02-20"
+      "stamp": "2020-02-24"
     },
     {
       "company_id": "hudbay",
@@ -66333,7 +66490,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total growth capital: 170 USD million",
-      "stamp": "2020-02-20"
+      "stamp": "2020-02-24"
     },
     {
       "company_id": "hudbay",
@@ -66351,7 +66508,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total sustaining capital expenditures: 180 USD million",
-      "stamp": "2020-11-03"
+      "stamp": "2020-11-04"
     },
     {
       "company_id": "hudbay",
@@ -66369,7 +66526,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total exploration expenditures: 40 USD million",
-      "stamp": "2021-02-18"
+      "stamp": "2021-02-19"
     },
     {
       "company_id": "hudbay",
@@ -66387,7 +66544,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total growth capital: 100 USD million",
-      "stamp": "2021-02-18"
+      "stamp": "2021-02-19"
     },
     {
       "company_id": "hudbay",
@@ -66405,7 +66562,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total sustaining capital expenditures: 225 USD million",
-      "stamp": "2021-11-03"
+      "stamp": "2021-11-04"
     },
     {
       "company_id": "hudbay",
@@ -66423,7 +66580,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total exploration expenditures: 65 USD million",
-      "stamp": "2022-02-23"
+      "stamp": "2022-02-24"
     },
     {
       "company_id": "hudbay",
@@ -66441,7 +66598,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total growth capital: 95 USD million",
-      "stamp": "2022-02-23"
+      "stamp": "2022-02-24"
     },
     {
       "company_id": "hudbay",
@@ -66459,7 +66616,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total sustaining capital expenditures: 220 USD million",
-      "stamp": "2022-11-02"
+      "stamp": "2022-11-03"
     },
     {
       "company_id": "hudbay",
@@ -66477,7 +66634,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total exploration expenditures: 30 USD million",
-      "stamp": "2023-02-23"
+      "stamp": "2023-02-24"
     },
     {
       "company_id": "hudbay",
@@ -66495,7 +66652,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total growth capital: 55 USD million",
-      "stamp": "2023-02-23"
+      "stamp": "2023-02-24"
     },
     {
       "company_id": "hudbay",
@@ -66513,7 +66670,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total sustaining capital expenditures: 243 USD million",
-      "stamp": "2023-11-08"
+      "stamp": "2023-11-09"
     },
     {
       "company_id": "hudbay",
@@ -66531,7 +66688,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total exploration expenditures: 43 USD million",
-      "stamp": "2024-02-22"
+      "stamp": "2024-02-26"
     },
     {
       "company_id": "hudbay",
@@ -66549,7 +66706,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total growth capital: 37 USD million",
-      "stamp": "2024-02-22"
+      "stamp": "2024-02-26"
     },
     {
       "company_id": "hudbay",
@@ -66567,7 +66724,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total sustaining capital expenditures: 290 USD million",
-      "stamp": "2024-11-12"
+      "stamp": "2024-11-14"
     },
     {
       "company_id": "hudbay",
@@ -66585,7 +66742,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total exploration expenditures: 50 USD million",
-      "stamp": "2025-02-18"
+      "stamp": "2025-02-20"
     },
     {
       "company_id": "hudbay",
@@ -66603,7 +66760,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total growth capital: 205 USD million",
-      "stamp": "2025-02-18"
+      "stamp": "2025-02-20"
     },
     {
       "company_id": "hudbay",
@@ -66621,7 +66778,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total sustaining capital expenditures: 365 USD million",
-      "stamp": "2025-11-11"
+      "stamp": "2025-11-13"
     },
     {
       "company_id": "hudbay",
@@ -66639,7 +66796,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total exploration expenditures: 85 USD million",
-      "stamp": "2026-02-19"
+      "stamp": "2026-02-23"
     },
     {
       "company_id": "hudbay",
@@ -66648,16 +66805,16 @@ window.DECK_DATA = {
       "target_year": 2026,
       "target_label": "2026",
       "metric": "Total growth capital expenditure guidance",
-      "low": 140.0,
-      "high": 140.0,
+      "low": 170.0,
+      "high": 170.0,
       "unit": "USD million",
-      "disclosed_period": "2025Q4",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "scope": null,
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
-      "excerpt": "Total growth capital - excl. Copper World JV: 140 USD million",
-      "stamp": "2026-02-19"
+      "excerpt": "Total growth capital expenditures - excluding Copper World: 170 USD million",
+      "stamp": "2026-07-29"
     },
     {
       "company_id": "hudbay",
@@ -66669,13 +66826,13 @@ window.DECK_DATA = {
       "low": 435.0,
       "high": 435.0,
       "unit": "USD million",
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "scope": null,
       "source_page": "SEC HTML",
       "source_section": "Capital Expenditures",
       "excerpt": "Total sustaining capital expenditures: 435 USD million",
-      "stamp": "2026-03-31"
+      "stamp": "2026-07-29"
     },
     {
       "company_id": "hudbay",
@@ -66693,7 +66850,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "22,000 - 25,000",
-      "stamp": "2019-11-11"
+      "stamp": "2019-11-12"
     },
     {
       "company_id": "hudbay",
@@ -66711,7 +66868,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "100,000 - 125,000",
-      "stamp": "2019-11-11"
+      "stamp": "2019-11-12"
     },
     {
       "company_id": "hudbay",
@@ -66729,7 +66886,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "83,000 - 97,000",
-      "stamp": "2020-08-11"
+      "stamp": "2020-08-12"
     },
     {
       "company_id": "hudbay",
@@ -66747,7 +66904,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "18,000 - 22,000",
-      "stamp": "2020-11-03"
+      "stamp": "2020-11-04"
     },
     {
       "company_id": "hudbay",
@@ -66765,7 +66922,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "80,000 - 95,000",
-      "stamp": "2020-02-20"
+      "stamp": "2020-02-24"
     },
     {
       "company_id": "hudbay",
@@ -66783,7 +66940,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "92,000 - 112,000",
-      "stamp": "2021-03-31"
+      "stamp": "2021-05-12"
     },
     {
       "company_id": "hudbay",
@@ -66801,7 +66958,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "20,000 - 24,000",
-      "stamp": "2021-11-03"
+      "stamp": "2021-11-04"
     },
     {
       "company_id": "hudbay",
@@ -66819,7 +66976,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "72,000 - 88,000",
-      "stamp": "2021-11-03"
+      "stamp": "2021-11-04"
     },
     {
       "company_id": "hudbay",
@@ -66837,7 +66994,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "101,000 - 131,000",
-      "stamp": "2022-02-23"
+      "stamp": "2022-02-24"
     },
     {
       "company_id": "hudbay",
@@ -66855,7 +67012,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "12,000 - 16,000",
-      "stamp": "2022-11-02"
+      "stamp": "2022-11-03"
     },
     {
       "company_id": "hudbay",
@@ -66873,7 +67030,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "89,000 - 115,000",
-      "stamp": "2022-11-02"
+      "stamp": "2022-11-03"
     },
     {
       "company_id": "hudbay",
@@ -66891,7 +67048,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "18,500 - 20,500",
-      "stamp": "2023-11-08"
+      "stamp": "2023-11-09"
     },
     {
       "company_id": "hudbay",
@@ -66909,7 +67066,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "100,000 - 128,000",
-      "stamp": "2023-03-31"
+      "stamp": "2023-05-09"
     },
     {
       "company_id": "hudbay",
@@ -66927,7 +67084,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "9,000 - 12,000",
-      "stamp": "2023-11-08"
+      "stamp": "2023-11-09"
     },
     {
       "company_id": "hudbay",
@@ -66945,7 +67102,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "91,000 - 116,000",
-      "stamp": "2023-11-08"
+      "stamp": "2023-11-09"
     },
     {
       "company_id": "hudbay",
@@ -66963,7 +67120,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "30,000 - 44,000",
-      "stamp": "2024-11-12"
+      "stamp": "2024-11-14"
     },
     {
       "company_id": "hudbay",
@@ -66981,7 +67138,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "137,000 - 176,000",
-      "stamp": "2024-03-31"
+      "stamp": "2024-05-14"
     },
     {
       "company_id": "hudbay",
@@ -66999,7 +67156,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "9,000 - 12,000",
-      "stamp": "2024-11-12"
+      "stamp": "2024-11-14"
     },
     {
       "company_id": "hudbay",
@@ -67017,7 +67174,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "98,000 - 120,000",
-      "stamp": "2024-11-12"
+      "stamp": "2024-11-14"
     },
     {
       "company_id": "hudbay",
@@ -67035,7 +67192,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "28,000 - 41,000",
-      "stamp": "2025-11-11"
+      "stamp": "2025-11-13"
     },
     {
       "company_id": "hudbay",
@@ -67053,7 +67210,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "117,000 - 149,000",
-      "stamp": "2025-11-11"
+      "stamp": "2025-11-13"
     },
     {
       "company_id": "hudbay",
@@ -67071,7 +67228,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "9,000 - 11,000",
-      "stamp": "2025-11-11"
+      "stamp": "2025-11-13"
     },
     {
       "company_id": "hudbay",
@@ -67089,7 +67246,7 @@ window.DECK_DATA = {
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "80,000 - 97,000",
-      "stamp": "2025-11-11"
+      "stamp": "2025-11-13"
     },
     {
       "company_id": "hudbay",
@@ -67101,13 +67258,13 @@ window.DECK_DATA = {
       "low": 25000.0,
       "high": 35000.0,
       "unit": "t",
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "scope": "copper_mountain",
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "25,000 - 35,000",
-      "stamp": "2026-03-31"
+      "stamp": "2026-07-29"
     },
     {
       "company_id": "hudbay",
@@ -67119,13 +67276,13 @@ window.DECK_DATA = {
       "low": 110000.0,
       "high": 138000.0,
       "unit": "t",
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "scope": null,
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "110,000 - 138,000",
-      "stamp": "2026-03-31"
+      "stamp": "2026-07-29"
     },
     {
       "company_id": "hudbay",
@@ -67137,13 +67294,13 @@ window.DECK_DATA = {
       "low": 10000.0,
       "high": 13000.0,
       "unit": "t",
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "scope": "manitoba_operations",
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "10,000 - 13,000",
-      "stamp": "2026-03-31"
+      "stamp": "2026-07-29"
     },
     {
       "company_id": "hudbay",
@@ -67155,13 +67312,13 @@ window.DECK_DATA = {
       "low": 75000.0,
       "high": 90000.0,
       "unit": "t",
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "scope": "constancia_complex",
       "source_page": "SEC HTML",
       "source_section": "Production guidance",
       "excerpt": "75,000 - 90,000",
-      "stamp": "2026-03-31"
+      "stamp": "2026-07-29"
     },
     {
       "company_id": "ivanhoe",
@@ -72259,11 +72416,11 @@ window.DECK_DATA = {
       "low_kt": 810.0,
       "high_kt": 870.0,
       "midpoint_kt": 840.0,
-      "actual_ytd_kt": 199.6,
-      "completion_mid": 0.2376,
-      "completion_to_low": 0.2464,
-      "completion_to_high": 0.2294,
-      "expected_share": 0.25,
+      "actual_ytd_kt": 397.0,
+      "completion_mid": 0.4726,
+      "completion_to_low": 0.4901,
+      "completion_to_high": 0.4563,
+      "expected_share": 0.5,
       "progress_status": "on_track",
       "prior_actual_kt": 851.6,
       "guidance_delta_kt": -11.6,
@@ -72272,7 +72429,7 @@ window.DECK_DATA = {
       "exclusion_reason": null,
       "basis_tag": "公司产量口径",
       "is_proxy": false,
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported at period end",
       "actual_note": null,
       "components": [
@@ -72288,12 +72445,12 @@ window.DECK_DATA = {
       "low_kt": 110.0,
       "high_kt": 138.0,
       "midpoint_kt": 124.0,
-      "actual_ytd_kt": 27.9,
-      "completion_mid": 0.2252,
-      "completion_to_low": 0.2539,
-      "completion_to_high": 0.2024,
-      "expected_share": 0.25,
-      "progress_status": "on_track",
+      "actual_ytd_kt": 56.2,
+      "completion_mid": 0.4532,
+      "completion_to_low": 0.5109,
+      "completion_to_high": 0.4072,
+      "expected_share": 0.5,
+      "progress_status": "behind",
       "prior_actual_kt": 118.2,
       "guidance_delta_kt": 5.8,
       "guidance_delta_pct": 4.9,
@@ -72301,7 +72458,7 @@ window.DECK_DATA = {
       "exclusion_reason": null,
       "basis_tag": "公司产量口径",
       "is_proxy": false,
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "actual_note": null,
       "components": [
@@ -74899,7 +75056,7 @@ window.DECK_DATA = {
       "company_id": "glencore",
       "company": "Glencore",
       "project": "Collahuasi desalination plant - reverse osmosis line",
-      "stage": "Nearing completion / commissioning",
+      "stage": "Permitting review / operating",
       "summary_cn": "接近完工并进入调试，预计2026Q2末完成投运。"
     },
     {
