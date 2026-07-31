@@ -9399,6 +9399,19 @@ window.DECK_DATA = {
       "derived": false
     },
     {
+      "company_id": "capstone",
+      "company": "Capstone",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 51.8,
+      "basis_group": "100%/合并口径",
+      "basis": "Consolidated reported production; Mantoverde shown at 100%",
+      "metric": "Consolidated copper production",
+      "product_stage": "mixed_mining_products",
+      "derived": false
+    },
+    {
       "company_id": "first_quantum",
       "company": "First Quantum",
       "period": "2026Q2",
@@ -37936,6 +37949,19 @@ window.DECK_DATA = {
       "backfill": false
     },
     {
+      "mine_id": "cozamin",
+      "mine": "Cozamin",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 5.7,
+      "company": "Capstone",
+      "source_count": 1,
+      "selection_stage": "copper_concentrate_contained",
+      "derived": false,
+      "backfill": false
+    },
+    {
       "mine_id": "el_soldado",
       "mine": "El Soldado",
       "period": "2026Q2",
@@ -38170,6 +38196,32 @@ window.DECK_DATA = {
       "backfill": false
     },
     {
+      "mine_id": "mantos_blancos",
+      "mine": "Mantos Blancos",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 12.5,
+      "company": "Capstone",
+      "source_count": 1,
+      "selection_stage": "mine_total",
+      "derived": true,
+      "backfill": false
+    },
+    {
+      "mine_id": "mantoverde",
+      "mine": "Mantoverde",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 23.5,
+      "company": "Capstone",
+      "source_count": 1,
+      "selection_stage": "mine_total",
+      "derived": true,
+      "backfill": false
+    },
+    {
       "mine_id": "motheo",
       "mine": "Motheo Copper Mine",
       "period": "2026Q2",
@@ -38219,6 +38271,19 @@ window.DECK_DATA = {
       "source_count": 1,
       "selection_stage": "mine_total",
       "derived": true,
+      "backfill": false
+    },
+    {
+      "mine_id": "pinto_valley",
+      "mine": "Pinto Valley",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "kt": 10.0,
+      "company": "Capstone",
+      "source_count": 1,
+      "selection_stage": "mine_total",
+      "derived": false,
       "backfill": false
     },
     {
@@ -39694,8 +39759,8 @@ window.DECK_DATA = {
     {
       "company_id": "capstone",
       "company": "Capstone",
-      "period": "2026Q1",
-      "value": 2.66,
+      "period": "2026Q2",
+      "value": 2.82,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
       "scope": "Consolidated"
@@ -40414,6 +40479,18 @@ window.DECK_DATA = {
       "year": 2026,
       "quarter": "Q1",
       "value": 2.66,
+      "metric": "C1 cash costs",
+      "category": "c1_cash_cost_actual",
+      "scope": "Consolidated",
+      "unit": "USD/lb"
+    },
+    {
+      "company_id": "capstone",
+      "company": "Capstone",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "value": 2.82,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
       "scope": "Consolidated",
@@ -42832,7 +42909,7 @@ window.DECK_DATA = {
       "year": 2020,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2020-03-31",
+      "stamp": "2023-01-04",
       "value": 2.05,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -42846,7 +42923,7 @@ window.DECK_DATA = {
       "year": 2020,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2020-06-30",
+      "stamp": "2023-01-04",
       "value": 1.87,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -42860,7 +42937,7 @@ window.DECK_DATA = {
       "year": 2020,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2020-09-30",
+      "stamp": "2023-01-04",
       "value": 1.82,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -42874,7 +42951,7 @@ window.DECK_DATA = {
       "year": 2020,
       "quarter": "Q4",
       "period_basis": "quarterly",
-      "stamp": "2020-12-31",
+      "stamp": "2023-01-04",
       "value": 1.68,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -42888,7 +42965,7 @@ window.DECK_DATA = {
       "year": 2021,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2021-03-31",
+      "stamp": "2022-12-20",
       "value": 1.7,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -42902,7 +42979,7 @@ window.DECK_DATA = {
       "year": 2021,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2021-06-30",
+      "stamp": "2022-12-20",
       "value": 1.91,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -42916,7 +42993,7 @@ window.DECK_DATA = {
       "year": 2021,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2021-09-30",
+      "stamp": "2022-12-20",
       "value": 1.96,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -42930,7 +43007,7 @@ window.DECK_DATA = {
       "year": 2021,
       "quarter": "Q4",
       "period_basis": "quarterly",
-      "stamp": "2021-12-31",
+      "stamp": "2022-12-20",
       "value": 1.72,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -42944,7 +43021,7 @@ window.DECK_DATA = {
       "year": 2022,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2022-03-31",
+      "stamp": "2022-12-20",
       "value": 2.31,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -42958,7 +43035,7 @@ window.DECK_DATA = {
       "year": 2022,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2022-06-30",
+      "stamp": "2022-12-20",
       "value": 2.78,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -42972,7 +43049,7 @@ window.DECK_DATA = {
       "year": 2022,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2022-09-30",
+      "stamp": "2022-12-20",
       "value": 2.76,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -43000,7 +43077,7 @@ window.DECK_DATA = {
       "year": 2023,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2023-03-31",
+      "stamp": "2023-05-03",
       "value": 2.96,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -43014,7 +43091,7 @@ window.DECK_DATA = {
       "year": 2023,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2023-06-30",
+      "stamp": "2023-08-02",
       "value": 3.01,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -43028,7 +43105,7 @@ window.DECK_DATA = {
       "year": 2023,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2023-09-30",
+      "stamp": "2023-11-03",
       "value": 2.88,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -43056,7 +43133,7 @@ window.DECK_DATA = {
       "year": 2024,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2024-03-31",
+      "stamp": "2024-05-02",
       "value": 2.88,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -43070,7 +43147,7 @@ window.DECK_DATA = {
       "year": 2024,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2024-06-30",
+      "stamp": "2024-08-01",
       "value": 2.84,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -43084,7 +43161,7 @@ window.DECK_DATA = {
       "year": 2024,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2024-09-30",
+      "stamp": "2024-10-31",
       "value": 2.83,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -43112,7 +43189,7 @@ window.DECK_DATA = {
       "year": 2025,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2025-03-31",
+      "stamp": "2025-05-01",
       "value": 2.59,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -43126,7 +43203,7 @@ window.DECK_DATA = {
       "year": 2025,
       "quarter": "Q2",
       "period_basis": "quarterly",
-      "stamp": "2025-06-30",
+      "stamp": "2025-07-31",
       "value": 2.45,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -43140,7 +43217,7 @@ window.DECK_DATA = {
       "year": 2025,
       "quarter": "Q3",
       "period_basis": "quarterly",
-      "stamp": "2025-09-30",
+      "stamp": "2026-03-02",
       "value": 2.42,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -43154,7 +43231,7 @@ window.DECK_DATA = {
       "year": 2025,
       "quarter": "Q4",
       "period_basis": "quarterly",
-      "stamp": "2025-12-31",
+      "stamp": "2026-03-02",
       "value": 2.31,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
@@ -43168,8 +43245,22 @@ window.DECK_DATA = {
       "year": 2026,
       "quarter": "Q1",
       "period_basis": "quarterly",
-      "stamp": "2026-03-31",
+      "stamp": "2026-04-29",
       "value": 2.66,
+      "metric": "C1 cash costs",
+      "category": "c1_cash_cost_actual",
+      "scope": "Consolidated",
+      "unit": "USD/lb"
+    },
+    {
+      "company_id": "capstone",
+      "company": "Capstone",
+      "period": "2026Q2",
+      "year": 2026,
+      "quarter": "Q2",
+      "period_basis": "quarterly",
+      "stamp": "2026-07-30",
+      "value": 2.82,
       "metric": "C1 cash costs",
       "category": "c1_cash_cost_actual",
       "scope": "Consolidated",
@@ -50845,19 +50936,19 @@ window.DECK_DATA = {
     {
       "company_id": "capstone",
       "company": "Capstone",
-      "latest_period": "2026Q1",
-      "latest_kt": 48.0,
+      "latest_period": "2026Q2",
+      "latest_kt": 51.8,
       "basis_group": "100%/合并口径",
       "basis": "Consolidated reported production; Mantoverde shown at 100%",
       "metric": "Consolidated copper production",
       "growth_kt": 155.1,
       "growth_pct": 222.8,
       "cost": {
-        "value": 2.66,
+        "value": 2.82,
         "metric": "C1 cash costs",
         "category": "c1_cash_cost_actual",
         "scope": "Consolidated",
-        "period": "2026Q1",
+        "period": "2026Q2",
         "period_basis": "quarterly",
         "unit": "USD/lb"
       },
@@ -50867,23 +50958,23 @@ window.DECK_DATA = {
         "category": "c1_cash_cost_actual",
         "scope": "Consolidated",
         "unit": "USD/lb",
-        "latest_period": "2026Q1",
+        "latest_period": "2026Q2",
         "period_basis": "quarterly",
-        "latest_value": 2.66,
-        "prior_value": 2.59,
-        "change": 0.07,
-        "explanation_cn": "C1 cash costs同比上升0.07美元/磅。低产量使单位成本增加约0.31美元/磅，主要与Mantoverde罢工及其他矿山处理量、品位下降有关；金银价格上涨带来的副产品抵扣约改善0.25美元/磅。"
+        "latest_value": 2.82,
+        "prior_value": 2.45,
+        "change": 0.37,
+        "explanation_cn": "C1 cash costs同比上升0.37美元/磅。综合C1同比上升0.37美元/磅至2.82美元/磅，主要受Mantos Blancos低品位、低回收率和工会奖金，以及Pinto Valley维护和投入成本上升影响；Mantoverde硫化矿高处理量和较低C1形成部分抵消。"
       },
       "quarter_stats": {
-        "current_kt": 48.0,
-        "prior_kt": 53.8,
-        "quarter_change_kt": -5.8,
-        "quarter_change_pct": -10.8,
-        "ytd_kt": 48.0,
-        "prior_ytd_kt": 53.8,
-        "ytd_change_kt": -5.8,
-        "ytd_change_pct": -10.8,
-        "show_ytd": false
+        "current_kt": 51.8,
+        "prior_kt": 57.4,
+        "quarter_change_kt": -5.6,
+        "quarter_change_pct": -9.8,
+        "ytd_kt": 99.8,
+        "prior_ytd_kt": 111.2,
+        "ytd_change_kt": -11.4,
+        "ytd_change_pct": -10.3,
+        "show_ytd": true
       },
       "capex": [
         {
@@ -51030,7 +51121,7 @@ window.DECK_DATA = {
           "source_page": "Guidance section",
           "source_section": "Guidance",
           "excerpt": "on and upper end of costs, and Pinto Valley is trending below the lower end of production and above the upper end of costs. The Company reiterates its 2025 consolidated sustaining capital guidance of $255 million and updated exploration expenditure guidance of $40 million. The Company has revised its 2025 expansionary capital guidance to $70 million, from $120 million previously, largely due to changes in timing related to MV-O expansionary capital 1 These are non-GAA",
-          "stamp": "2025-09-30"
+          "stamp": "2026-03-02"
         },
         {
           "company_id": "capstone",
@@ -51048,7 +51139,25 @@ window.DECK_DATA = {
           "source_page": "Guidance section",
           "source_section": "Guidance",
           "excerpt": "ction. 2 Mantoverde shown on a 100% basis. Key C1 Cash costs input assumptions: CLP/USD: 875:1 MXN/USD: 18:1 Silver: $55/oz Molybdenum: $20/lb Gold: $4,300/oz In 2026, the Company plans to spend a total of $495 million in sustaining and expansionary capital expenditures at its operating mines and the Santo Domingo Project. This is broken down into $270 million on sustaining capital and $225 million on expansionary capital. Sustaining capital expenditure guidance includes ap",
-          "stamp": "2025-12-31"
+          "stamp": "2026-03-02"
+        },
+        {
+          "company_id": "capstone",
+          "company": "Capstone",
+          "guidance_type": "capital_expenditure",
+          "target_year": 2026,
+          "target_label": "2026",
+          "metric": "Total consolidated capital expenditure guidance",
+          "low": 790.0,
+          "high": 790.0,
+          "unit": "USD million",
+          "disclosed_period": "2026Q2",
+          "revision_status": "unchanged",
+          "scope": null,
+          "source_page": "11",
+          "source_section": "2026 Outlook",
+          "excerpt": "total consolidated capital expenditure guidance (including sustaining, expansionary, capitalized stripping, and exploration) of $790 million is unchanged",
+          "stamp": "2026-07-30"
         },
         {
           "company_id": "capstone",
@@ -51084,7 +51193,7 @@ window.DECK_DATA = {
           "source_page": "Guidance section",
           "source_section": "Guidance",
           "excerpt": "prior period alternative performance measures have been restated to conform with current period classification. Page 5 Q4 2020 Highlights and Significant Items Results Exceed 2020 Production and Cost Guidance Capstone exceeded both production and cost guidance for 2020 ; finishing the year at 156.9 million pounds of copper production above the guidance range of 140 to 155 million pounds, at consolidated C1 cash costs1 of $1.84 per payable pound of copper, below the guidance range of $1.85 to $2.00 per pound. Q4 2020 Financial and Operational Highlights • Strong f",
-          "stamp": "2020-12-31"
+          "stamp": "2023-01-04"
         },
         {
           "company_id": "capstone",
@@ -51096,13 +51205,13 @@ window.DECK_DATA = {
           "low": 175.0,
           "high": 190.0,
           "unit": "million lb",
-          "disclosed_period": "2021Q4",
+          "disclosed_period": "2021Q1",
           "revision_status": "as reported",
           "scope": null,
-          "source_page": "Guidance section",
-          "source_section": "Guidance",
-          "excerpt": "ber 31, 2021, there were no significant financial impacts on the Company. Page 4 2021 Annual and Q4 2021 Highlights and Significant Items 2021 Copper Production and C1 Cash Costs1 Guidance Capstone achieved both production and cost guidance in 2021; finishing the year at 187.1 million pounds of copper production, at the upper end of the 175 - 190 million pounds guidance range, and at consolidated C1 cash costs1 of $1.81 per payable pound of copper, which was at the mid-point of the guidance range of $1.75 to $1.90 per pound. 2021 Annual ",
-          "stamp": "2021-12-31"
+          "source_page": "7",
+          "source_section": "Q1 2021 highlights",
+          "excerpt": "vestments. • Strong Q1 2021 copper production of 47.8 million pounds at C1 cash costs1 of $1.70 per payable pound of copper produced. Production exceeded the high-end range of our 2021 guidance (175-190 million pounds on an annual basis) on a quarterly basis, and C1 cash costs1 were below the low end of annual guidance of $1.75 to $1.90 per payable pound produced. • Cozamin Updated Life of Mine Plan and Updated Re",
+          "stamp": "2022-12-20"
         },
         {
           "company_id": "capstone",
@@ -51120,7 +51229,7 @@ window.DECK_DATA = {
           "source_page": "Guidance section",
           "source_section": "Guidance",
           "excerpt": "continued in Q3 2022. Lara is conducting the work and will report results when appropriate. Outlook The company reiterates the consolidated production, C1 cash costs 1 and capital guidance of 136-150kt of copper, $2.55-$2.70 per pound and $580 million, respectively for the nine month period from April 1, 2022 to December 31, 2022. We expect improved concentrator throughput level",
-          "stamp": "2022-09-30"
+          "stamp": "2022-12-20"
         },
         {
           "company_id": "capstone",
@@ -51138,7 +51247,7 @@ window.DECK_DATA = {
           "source_page": "13",
           "source_section": "2023 Outlook",
           "excerpt": "ent to Q3 2023, Capstone notified Lara Exploration Ltd. (\"Lara\") of the intent to relinquish the Planalto Option Agreement and fully exit the project. 2.1 2023 Outlook The Company re-affirms its H2 copper production guidance of 83,000 to 93,000 tonnes. C1 cash costs1 are trending towards the upper end of the H2 guidance range of $2.55/lb to $2.75/lb per payable pound of copper produced due to additional unplanned maintenance ex",
-          "stamp": "2023-09-30"
+          "stamp": "2023-11-03"
         },
         {
           "company_id": "capstone",
@@ -51156,7 +51265,7 @@ window.DECK_DATA = {
           "source_page": "Guidance section",
           "source_section": "Guidance",
           "excerpt": "and $377.0 million of undrawn amounts on the corporate revolving credit facility. • The Company notes that 2024 consolidated production is expected to finish at the low end of the guidance range of 190,000 to 220,000 tonnes of copper. 2024 consolidated C1 cash costs1 guidance has been revised to $2.60/lb to $2.80/lb mainly due to the ramp-ups at Mantoverde and Mantos Blancos occurring later in the ye",
-          "stamp": "2024-09-30"
+          "stamp": "2024-10-31"
         },
         {
           "company_id": "capstone",
@@ -51174,7 +51283,7 @@ window.DECK_DATA = {
           "source_page": "Guidance section",
           "source_section": "Guidance",
           "excerpt": "ed of $310.1 million of cash and short-term investments, and $761.0 million of undrawn amounts on the $1 billion corporate revolving credit facility. • The Company reiterates 2025 guidance, noting consolidated copper production is trending towards the lower half of the guidance range of 220,000 to 255,000 tonnes and 2025 consolidated cash costs1 are trending towards the upper half of the guidance range of $2.20 to $2.50 per payable pound. • Mantoverde Optimized (“MV Optimized”) project sa",
-          "stamp": "2025-09-30"
+          "stamp": "2026-03-02"
         },
         {
           "company_id": "capstone",
@@ -51183,16 +51292,16 @@ window.DECK_DATA = {
           "target_year": 2026,
           "target_label": "2026",
           "metric": "Consolidated copper production",
-          "low": 200.0,
-          "high": 230.0,
-          "unit": "kt",
-          "disclosed_period": "2026Q1",
+          "low": 200000.0,
+          "high": 230000.0,
+          "unit": "t",
+          "disclosed_period": "2026Q2",
           "revision_status": "as reported",
           "scope": null,
           "source_page": "Guidance section",
           "source_section": "Guidance",
-          "excerpt": "dation could unlock significant ESG opportunities and help transform the Company's approach to create value for all stakeholders in the Globe-Miami District. 2.1 2026 Outlook 2026 guidance is unchanged as follows: 200-230kt consolidated production of copper, $2.45-$2.75/lb C1 cash costs1 per payable pound of copper, $270 million sustaining capital expenditures, $225 million expansionary capital expen",
-          "stamp": "2026-03-31"
+          "excerpt": " as at June 30, 2026 , composed of $367.1 million of cash and cash equivalents, and $715.4 million of undrawn amounts on the $1 billion corporate revolving credit facility. • 2026 production guidance of 200,000 to 230,000 tonnes of copper and C1 cash costs 1 guidance of $2.45 to $2.75 per payable pound of copper is unchanged. Higher production is expected in the second half of 2026, largely driven by stro",
+          "stamp": "2026-07-30"
         }
       ],
       "current_guidance": {
@@ -51204,12 +51313,12 @@ window.DECK_DATA = {
         "low_kt": 200.0,
         "high_kt": 230.0,
         "midpoint_kt": 215.0,
-        "actual_ytd_kt": 48.0,
-        "completion_mid": 0.2231,
-        "completion_to_low": 0.2398,
-        "completion_to_high": 0.2085,
-        "expected_share": 0.25,
-        "progress_status": "on_track",
+        "actual_ytd_kt": 99.7,
+        "completion_mid": 0.4638,
+        "completion_to_low": 0.4986,
+        "completion_to_high": 0.4336,
+        "expected_share": 0.5,
+        "progress_status": "behind",
         "prior_actual_kt": 224.8,
         "guidance_delta_kt": -9.8,
         "guidance_delta_pct": -4.3,
@@ -51217,7 +51326,7 @@ window.DECK_DATA = {
         "exclusion_reason": null,
         "basis_tag": "公司产量口径",
         "is_proxy": false,
-        "disclosed_period": "2026Q1",
+        "disclosed_period": "2026Q2",
         "revision_status": "as reported",
         "actual_note": null,
         "components": [
@@ -51231,17 +51340,17 @@ window.DECK_DATA = {
           "guidance_type": "capital_expenditure",
           "target_year": 2026,
           "target_label": "2026",
-          "metric": "Capital expenditure guidance",
-          "low": 495.0,
-          "high": 495.0,
+          "metric": "Total consolidated capital expenditure guidance",
+          "low": 790.0,
+          "high": 790.0,
           "unit": "USD million",
-          "disclosed_period": "2025Q4",
-          "revision_status": "as reported",
+          "disclosed_period": "2026Q2",
+          "revision_status": "unchanged",
           "scope": null,
-          "source_page": "Guidance section",
-          "source_section": "Guidance",
-          "excerpt": "ction. 2 Mantoverde shown on a 100% basis. Key C1 Cash costs input assumptions: CLP/USD: 875:1 MXN/USD: 18:1 Silver: $55/oz Molybdenum: $20/lb Gold: $4,300/oz In 2026, the Company plans to spend a total of $495 million in sustaining and expansionary capital expenditures at its operating mines and the Santo Domingo Project. This is broken down into $270 million on sustaining capital and $225 million on expansionary capital. Sustaining capital expenditure guidance includes ap",
-          "stamp": "2025-12-31"
+          "source_page": "11",
+          "source_section": "2026 Outlook",
+          "excerpt": "total consolidated capital expenditure guidance (including sustaining, expansionary, capitalized stripping, and exploration) of $790 million is unchanged",
+          "stamp": "2026-07-30"
         }
       ],
       "future_guidance": [
@@ -51252,44 +51361,56 @@ window.DECK_DATA = {
           "low": 200.0,
           "high": 230.0,
           "unit": "kt",
-          "disclosed_period": "2026Q1",
+          "disclosed_period": "2026Q2",
           "note": null
+        },
+        {
+          "kind": "成本",
+          "target": "2026",
+          "metric": "Consolidated C1 cash cost guidance",
+          "low": 2.45,
+          "high": 2.75,
+          "unit": "USD/lb",
+          "disclosed_period": "2026Q2",
+          "note": "Consolidated",
+          "target_year": 2026,
+          "stamp": "2026-07-30"
         },
         {
           "kind": "资本开支",
           "target": "2026",
-          "metric": "Capital expenditure guidance",
-          "low": 495.0,
-          "high": 495.0,
+          "metric": "Total consolidated capital expenditure guidance",
+          "low": 790.0,
+          "high": 790.0,
           "unit": "USD million",
-          "disclosed_period": "2025Q4",
+          "disclosed_period": "2026Q2",
           "note": "保留公司披露币种和范围"
         }
       ],
       "guidance_history": [],
       "explanations": [],
-      "production_summary_cn": "2026Q1公司主口径产量同比减少0.58万吨（-10.8%）。产量同比下降11%，主要因Mantoverde罢工35天压低处理量并限制高品位硫化矿供应；Mantos Blancos和Cozamin按矿序品位下降，Pinto Valley非计划检修亦形成拖累。",
+      "production_summary_cn": "2026Q2公司主口径产量同比减少0.56万吨（-9.8%）。产量同比下降9.9%，主要因Mantos Blancos按矿序入选品位和回收率下降、Mantoverde阴极铜受堆浸处理量下降拖累；Cozamin品位和回收率下降，Pinto Valley大体持平，Mantoverde硫化矿创纪录产量形成部分抵消。",
       "projects": [
         {
           "company_id": "capstone",
           "company": "Capstone",
           "project": "Mantoverde Optimized",
           "stage": "Expansion execution",
-          "summary_cn": "扩建执行中；选厂由3.2万吨/日扩至4.5万吨/日，新增铜产量约2万吨/年，2026Q1起爬坡，投资约USD 1.46亿。"
+          "summary_cn": "扩建按计划推进，硫化矿项目计划于2026Q3接入；预计新增铜约2万吨/年，资本成本估算维持USD 1.76亿。"
         },
         {
           "company_id": "capstone",
           "company": "Capstone",
           "project": "Mantos Blancos Phase II",
-          "stage": "Study",
-          "summary_cn": "处于研究阶段；拟将选厂由2.0万吨/日扩至2.7万吨/日并评估阴极铜再浸出，2026年计划投入扩建资本USD 1,500万。"
+          "stage": "Study / environmental permitting",
+          "summary_cn": "2026年6月已提交环评申请，预可研预计年底完成；评估硫化矿选厂扩建及历史尾矿再浸出增产阴极铜。"
         },
         {
           "company_id": "capstone",
           "company": "Capstone",
           "project": "Santo Domingo",
-          "stage": "Detailed engineering and financing",
-          "summary_cn": "处于详细工程和融资阶段；技术研究预计矿山寿命期可回收铜129.2万吨，待融资和合作安排完成后决定建设。"
+          "stage": "Detailed engineering and procurement management",
+          "summary_cn": "详细工程和采购管理持续推进，Santo Domingo-Estrellita累计钻探约3万米；2026Q2扩建投入USD 1,870万，争取年内作出投资决策。"
         }
       ]
     },
@@ -54777,7 +54898,7 @@ window.DECK_DATA = {
           "stamp": "2026-05-06"
         }
       ],
-      "production_summary_cn": "2026Q2公司主口径产量同比减少4.77万吨（-42.6%）。Kakula当前以外围开发为主，处理量和入选品位低于上年同期；LCS季度内停产56天也压低最终阳极及粗铜产出。",
+      "production_summary_cn": "2026Q2公司主口径产量同比减少4.77万吨（-42.6%）。Kakula当前以外围开发为主，处理量和入选品位低于上年同期；LCS季度内计划停产56天也压低最终阳极及粗铜产出。",
       "projects": [
         {
           "company_id": "ivanhoe",
@@ -65468,7 +65589,7 @@ window.DECK_DATA = {
       "source_page": "Guidance section",
       "source_section": "Guidance",
       "excerpt": "on and upper end of costs, and Pinto Valley is trending below the lower end of production and above the upper end of costs. The Company reiterates its 2025 consolidated sustaining capital guidance of $255 million and updated exploration expenditure guidance of $40 million. The Company has revised its 2025 expansionary capital guidance to $70 million, from $120 million previously, largely due to changes in timing related to MV-O expansionary capital 1 These are non-GAA",
-      "stamp": "2025-09-30"
+      "stamp": "2026-03-02"
     },
     {
       "company_id": "capstone",
@@ -65486,7 +65607,25 @@ window.DECK_DATA = {
       "source_page": "Guidance section",
       "source_section": "Guidance",
       "excerpt": "ction. 2 Mantoverde shown on a 100% basis. Key C1 Cash costs input assumptions: CLP/USD: 875:1 MXN/USD: 18:1 Silver: $55/oz Molybdenum: $20/lb Gold: $4,300/oz In 2026, the Company plans to spend a total of $495 million in sustaining and expansionary capital expenditures at its operating mines and the Santo Domingo Project. This is broken down into $270 million on sustaining capital and $225 million on expansionary capital. Sustaining capital expenditure guidance includes ap",
-      "stamp": "2025-12-31"
+      "stamp": "2026-03-02"
+    },
+    {
+      "company_id": "capstone",
+      "company": "Capstone",
+      "guidance_type": "capital_expenditure",
+      "target_year": 2026,
+      "target_label": "2026",
+      "metric": "Total consolidated capital expenditure guidance",
+      "low": 790.0,
+      "high": 790.0,
+      "unit": "USD million",
+      "disclosed_period": "2026Q2",
+      "revision_status": "unchanged",
+      "scope": null,
+      "source_page": "11",
+      "source_section": "2026 Outlook",
+      "excerpt": "total consolidated capital expenditure guidance (including sustaining, expansionary, capitalized stripping, and exploration) of $790 million is unchanged",
+      "stamp": "2026-07-30"
     },
     {
       "company_id": "capstone",
@@ -65522,7 +65661,7 @@ window.DECK_DATA = {
       "source_page": "Guidance section",
       "source_section": "Guidance",
       "excerpt": "prior period alternative performance measures have been restated to conform with current period classification. Page 5 Q4 2020 Highlights and Significant Items Results Exceed 2020 Production and Cost Guidance Capstone exceeded both production and cost guidance for 2020 ; finishing the year at 156.9 million pounds of copper production above the guidance range of 140 to 155 million pounds, at consolidated C1 cash costs1 of $1.84 per payable pound of copper, below the guidance range of $1.85 to $2.00 per pound. Q4 2020 Financial and Operational Highlights • Strong f",
-      "stamp": "2020-12-31"
+      "stamp": "2023-01-04"
     },
     {
       "company_id": "capstone",
@@ -65534,13 +65673,13 @@ window.DECK_DATA = {
       "low": 175.0,
       "high": 190.0,
       "unit": "million lb",
-      "disclosed_period": "2021Q4",
+      "disclosed_period": "2021Q1",
       "revision_status": "as reported",
       "scope": null,
-      "source_page": "Guidance section",
-      "source_section": "Guidance",
-      "excerpt": "ber 31, 2021, there were no significant financial impacts on the Company. Page 4 2021 Annual and Q4 2021 Highlights and Significant Items 2021 Copper Production and C1 Cash Costs1 Guidance Capstone achieved both production and cost guidance in 2021; finishing the year at 187.1 million pounds of copper production, at the upper end of the 175 - 190 million pounds guidance range, and at consolidated C1 cash costs1 of $1.81 per payable pound of copper, which was at the mid-point of the guidance range of $1.75 to $1.90 per pound. 2021 Annual ",
-      "stamp": "2021-12-31"
+      "source_page": "7",
+      "source_section": "Q1 2021 highlights",
+      "excerpt": "vestments. • Strong Q1 2021 copper production of 47.8 million pounds at C1 cash costs1 of $1.70 per payable pound of copper produced. Production exceeded the high-end range of our 2021 guidance (175-190 million pounds on an annual basis) on a quarterly basis, and C1 cash costs1 were below the low end of annual guidance of $1.75 to $1.90 per payable pound produced. • Cozamin Updated Life of Mine Plan and Updated Re",
+      "stamp": "2022-12-20"
     },
     {
       "company_id": "capstone",
@@ -65558,7 +65697,7 @@ window.DECK_DATA = {
       "source_page": "Guidance section",
       "source_section": "Guidance",
       "excerpt": "continued in Q3 2022. Lara is conducting the work and will report results when appropriate. Outlook The company reiterates the consolidated production, C1 cash costs 1 and capital guidance of 136-150kt of copper, $2.55-$2.70 per pound and $580 million, respectively for the nine month period from April 1, 2022 to December 31, 2022. We expect improved concentrator throughput level",
-      "stamp": "2022-09-30"
+      "stamp": "2022-12-20"
     },
     {
       "company_id": "capstone",
@@ -65576,7 +65715,7 @@ window.DECK_DATA = {
       "source_page": "13",
       "source_section": "2023 Outlook",
       "excerpt": "ent to Q3 2023, Capstone notified Lara Exploration Ltd. (\"Lara\") of the intent to relinquish the Planalto Option Agreement and fully exit the project. 2.1 2023 Outlook The Company re-affirms its H2 copper production guidance of 83,000 to 93,000 tonnes. C1 cash costs1 are trending towards the upper end of the H2 guidance range of $2.55/lb to $2.75/lb per payable pound of copper produced due to additional unplanned maintenance ex",
-      "stamp": "2023-09-30"
+      "stamp": "2023-11-03"
     },
     {
       "company_id": "capstone",
@@ -65594,7 +65733,7 @@ window.DECK_DATA = {
       "source_page": "Guidance section",
       "source_section": "Guidance",
       "excerpt": "and $377.0 million of undrawn amounts on the corporate revolving credit facility. • The Company notes that 2024 consolidated production is expected to finish at the low end of the guidance range of 190,000 to 220,000 tonnes of copper. 2024 consolidated C1 cash costs1 guidance has been revised to $2.60/lb to $2.80/lb mainly due to the ramp-ups at Mantoverde and Mantos Blancos occurring later in the ye",
-      "stamp": "2024-09-30"
+      "stamp": "2024-10-31"
     },
     {
       "company_id": "capstone",
@@ -65612,7 +65751,7 @@ window.DECK_DATA = {
       "source_page": "Guidance section",
       "source_section": "Guidance",
       "excerpt": "ed of $310.1 million of cash and short-term investments, and $761.0 million of undrawn amounts on the $1 billion corporate revolving credit facility. • The Company reiterates 2025 guidance, noting consolidated copper production is trending towards the lower half of the guidance range of 220,000 to 255,000 tonnes and 2025 consolidated cash costs1 are trending towards the upper half of the guidance range of $2.20 to $2.50 per payable pound. • Mantoverde Optimized (“MV Optimized”) project sa",
-      "stamp": "2025-09-30"
+      "stamp": "2026-03-02"
     },
     {
       "company_id": "capstone",
@@ -65621,16 +65760,16 @@ window.DECK_DATA = {
       "target_year": 2026,
       "target_label": "2026",
       "metric": "Consolidated copper production",
-      "low": 200.0,
-      "high": 230.0,
-      "unit": "kt",
-      "disclosed_period": "2026Q1",
+      "low": 200000.0,
+      "high": 230000.0,
+      "unit": "t",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "scope": null,
       "source_page": "Guidance section",
       "source_section": "Guidance",
-      "excerpt": "dation could unlock significant ESG opportunities and help transform the Company's approach to create value for all stakeholders in the Globe-Miami District. 2.1 2026 Outlook 2026 guidance is unchanged as follows: 200-230kt consolidated production of copper, $2.45-$2.75/lb C1 cash costs1 per payable pound of copper, $270 million sustaining capital expenditures, $225 million expansionary capital expen",
-      "stamp": "2026-03-31"
+      "excerpt": " as at June 30, 2026 , composed of $367.1 million of cash and cash equivalents, and $715.4 million of undrawn amounts on the $1 billion corporate revolving credit facility. • 2026 production guidance of 200,000 to 230,000 tonnes of copper and C1 cash costs 1 guidance of $2.45 to $2.75 per payable pound of copper is unchanged. Higher production is expected in the second half of 2026, largely driven by stro",
+      "stamp": "2026-07-30"
     },
     {
       "company_id": "codelco",
@@ -72304,12 +72443,12 @@ window.DECK_DATA = {
       "low_kt": 200.0,
       "high_kt": 230.0,
       "midpoint_kt": 215.0,
-      "actual_ytd_kt": 48.0,
-      "completion_mid": 0.2231,
-      "completion_to_low": 0.2398,
-      "completion_to_high": 0.2085,
-      "expected_share": 0.25,
-      "progress_status": "on_track",
+      "actual_ytd_kt": 99.7,
+      "completion_mid": 0.4638,
+      "completion_to_low": 0.4986,
+      "completion_to_high": 0.4336,
+      "expected_share": 0.5,
+      "progress_status": "behind",
       "prior_actual_kt": 224.8,
       "guidance_delta_kt": -9.8,
       "guidance_delta_pct": -4.3,
@@ -72317,7 +72456,7 @@ window.DECK_DATA = {
       "exclusion_reason": null,
       "basis_tag": "公司产量口径",
       "is_proxy": false,
-      "disclosed_period": "2026Q1",
+      "disclosed_period": "2026Q2",
       "revision_status": "as reported",
       "actual_note": null,
       "components": [
@@ -74956,21 +75095,21 @@ window.DECK_DATA = {
       "company": "Capstone",
       "project": "Mantoverde Optimized",
       "stage": "Expansion execution",
-      "summary_cn": "扩建执行中；选厂由3.2万吨/日扩至4.5万吨/日，新增铜产量约2万吨/年，2026Q1起爬坡，投资约USD 1.46亿。"
+      "summary_cn": "扩建按计划推进，硫化矿项目计划于2026Q3接入；预计新增铜约2万吨/年，资本成本估算维持USD 1.76亿。"
     },
     {
       "company_id": "capstone",
       "company": "Capstone",
       "project": "Mantos Blancos Phase II",
-      "stage": "Study",
-      "summary_cn": "处于研究阶段；拟将选厂由2.0万吨/日扩至2.7万吨/日并评估阴极铜再浸出，2026年计划投入扩建资本USD 1,500万。"
+      "stage": "Study / environmental permitting",
+      "summary_cn": "2026年6月已提交环评申请，预可研预计年底完成；评估硫化矿选厂扩建及历史尾矿再浸出增产阴极铜。"
     },
     {
       "company_id": "capstone",
       "company": "Capstone",
       "project": "Santo Domingo",
-      "stage": "Detailed engineering and financing",
-      "summary_cn": "处于详细工程和融资阶段；技术研究预计矿山寿命期可回收铜129.2万吨，待融资和合作安排完成后决定建设。"
+      "stage": "Detailed engineering and procurement management",
+      "summary_cn": "详细工程和采购管理持续推进，Santo Domingo-Estrellita累计钻探约3万米；2026Q2扩建投入USD 1,870万，争取年内作出投资决策。"
     },
     {
       "company_id": "cmoc",
@@ -75343,7 +75482,7 @@ window.DECK_DATA = {
       "company": "Capstone",
       "project": "Mantoverde Optimized",
       "stage": "Expansion execution",
-      "summary_cn": "扩建执行中；选厂由3.2万吨/日扩至4.5万吨/日，新增铜产量约2万吨/年，2026Q1起爬坡，投资约USD 1.46亿。"
+      "summary_cn": "扩建按计划推进，硫化矿项目计划于2026Q3接入；预计新增铜约2万吨/年，资本成本估算维持USD 1.76亿。"
     },
     {
       "company_id": "teck",
