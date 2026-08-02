@@ -147,7 +147,7 @@
               </article>
 
               <article class="analysis-panel">
-                <h4>未来铜矿项目与进展</h4>
+                <h4>重点铜矿与项目</h4>
                 <div class="project-list" id="project-list"></div>
               </article>
             </div>
@@ -159,21 +159,50 @@
         <div class="section-heading">
           <div>
             <p class="section-kicker">MINE CONTRIBUTION</p>
-            <h2 id="mine-title">矿山累计同比贡献</h2>
+            <h2 id="mine-title">矿山当年累计贡献与季度趋势</h2>
           </div>
           <p>去重矿山100%含铜量</p>
         </div>
 
         <div class="kpi-grid" id="mine-summary"></div>
 
+        <div class="mine-trend-grid">
+          <section class="data-panel mine-chart-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">SAMPLE OUTPUT</p>
+                <h4>整体矿山季度产量</h4>
+                <p id="mine-seasonal-scope-note"></p>
+              </div>
+              <div class="mine-chart-actions">
+                <button type="button" class="scope-toggle" id="mine-scope-toggle" aria-pressed="false" title="切换至最新一期已披露企业样本">已出季报口径</button>
+                <span>单位：万吨</span>
+              </div>
+            </div>
+            <div class="mine-chart" id="mine-seasonal-chart"></div>
+          </section>
+
+          <section class="data-panel mine-chart-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">YEAR-ON-YEAR</p>
+                <h4>季度同比增减量</h4>
+              </div>
+              <span>单位：万吨</span>
+            </div>
+            <div class="mine-chart" id="mine-yoy-chart"></div>
+            <div class="mine-insights" id="mine-yoy-insights"></div>
+          </section>
+        </div>
+
         <div class="mine-grid">
           <section class="data-panel contribution-panel">
             <div class="panel-heading">
               <div>
                 <p class="section-kicker">POSITIVE CONTRIBUTORS</p>
-                <h4>累计同比增量十大矿山</h4>
+                <h4 id="positive-title">当年累计同比增量前十大矿山</h4>
               </div>
-              <span id="positive-total"></span>
+              <span>与上年同期比较</span>
             </div>
             <div class="contribution-list" id="positive-mines"></div>
           </section>
@@ -182,14 +211,14 @@
             <div class="panel-heading">
               <div>
                 <p class="section-kicker negative-kicker">NEGATIVE CONTRIBUTORS</p>
-                <h4>累计同比减量十大矿山</h4>
+                <h4 id="negative-title">当年累计同比减量后十大矿山</h4>
               </div>
-              <span id="negative-total"></span>
+              <span>与上年同期比较</span>
             </div>
             <div class="contribution-list" id="negative-mines"></div>
           </section>
         </div>
-        <p class="method-note mine-note">按共同完整季度累计，与上年同期比较；矿山100%含铜量按mine_id去重，沿用PPT的优先来源、收购前回填和出售后剔除规则。</p>
+        <p class="method-note mine-note">贡献榜按共同完整季度的当年累计值与上年同期比较；季度季节性和季度同比趋势直接沿用PPT数据。矿山100%含铜量按mine_id去重，并沿用固定优先来源、收购前回填和出售后剔除规则。</p>
       </section>
     </main>
   </div>

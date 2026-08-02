@@ -300,7 +300,8 @@ main {
 .tab-button:focus-visible,
 .icon-button:focus-visible,
 .company-option:focus-visible,
-.sort-button:focus-visible {
+.sort-button:focus-visible,
+.scope-toggle:focus-visible {
   outline: 2px solid rgba(79, 119, 116, 0.36);
   outline-offset: 1px;
 }
@@ -609,6 +610,42 @@ main {
   font-size: 10px;
   line-height: 1.35;
   text-align: right;
+}
+
+.mine-chart-actions {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.panel-heading .mine-chart-actions span {
+  margin: 0;
+}
+
+.scope-toggle {
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--zinc-deep);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.scope-toggle:hover {
+  border-color: var(--zinc);
+  background: var(--zinc-soft);
+}
+
+.scope-toggle[aria-pressed="true"] {
+  border-color: var(--zinc-deep);
+  background: var(--zinc-deep);
+  color: #fff;
 }
 
 .seasonal-chart {
@@ -1170,6 +1207,17 @@ main {
 
   .mine-chart-panel {
     padding: 12px 10px 10px;
+  }
+
+  .mine-chart-actions {
+    max-width: 190px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+
+  .scope-toggle {
+    min-height: 32px;
   }
 
   .mine-chart {

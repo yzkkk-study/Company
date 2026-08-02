@@ -237,6 +237,52 @@
     return niceFraction * exponent;
   }
 
+  function renderDisclosedChart(container, rows) {
+    if (!rows.length) {
+      container.innerHTML = '<div class="empty-state">未形成可用的按披露期产量序列。</div>';
+      return;
+    }
+    const compact = window.matchMedia("(max-width: 680px)").matches;
+    const width = compact ? 520 : 1040;
+    const height = compact ? 390 : 350;
+    const margin = compact
+      ? { top: 24, right: 20, bottom: 54, left: 58 }
+      : { top: 24, right: 34, bottom: 52, left: 68 };
+    const ordered = [...rows].sort((a, b) => a.period.localeCompare(b.period));
+    const values = ordered.map((row) => Number(row.kt) / 10);
+    const rawMin = Math.min(...values), rawMax = Math.max(...values);
+    const step = niceAxisStep(((rawMax - rawMin) || Math.max(rawMax * 0.08, 1)) / 5);
+    let min = Math.max(0, Math.floor(rawMin / step) * step);
+    let max = Math.ceil(rawMax / step) * step;
+    if (max === min) max += step;
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+    const x = (index) => margin.left + (ordered.length === 1 ? plotWidth / 2 : index * plotWidth / (ordered.length - 1));
+    const y = (value) => margin.top + (max - value) / (max - min) * plotHeight;
+    const root = svg("svg", { viewBox: `0 0 ${width} ${height}`, role: "img", "aria-label": "按披露期产量趋势图" });
+    for (let index = 0; index <= 5; index += 1) {
+      const value = min + (max - min) * index / 5;
+      const yy = y(value);
+      root.append(svg("line", { x1: margin.left, y1: yy, x2: width - margin.right, y2: yy, stroke: "#E5E8EC" }));
+      const label = svg("text", { x: margin.left - 10, y: yy + 4, "text-anchor": "end", class: "svg-label" });
+      label.textContent = number(value, step < 1 ? 1 : 0);
+      root.append(label);
+    }
+    const points = ordered.map((row, index) => [x(index), y(Number(row.kt) / 10), row]);
+    root.append(svg("path", { d: smoothPath(points.map(([px, py]) => [px, py])), fill: "none", stroke: "#0F766E", "stroke-width": 4, "stroke-linecap": "round" }));
+    points.forEach(([px, py, row], index) => {
+      root.append(svg("circle", { cx: px, cy: py, r: index === points.length - 1 ? 5 : 3, fill: "#0F766E", stroke: "#FFFFFF", "stroke-width": 2 }));
+      const label = svg("text", { x: px, y: height - 20, "text-anchor": "middle", class: "svg-label" });
+      label.textContent = row.period;
+      root.append(label);
+    });
+    const unit = svg("text", { x: margin.left, y: 14, class: "svg-unit" });
+    unit.textContent = "万吨";
+    root.append(unit);
+    container.innerHTML = "";
+    container.append(root);
+  }
+
   function renderSeasonalChart(container, rows, latestPeriod) {
     if (!rows.length) {
       container.innerHTML = '<div class="empty-state">未形成季度产量序列。</div>';
@@ -329,6 +375,75 @@
     container.append(legend);
   }
 
+  function renderYoyChart(container, rows) {
+    const data = rows
+      .filter((row) => row.yoy_kt != null)
+      .sort((left, right) => left.period.localeCompare(right.period));
+    if (!data.length) {
+      container.innerHTML = '<div class="empty-state">未形成季度同比序列。</div>';
+      return;
+    }
+    const compact = window.matchMedia("(max-width: 680px)").matches;
+    const width = compact ? 640 : 900;
+    const height = compact ? 380 : 350;
+    const margin = compact
+      ? { top: 28, right: 16, bottom: 58, left: 56 }
+      : { top: 28, right: 24, bottom: 54, left: 62 };
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+    const values = data.map((row) => Number(row.yoy_kt) / 10);
+    const max = Math.max(...values.map(Math.abs), 1);
+    const slotWidth = plotWidth / data.length;
+    const barWidth = Math.max(5, slotWidth - (compact ? 4 : 6));
+    const x = (index) => margin.left + index * slotWidth + (slotWidth - barWidth) / 2;
+    const y = (value) => margin.top + (max - value) / (max * 2) * plotHeight;
+    const zero = y(0);
+    const root = svg("svg", { viewBox: `0 0 ${width} ${height}`, role: "img", "aria-label": "矿山季度同比增减量" });
+
+    [-max, -max / 2, 0, max / 2, max].forEach((value) => {
+      const yy = y(value);
+      root.append(svg("line", {
+        x1: margin.left,
+        y1: yy,
+        x2: width - margin.right,
+        y2: yy,
+        stroke: value === 0 ? "#64748B" : "#E5E8EC",
+        "stroke-width": value === 0 ? 1.5 : 1,
+      }));
+      const label = svg("text", { x: margin.left - 9, y: yy + 4, "text-anchor": "end", class: "svg-label" });
+      label.textContent = number(value, 1);
+      root.append(label);
+    });
+
+    data.forEach((row, index) => {
+      const value = Number(row.yoy_kt) / 10;
+      const yy = value >= 0 ? y(value) : zero;
+      const bar = svg("rect", {
+        x: x(index),
+        y: yy,
+        width: barWidth,
+        height: Math.max(Math.abs(y(value) - zero), 1),
+        fill: value >= 0 ? "#087A62" : "#B63F3A",
+        rx: 1.5,
+      });
+      const title = svg("title");
+      title.textContent = `${row.period}：${signedWan(row.yoy_kt)}`;
+      bar.append(title);
+      root.append(bar);
+      if (row.quarter === "Q1" || index === data.length - 1) {
+        const label = svg("text", { x: x(index) + barWidth / 2, y: height - 23, "text-anchor": "middle", class: "svg-small" });
+        label.textContent = row.period;
+        root.append(label);
+      }
+    });
+
+    const unit = svg("text", { x: margin.left, y: 15, class: "svg-unit" });
+    unit.textContent = "同比变化（万吨）";
+    root.append(unit);
+    container.innerHTML = "";
+    container.append(root);
+  }
+
   function futureGuidanceAmount(row) {
     const low = Number(row.low);
     const high = Number(row.high);
@@ -385,22 +500,28 @@
     activeRailItem?.scrollIntoView({ block: "nearest" });
 
     const stats = profile.quarter_stats;
+    const quarterly = profile.production_period_basis === "quarterly";
     const guidance = guidanceByCompany.get(profile.company_id) || profile.current_guidance;
     $("#company-period").textContent = `数据截至 ${profile.latest_period}`;
     $("#company-name").textContent = profile.company;
     $("#company-basis-group").textContent = profile.basis_group || "公司披露口径";
     $("#company-metric").textContent = `${profile.metric || "公司主口径"} · 公司自身时间序列`;
+    $(".seasonal-panel h4").textContent = quarterly ? "季度产量季节性" : "按披露期产量趋势";
     $("#company-basis").textContent = profile.basis || "未披露";
     $("#company-kpis").innerHTML = [
-      kpi("当季度产量", wan(stats.current_kt), profile.metric || "公司主口径"),
-      kpi("单季同比增减", signedWan(stats.quarter_change_kt), signedPct(stats.quarter_change_pct), classForValue(stats.quarter_change_kt)),
-      kpi("累计同比增减", signedWan(stats.ytd_change_kt), signedPct(stats.ytd_change_pct), classForValue(stats.ytd_change_kt)),
+      kpi(quarterly ? "当季度产量" : "最新披露产量", wan(stats.current_kt), profile.metric || "公司主口径"),
+      kpi(quarterly ? "单季同比增减" : "同口径同比增减", signedWan(stats.quarter_change_kt), signedPct(stats.quarter_change_pct), classForValue(stats.quarter_change_kt)),
+      quarterly
+        ? kpi("累计同比增减", signedWan(stats.ytd_change_kt), signedPct(stats.ytd_change_pct), classForValue(stats.ytd_change_kt))
+        : kpi("上年同口径产量", wan(stats.prior_kt), "不拆分自然季度"),
       kpi("年度指引完成度", pct(guidance?.completion_mid), progressLabel(guidance?.progress_status)),
     ].join("");
 
     const seasonal = D.company_seasonal.filter((row) => row.company_id === profile.company_id);
-    renderSeasonalChart($("#company-seasonal-chart"), seasonal, profile.latest_period);
-    $("#production-explanation").textContent = profile.production_summary_cn || "当季报告未提供可稳定提取的产量变化解释。";
+    const disclosed = (D.company_disclosed || []).filter((row) => row.company_id === profile.company_id);
+    if (quarterly) renderSeasonalChart($("#company-seasonal-chart"), seasonal, profile.latest_period);
+    else renderDisclosedChart($("#company-seasonal-chart"), disclosed);
+    $("#production-explanation").textContent = profile.production_summary_cn || "报告未提供可稳定提取的产量变化解释。";
     $("#cost-explanation").textContent = profile.cost_detail?.explanation_cn || "公司未在已提取文本中单列成本变动原因。";
 
     let guidanceSummary = "未提取到2026年度可用产量指引。";
@@ -429,8 +550,10 @@
     }
 
     const projects = profile.projects || [];
-    $("#project-list").innerHTML = projects.length
-      ? projects.map((row) => `<div class="project-row"><strong>${esc(row.project)}</strong><span>${esc(stageText(row.stage))}</span><small>${esc(shorten(row.summary_cn || "项目规模、时间和资本开支未披露", 150))}</small></div>`).join("")
+    const mineSnapshots = (profile.focus_mine_disclosures || []).map((row) => `<div class="project-row"><strong>${esc(row.mine)} · ${esc(row.period)}</strong><span>100%量 ${esc(wan(row.kt))}</span><small>${row.equity_kt == null ? esc(shorten(row.notes || row.basis || "权益量未披露", 120)) : `权益${esc(number(row.ownership_pct, 1))}% · ${esc(wan(row.equity_kt))}`}</small></div>`);
+    const projectRows = mineSnapshots.concat(projects.map((row) => `<div class="project-row"><strong>${esc(row.project)}</strong><span>${esc(stageText(row.stage))}</span><small>${esc(shorten(row.summary_cn || "项目规模、时间和资本开支未披露", 150))}</small></div>`));
+    $("#project-list").innerHTML = projectRows.length
+      ? projectRows.join("")
       : '<div class="empty-state">本次结构化数据未提取到明确的未来铜矿项目。</div>';
   }
 
@@ -459,18 +582,30 @@
       const rowQuarter = Number(String(row.quarter).replace("Q", ""));
       if (rowQuarter > quarter || ![year, year - 1].includes(Number(row.year))) return;
       if (!rowsByMine.has(row.mine_id)) {
-        rowsByMine.set(row.mine_id, { mine_id: row.mine_id, mine: row.mine, company: row.company, current_kt: 0, prior_kt: 0 });
+        rowsByMine.set(row.mine_id, {
+          mine_id: row.mine_id,
+          mine: row.mine,
+          company: row.company,
+          current_kt: 0,
+          prior_kt: 0,
+          current_present: false,
+          prior_present: false,
+        });
       }
       const item = rowsByMine.get(row.mine_id);
       if (Number(row.year) === year) {
         item.current_kt += Number(row.kt) || 0;
+        item.current_present = true;
         item.mine = row.mine || item.mine;
         item.company = row.company || item.company;
       } else {
         item.prior_kt += Number(row.kt) || 0;
+        item.prior_present = true;
       }
     });
-    const rows = [...rowsByMine.values()].map((row) => ({ ...row, change_kt: row.current_kt - row.prior_kt }));
+    const rows = [...rowsByMine.values()]
+      .map((row) => ({ ...row, change_kt: row.current_kt - row.prior_kt }))
+      .sort((left, right) => right.change_kt - left.change_kt);
     return { year, quarter, rows };
   }
 
@@ -487,26 +622,75 @@
     }).join("") || '<div class="empty-state">没有可比矿山。</div>';
   }
 
+  function setupMineSeasonalScope() {
+    const button = $("#mine-scope-toggle");
+    const sample = D.latest_reported_mine_sample;
+    let reportedScope = false;
+    if (!sample?.seasonal_totals?.length) {
+      button.hidden = true;
+      renderSeasonalChart($("#mine-seasonal-chart"), D.seasonal_totals, D.meta.as_of);
+      $("#mine-seasonal-scope-note").textContent = `${D.meta.as_of}共同完整季度 · ${D.meta.company_count}家企业`;
+      return;
+    }
+
+    const render = () => {
+      const rows = reportedScope ? sample.seasonal_totals : D.seasonal_totals;
+      const period = reportedScope ? sample.period : D.meta.as_of;
+      const latest = rows.find((row) => row.period === period);
+      renderSeasonalChart($("#mine-seasonal-chart"), rows, period);
+      $("#mine-seasonal-scope-note").textContent = reportedScope
+        ? `${sample.period}已披露 · ${sample.company_count}家企业 · ${latest?.mine_count || 0}个矿山/矿组`
+        : `${D.meta.as_of}共同完整季度 · ${D.meta.company_count}家企业 · ${latest?.mine_count || 0}个矿山/矿组`;
+      button.classList.toggle("is-active", reportedScope);
+      button.setAttribute("aria-pressed", String(reportedScope));
+      button.title = reportedScope ? "切换回共同完整季度口径" : "切换至最新一期已披露企业样本";
+    };
+    button.addEventListener("click", () => {
+      reportedScope = !reportedScope;
+      render();
+    });
+    window.matchMedia("(max-width: 680px)").addEventListener("change", render);
+    render();
+  }
+
   function setupMines() {
-    const { year, quarter, rows } = computeMineYtd();
-    const positives = rows.filter((row) => row.change_kt > 0).sort((a, b) => b.change_kt - a.change_kt).slice(0, 10);
-    const negatives = rows.filter((row) => row.change_kt < 0).sort((a, b) => a.change_kt - b.change_kt).slice(0, 10);
-    const currentTotal = rows.reduce((sum, row) => sum + row.current_kt, 0);
-    const priorTotal = rows.reduce((sum, row) => sum + row.prior_kt, 0);
+    const ytd = computeMineYtd();
+    const latest = D.seasonal_totals.find((row) => row.period === D.meta.as_of);
+    const positives = ytd.rows.filter((row) => row.change_kt > 0).slice(0, 10);
+    const negatives = ytd.rows.filter((row) => row.change_kt < 0).sort((left, right) => left.change_kt - right.change_kt).slice(0, 10);
+    const currentTotal = Number(D.seasonal_totals
+      .filter((row) => Number(row.year) === ytd.year && Number(String(row.quarter).replace("Q", "")) <= ytd.quarter)
+      .reduce((sum, row) => sum + Number(row.kt), 0).toFixed(1));
+    const priorTotal = Number(D.seasonal_totals
+      .filter((row) => Number(row.year) === ytd.year - 1 && Number(String(row.quarter).replace("Q", "")) <= ytd.quarter)
+      .reduce((sum, row) => sum + Number(row.kt), 0).toFixed(1));
     const delta = currentTotal - priorTotal;
-    const positiveTotal = positives.reduce((sum, row) => sum + row.change_kt, 0);
-    const negativeTotal = negatives.reduce((sum, row) => sum + row.change_kt, 0);
-    $("#mine-title").textContent = `${year}Q${quarter}当年累计同比矿山贡献`;
+    const currentMineCount = ytd.rows.filter((row) => row.current_present).length;
+    const priorMineCount = ytd.rows.filter((row) => row.prior_present).length;
+    const quarterlyRows = [...D.mine_yoy_contribution];
+    const strongest = quarterlyRows[0];
+    const weakest = [...quarterlyRows].sort((left, right) => left.change_kt - right.change_kt)[0];
+    $("#mine-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计矿山贡献与季度趋势`;
     $("#mine-summary").innerHTML = [
-      kpi("当年累计产量", wan(currentTotal), `${year}Q1-Q${quarter}去重矿山合计`),
-      kpi("上年同期产量", wan(priorTotal), `${year - 1}Q1-Q${quarter}同口径`),
+      kpi("当年累计产量", wan(currentTotal), `${ytd.year}Q1-Q${ytd.quarter}去重矿山合计`),
+      kpi("上年同期产量", wan(priorTotal), `${ytd.year - 1}Q1-Q${ytd.quarter}同口径`),
       kpi("累计同比增减", signedWan(delta), priorTotal ? signedPct(delta / priorTotal * 100) : "—", classForValue(delta)),
-      kpi("可比矿山/矿组", `${rows.length}个`, "按mine_id去重"),
+      kpi("纳入同比矿山/矿组", `${ytd.rows.length}个`, `当年${currentMineCount} / 上年${priorMineCount}`),
     ].join("");
-    $("#positive-total").textContent = `前十合计 ${signedWan(positiveTotal)}`;
-    $("#negative-total").textContent = `前十合计 ${signedWan(negativeTotal)}`;
+    setupMineSeasonalScope();
+    renderYoyChart($("#mine-yoy-chart"), D.seasonal_totals);
+    $("#mine-yoy-insights").innerHTML = [
+      `<span><b>最新季度</b>${esc(signedWan(latest?.yoy_kt))}</span>`,
+      `<span><b>最大增量矿山</b>${esc(strongest?.mine || "—")} ${esc(signedWan(strongest?.change_kt))}</span>`,
+      `<span><b>最大减量矿山</b>${esc(weakest?.mine || "—")} ${esc(signedWan(weakest?.change_kt))}</span>`,
+    ].join("");
+    $("#positive-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计同比增量前十大矿山`;
+    $("#negative-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计同比减量后十大矿山`;
     renderMineList($("#positive-mines"), positives, false);
     renderMineList($("#negative-mines"), negatives, true);
+    window.matchMedia("(max-width: 680px)").addEventListener("change", () => {
+      renderYoyChart($("#mine-yoy-chart"), D.seasonal_totals);
+    });
   }
 
   $("#header-as-of").textContent = D.meta.as_of;

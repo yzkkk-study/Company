@@ -811,6 +811,88 @@ main {
   gap: 14px;
 }
 
+.mine-trend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.mine-chart-panel {
+  min-width: 0;
+  padding: 14px 16px 12px;
+}
+
+.mine-chart-actions {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 5px;
+  flex: 0 0 auto;
+}
+
+.scope-toggle {
+  min-height: 28px;
+  padding: 4px 9px;
+  border: 1px solid var(--copper);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--copper-deep);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.scope-toggle:hover,
+.scope-toggle:focus-visible,
+.scope-toggle.is-active {
+  background: var(--copper-deep);
+  color: #fff;
+}
+
+.scope-toggle:focus-visible {
+  outline: 2px solid rgba(168, 101, 50, 0.34);
+  outline-offset: 1px;
+}
+
+.mine-chart {
+  width: 100%;
+  min-height: 260px;
+  padding-top: 8px;
+}
+
+.mine-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mine-insights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line-soft);
+}
+
+.mine-insights span {
+  min-height: 48px;
+  padding: 8px 9px;
+  color: var(--ink-soft);
+  font-size: 9px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.mine-insights span + span {
+  border-left: 1px solid var(--line-soft);
+}
+
+.mine-insights b {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--ink);
+  font-size: 9px;
+}
+
 .contribution-panel {
   padding: 14px 16px 16px;
 }
@@ -943,6 +1025,10 @@ main {
 
   .project-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mine-trend-grid {
+    grid-template-columns: 1fr;
   }
 
   .contribution-row {
@@ -1115,6 +1201,33 @@ main {
 
   .guidance-line {
     grid-template-columns: 70px minmax(76px, auto) minmax(0, 1fr);
+  }
+
+  .mine-chart-panel {
+    padding: 12px 10px 10px;
+  }
+
+  .mine-chart-actions {
+    gap: 4px;
+  }
+
+  .scope-toggle {
+    min-height: 30px;
+    padding: 5px 8px;
+    white-space: nowrap;
+  }
+
+  .mine-chart {
+    min-height: 220px;
+  }
+
+  .mine-insights {
+    grid-template-columns: 1fr;
+  }
+
+  .mine-insights span + span {
+    border-left: 0;
+    border-top: 1px solid var(--line-soft);
   }
 
   .contribution-panel {

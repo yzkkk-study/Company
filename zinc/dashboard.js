@@ -574,6 +574,30 @@
     }).join("") || '<div class="empty-state">没有可比矿山。</div>';
   }
 
+  let useReportedMineScope = false;
+
+  function renderMineSeasonalScope() {
+    const button = $("#mine-scope-toggle");
+    const meta = $("#mine-scope-meta");
+    const reported = D.reported_quarter_scope;
+    const reportedAvailable = Boolean(reported?.seasonal_totals?.length);
+    if (!reportedAvailable) useReportedMineScope = false;
+    const rows = useReportedMineScope ? reported.seasonal_totals : D.seasonal_totals;
+    const latestPeriod = useReportedMineScope ? reported.period : D.meta.as_of;
+    renderSeasonalChart($("#mine-seasonal-chart"), rows, latestPeriod);
+    button.disabled = !reportedAvailable;
+    button.setAttribute("aria-pressed", String(useReportedMineScope));
+    if (useReportedMineScope) {
+      meta.textContent = `${reported.period} · ${reported.company_count}家已披露 · ${reported.latest_mine_count}个矿山/矿组 · 单位：万吨`;
+      button.title = `当前采用${reported.period}已出季报企业子样本`;
+    } else {
+      meta.textContent = `共同完整期 ${D.meta.as_of} · 单位：万吨`;
+      button.title = reportedAvailable
+        ? `切换至${reported.period}已出季报企业子样本`
+        : "尚未形成已出季报企业子样本";
+    }
+  }
+
   function setupMines() {
     const ytd = computeMineYtd();
     const latest = D.seasonal_totals.find((row) => row.period === D.meta.as_of);
@@ -594,7 +618,7 @@
       kpi("累计同比增减", signedWan(delta), priorTotal ? signedPct(delta / priorTotal * 100) : "—", classForValue(delta)),
       kpi("纳入同比矿山/矿组", `${ytd.rows.length}个`, `当年${currentMineCount} / 上年${priorMineCount}`),
     ].join("");
-    renderSeasonalChart($("#mine-seasonal-chart"), D.seasonal_totals, D.meta.as_of);
+    renderMineSeasonalScope();
     renderYoyChart($("#mine-yoy-chart"), D.seasonal_totals);
     $("#mine-yoy-insights").innerHTML = [
       `<span><b>最新季度</b>${esc(signedWan(latest?.yoy_kt))}</span>`,
@@ -605,8 +629,12 @@
     $("#negative-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计同比减量后十大矿山`;
     renderMineList($("#positive-mines"), positives, false);
     renderMineList($("#negative-mines"), negatives, true);
+    $("#mine-scope-toggle").addEventListener("click", () => {
+      useReportedMineScope = !useReportedMineScope;
+      renderMineSeasonalScope();
+    });
     window.matchMedia("(max-width: 680px)").addEventListener("change", () => {
-      renderSeasonalChart($("#mine-seasonal-chart"), D.seasonal_totals, D.meta.as_of);
+      renderMineSeasonalScope();
       renderYoyChart($("#mine-yoy-chart"), D.seasonal_totals);
     });
   }
