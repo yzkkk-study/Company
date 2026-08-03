@@ -121,18 +121,17 @@
 
   function renderGuidanceSummary() {
     const available = guidanceRows.filter(({ guidance }) => guidance.available).length;
-    const comparableRows = guidanceRows
-      .map(({ guidance }) => guidance)
-      .filter((guidance) => guidance.available && guidance.comparable && guidance.midpoint_kt != null && guidance.prior_actual_kt != null);
-    const guidanceMidpoint = comparableRows.reduce((sum, guidance) => sum + Number(guidance.midpoint_kt), 0);
-    const priorActual = comparableRows.reduce((sum, guidance) => sum + Number(guidance.prior_actual_kt), 0);
-    const delta = guidanceMidpoint - priorActual;
-    const deltaPct = priorActual ? delta / priorActual * 100 : null;
+    const summary = D.aggregate_guidance_summary;
+    const guidanceMidpoint = Number(summary.guidance_midpoint_kt);
+    const priorActual = Number(summary.prior_actual_kt);
+    const delta = Number(summary.delta_kt);
+    const deltaPct = summary.delta_pct;
     const deltaClass = classForValue(delta);
     $("#guidance-summary").innerHTML = [
-      kpi("连续跟踪企业", `${profiles.length}家`, `${available}家已形成2026年指引`),
-      kpi("可比指引中点合计", wan(guidanceMidpoint), `上年对应实际 ${wan(priorActual)}`),
+      kpi("连续跟踪企业", `${profiles.length}家`, `${available}家已形成2026年指引并纳入总样本`),
+      kpi("可比指引中点合计", wan(guidanceMidpoint), `上年自然年对应实际 ${wan(priorActual)}`),
       kpi("指引隐含同比增减", signedWan(delta), signedPct(deltaPct), deltaClass),
+      kpi("整体指引完成度", pct(summary.completion_mid), `${summary.completion_company_count}家已披露${summary.completion_period}`),
     ].join("");
   }
 
@@ -574,11 +573,11 @@
     renderCompany(profileById.get(currentCompanyId));
   }
 
-  function computeMineYtd() {
-    const year = Number(String(D.meta.as_of).slice(0, 4));
-    const quarter = Number(String(D.meta.as_of).replace(/^.*Q/, ""));
+  function computeMineYtd(view) {
+    const year = Number(String(view.period).slice(0, 4));
+    const quarter = Number(String(view.period).replace(/^.*Q/, ""));
     const rowsByMine = new Map();
-    D.mine_seasonal.forEach((row) => {
+    view.mine_seasonal.forEach((row) => {
       const rowQuarter = Number(String(row.quarter).replace("Q", ""));
       if (rowQuarter > quarter || ![year, year - 1].includes(Number(row.year))) return;
       if (!rowsByMine.has(row.mine_id)) {
@@ -622,75 +621,82 @@
     }).join("") || '<div class="empty-state">没有可比矿山。</div>';
   }
 
-  function setupMineSeasonalScope() {
+  function setupMines() {
     const button = $("#mine-scope-toggle");
     const sample = D.latest_reported_mine_sample;
+    const common = D.common_mine_view || {
+      scope: "common_complete",
+      period: D.meta.as_of,
+      company_count: D.meta.company_count,
+      seasonal_totals: D.seasonal_totals,
+      mine_seasonal: D.mine_seasonal,
+      mine_yoy_contribution: D.mine_yoy_contribution,
+    };
     let reportedScope = false;
-    if (!sample?.seasonal_totals?.length) {
-      button.hidden = true;
-      renderSeasonalChart($("#mine-seasonal-chart"), D.seasonal_totals, D.meta.as_of);
-      $("#mine-seasonal-scope-note").textContent = `${D.meta.as_of}共同完整季度 · ${D.meta.company_count}家企业`;
-      return;
-    }
 
     const render = () => {
-      const rows = reportedScope ? sample.seasonal_totals : D.seasonal_totals;
-      const period = reportedScope ? sample.period : D.meta.as_of;
-      const latest = rows.find((row) => row.period === period);
-      renderSeasonalChart($("#mine-seasonal-chart"), rows, period);
-      $("#mine-seasonal-scope-note").textContent = reportedScope
-        ? `${sample.period}已披露 · ${sample.company_count}家企业 · ${latest?.mine_count || 0}个矿山/矿组`
-        : `${D.meta.as_of}共同完整季度 · ${D.meta.company_count}家企业 · ${latest?.mine_count || 0}个矿山/矿组`;
+      const view = reportedScope ? sample : common;
+      const ytd = view.mine_ytd_contribution?.length
+        ? { year: view.summary.year, quarter: view.summary.quarter, rows: view.mine_ytd_contribution }
+        : computeMineYtd(view);
+      const summary = view.summary || {};
+      const currentTotal = Number(summary.current_total_kt ?? view.seasonal_totals
+        .filter((row) => Number(row.year) === ytd.year && Number(String(row.quarter).replace("Q", "")) <= ytd.quarter)
+        .reduce((sum, row) => sum + Number(row.kt), 0).toFixed(1));
+      const priorTotal = Number(summary.prior_total_kt ?? view.seasonal_totals
+        .filter((row) => Number(row.year) === ytd.year - 1 && Number(String(row.quarter).replace("Q", "")) <= ytd.quarter)
+        .reduce((sum, row) => sum + Number(row.kt), 0).toFixed(1));
+      const delta = Number(summary.change_kt ?? (currentTotal - priorTotal).toFixed(1));
+      const currentMineCount = Number(summary.current_mine_count ?? ytd.rows.filter((row) => row.current_present).length);
+      const priorMineCount = Number(summary.prior_mine_count ?? ytd.rows.filter((row) => row.prior_present).length);
+      const comparisonMineCount = Number(summary.comparison_mine_count ?? ytd.rows.length);
+      const positives = ytd.rows.filter((row) => row.change_kt > 0).slice(0, 10);
+      const negatives = ytd.rows.filter((row) => row.change_kt < 0).sort((left, right) => left.change_kt - right.change_kt).slice(0, 10);
+      const latest = view.seasonal_totals.find((row) => row.period === view.period);
+      const quarterlyRows = [...view.mine_yoy_contribution];
+      const strongest = quarterlyRows[0];
+      const weakest = [...quarterlyRows].sort((left, right) => left.change_kt - right.change_kt)[0];
+      const sampleLabel = reportedScope
+        ? `${view.period}已披露 · ${view.company_count}家企业`
+        : `${view.period}共同完整季度 · ${view.company_count}家企业`;
+
+      $("#mine-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计矿山贡献与季度趋势`;
+      $("#mine-summary").innerHTML = [
+        kpi("当年累计产量", wan(currentTotal), `${ytd.year}Q1-Q${ytd.quarter}去重矿山合计`),
+        kpi("上年同期产量", wan(priorTotal), `${ytd.year - 1}Q1-Q${ytd.quarter}同口径`),
+        kpi("累计同比增减", signedWan(delta), priorTotal ? signedPct(delta / priorTotal * 100) : "—", classForValue(delta)),
+        kpi("纳入同比矿山/矿组", `${comparisonMineCount}个`, `当年${currentMineCount} / 上年${priorMineCount}`),
+      ].join("");
+      renderSeasonalChart($("#mine-seasonal-chart"), view.seasonal_totals, view.period);
+      renderYoyChart($("#mine-yoy-chart"), view.seasonal_totals);
+      $("#mine-seasonal-scope-note").textContent = `${sampleLabel} · ${latest?.mine_count || 0}个矿山/矿组`;
+      $("#mine-yoy-scope-note").textContent = `${sampleLabel} · 单季同比`;
+      $("#mine-yoy-insights").innerHTML = [
+        `<span><b>最新季度</b>${esc(signedWan(latest?.yoy_kt))}</span>`,
+        `<span><b>最大增量矿山</b>${esc(strongest?.mine || "—")} ${esc(signedWan(strongest?.change_kt))}</span>`,
+        `<span><b>最大减量矿山</b>${esc(weakest?.mine || "—")} ${esc(signedWan(weakest?.change_kt))}</span>`,
+      ].join("");
+      $("#positive-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计同比增量前十大矿山`;
+      $("#negative-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计同比减量后十大矿山`;
+      $("#positive-scope-note").textContent = reportedScope ? `${view.company_count}家已披露企业` : `${view.company_count}家企业样本`;
+      $("#negative-scope-note").textContent = $("#positive-scope-note").textContent;
+      renderMineList($("#positive-mines"), positives, false);
+      renderMineList($("#negative-mines"), negatives, true);
+      $("#mine-method-note").textContent = `本页全部数据按${sampleLabel}统一计算；累计贡献榜、季度季节性和季度同比使用同一企业样本。矿山100%含铜量按mine_id去重，并沿用固定优先来源、收购前回填和出售后剔除规则。`;
       button.classList.toggle("is-active", reportedScope);
       button.setAttribute("aria-pressed", String(reportedScope));
       button.title = reportedScope ? "切换回共同完整季度口径" : "切换至最新一期已披露企业样本";
     };
+    if (!sample?.seasonal_totals?.length || !sample?.mine_seasonal?.length) {
+      button.hidden = true;
+      reportedScope = false;
+    }
     button.addEventListener("click", () => {
       reportedScope = !reportedScope;
       render();
     });
     window.matchMedia("(max-width: 680px)").addEventListener("change", render);
     render();
-  }
-
-  function setupMines() {
-    const ytd = computeMineYtd();
-    const latest = D.seasonal_totals.find((row) => row.period === D.meta.as_of);
-    const positives = ytd.rows.filter((row) => row.change_kt > 0).slice(0, 10);
-    const negatives = ytd.rows.filter((row) => row.change_kt < 0).sort((left, right) => left.change_kt - right.change_kt).slice(0, 10);
-    const currentTotal = Number(D.seasonal_totals
-      .filter((row) => Number(row.year) === ytd.year && Number(String(row.quarter).replace("Q", "")) <= ytd.quarter)
-      .reduce((sum, row) => sum + Number(row.kt), 0).toFixed(1));
-    const priorTotal = Number(D.seasonal_totals
-      .filter((row) => Number(row.year) === ytd.year - 1 && Number(String(row.quarter).replace("Q", "")) <= ytd.quarter)
-      .reduce((sum, row) => sum + Number(row.kt), 0).toFixed(1));
-    const delta = currentTotal - priorTotal;
-    const currentMineCount = ytd.rows.filter((row) => row.current_present).length;
-    const priorMineCount = ytd.rows.filter((row) => row.prior_present).length;
-    const quarterlyRows = [...D.mine_yoy_contribution];
-    const strongest = quarterlyRows[0];
-    const weakest = [...quarterlyRows].sort((left, right) => left.change_kt - right.change_kt)[0];
-    $("#mine-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计矿山贡献与季度趋势`;
-    $("#mine-summary").innerHTML = [
-      kpi("当年累计产量", wan(currentTotal), `${ytd.year}Q1-Q${ytd.quarter}去重矿山合计`),
-      kpi("上年同期产量", wan(priorTotal), `${ytd.year - 1}Q1-Q${ytd.quarter}同口径`),
-      kpi("累计同比增减", signedWan(delta), priorTotal ? signedPct(delta / priorTotal * 100) : "—", classForValue(delta)),
-      kpi("纳入同比矿山/矿组", `${ytd.rows.length}个`, `当年${currentMineCount} / 上年${priorMineCount}`),
-    ].join("");
-    setupMineSeasonalScope();
-    renderYoyChart($("#mine-yoy-chart"), D.seasonal_totals);
-    $("#mine-yoy-insights").innerHTML = [
-      `<span><b>最新季度</b>${esc(signedWan(latest?.yoy_kt))}</span>`,
-      `<span><b>最大增量矿山</b>${esc(strongest?.mine || "—")} ${esc(signedWan(strongest?.change_kt))}</span>`,
-      `<span><b>最大减量矿山</b>${esc(weakest?.mine || "—")} ${esc(signedWan(weakest?.change_kt))}</span>`,
-    ].join("");
-    $("#positive-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计同比增量前十大矿山`;
-    $("#negative-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计同比减量后十大矿山`;
-    renderMineList($("#positive-mines"), positives, false);
-    renderMineList($("#negative-mines"), negatives, true);
-    window.matchMedia("(max-width: 680px)").addEventListener("change", () => {
-      renderYoyChart($("#mine-yoy-chart"), D.seasonal_totals);
-    });
   }
 
   $("#header-as-of").textContent = D.meta.as_of;

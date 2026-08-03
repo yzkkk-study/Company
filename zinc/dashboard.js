@@ -75,7 +75,7 @@
     const metric = String(guidance?.metric || "");
     if (!guidance?.available && guidance?.status_label) return guidance.status_label;
     if (/派生|估算/.test(String(guidance?.basis_tag || ""))) return guidance.basis_tag;
-    if (/zinc and lead combined/i.test(metric)) return "锌铅合计口径";
+    if (/zinc and lead combined/i.test(metric)) return "锌铅合计（按锌计）";
     if (/payable/i.test(metric)) return "应付锌口径";
     if (/attributable/i.test(metric)) return "归属锌口径";
     if (/refined|finished metal/i.test(metric)) return "精炼锌口径";
@@ -118,7 +118,7 @@
   }
 
   function dashboardGuidance(profile) {
-    const source = D.guidance_overview.find((row) => row.company_id === profile.company_id) || profile.current_guidance || { available: false };
+    const source = profile.current_guidance || D.guidance_overview.find((row) => row.company_id === profile.company_id) || { available: false };
     return { ...source };
   }
 
@@ -130,18 +130,17 @@
 
   function renderGuidanceSummary() {
     const available = guidanceRows.filter(({ guidance }) => guidance.available).length;
-    const comparableRows = guidanceRows
-      .map(({ guidance }) => guidance)
-      .filter((guidance) => guidance.available && guidance.comparable && guidance.midpoint_kt != null && guidance.prior_actual_kt != null);
-    const guidanceMidpoint = comparableRows.reduce((sum, guidance) => sum + Number(guidance.midpoint_kt), 0);
-    const priorActual = comparableRows.reduce((sum, guidance) => sum + Number(guidance.prior_actual_kt), 0);
-    const delta = guidanceMidpoint - priorActual;
-    const deltaPct = priorActual ? delta / priorActual * 100 : null;
+    const summary = D.comparable_guidance_summary || {};
+    const guidanceMidpoint = summary.guidance_midpoint_kt;
+    const priorActual = summary.prior_actual_kt;
+    const delta = summary.delta_kt;
+    const deltaPct = summary.delta_pct;
     const deltaClass = classForValue(delta);
     $("#guidance-summary").innerHTML = [
       kpi("指引面板企业", `${guidanceRows.length}家`, `${available}家已有当前有效数值或派生指引`),
-      kpi("可比指引中点合计", wan(guidanceMidpoint), `上年对应实际 ${wan(priorActual)}`),
+      kpi("可比指引中点合计", wan(guidanceMidpoint), `${summary.target_year - 1}自然年实际 ${wan(priorActual)} · ${summary.company_count}家`),
       kpi("指引隐含同比增减", signedWan(delta), signedPct(deltaPct), deltaClass),
+      kpi("整体指引完成度", pct(summary.completion_mid), `截至${summary.completion_as_of || summary.calculation_as_of} · ${summary.completion_company_count}家已披露 · 累计实际 ${wan(summary.actual_ytd_kt)}`),
     ].join("");
   }
 
@@ -525,11 +524,11 @@
     renderCompany(profileById.get(currentCompanyId));
   }
 
-  function computeMineYtd() {
-    const year = Number(String(D.meta.as_of).slice(0, 4));
-    const quarter = Number(String(D.meta.as_of).replace(/^.*Q/, ""));
+  function computeMineYtd(mineRows, period) {
+    const year = Number(String(period).slice(0, 4));
+    const quarter = Number(String(period).replace(/^.*Q/, ""));
     const rowsByMine = new Map();
-    D.mine_seasonal.forEach((row) => {
+    mineRows.forEach((row) => {
       const rowQuarter = Number(String(row.quarter).replace("Q", ""));
       if (rowQuarter > quarter || ![year, year - 1].includes(Number(row.year))) return;
       if (!rowsByMine.has(row.mine_id)) {
@@ -576,31 +575,31 @@
 
   let useReportedMineScope = false;
 
-  function renderMineSeasonalScope() {
+  function renderMineScope() {
     const button = $("#mine-scope-toggle");
     const meta = $("#mine-scope-meta");
     const reported = D.reported_quarter_scope;
-    const reportedAvailable = Boolean(reported?.seasonal_totals?.length);
+    const reportedAvailable = Boolean(
+      reported?.seasonal_totals?.length
+      && reported?.mine_seasonal?.length
+      && Array.isArray(reported?.mine_yoy_contribution)
+    );
     if (!reportedAvailable) useReportedMineScope = false;
-    const rows = useReportedMineScope ? reported.seasonal_totals : D.seasonal_totals;
-    const latestPeriod = useReportedMineScope ? reported.period : D.meta.as_of;
-    renderSeasonalChart($("#mine-seasonal-chart"), rows, latestPeriod);
-    button.disabled = !reportedAvailable;
-    button.setAttribute("aria-pressed", String(useReportedMineScope));
-    if (useReportedMineScope) {
-      meta.textContent = `${reported.period} · ${reported.company_count}家已披露 · ${reported.latest_mine_count}个矿山/矿组 · 单位：万吨`;
-      button.title = `当前采用${reported.period}已出季报企业子样本`;
-    } else {
-      meta.textContent = `共同完整期 ${D.meta.as_of} · 单位：万吨`;
-      button.title = reportedAvailable
-        ? `切换至${reported.period}已出季报企业子样本`
-        : "尚未形成已出季报企业子样本";
-    }
-  }
-
-  function setupMines() {
-    const ytd = computeMineYtd();
-    const latest = D.seasonal_totals.find((row) => row.period === D.meta.as_of);
+    const scope = useReportedMineScope
+      ? {
+        period: reported.period,
+        seasonalTotals: reported.seasonal_totals,
+        mineSeasonal: reported.mine_seasonal,
+        mineYoyContribution: reported.mine_yoy_contribution,
+      }
+      : {
+        period: D.meta.as_of,
+        seasonalTotals: D.seasonal_totals,
+        mineSeasonal: D.mine_seasonal,
+        mineYoyContribution: D.mine_yoy_contribution,
+      };
+    const ytd = computeMineYtd(scope.mineSeasonal, scope.period);
+    const latest = scope.seasonalTotals.find((row) => row.period === scope.period);
     const positives = ytd.rows.slice(0, 10);
     const negatives = [...ytd.rows].sort((left, right) => left.change_kt - right.change_kt).slice(0, 10);
     const currentTotal = ytd.rows.reduce((sum, row) => sum + row.current_kt, 0);
@@ -608,18 +607,18 @@
     const delta = currentTotal - priorTotal;
     const currentMineCount = ytd.rows.filter((row) => row.current_present).length;
     const priorMineCount = ytd.rows.filter((row) => row.prior_present).length;
-    const quarterlyRows = [...D.mine_yoy_contribution];
-    const strongest = quarterlyRows[0];
-    const weakest = [...quarterlyRows].sort((left, right) => left.change_kt - right.change_kt)[0];
-    $("#mine-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计矿山贡献与季度趋势`;
+    const strongest = scope.mineYoyContribution[0];
+    const weakest = [...scope.mineYoyContribution].sort((left, right) => left.change_kt - right.change_kt)[0];
+
+    $("#mine-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计矿山贡献与季度趋势${useReportedMineScope ? " · 已出季报口径" : ""}`;
     $("#mine-summary").innerHTML = [
       kpi("当年累计产量", wan(currentTotal), `${ytd.year}Q1-Q${ytd.quarter}去重矿山合计`),
       kpi("上年同期产量", wan(priorTotal), `${ytd.year - 1}Q1-Q${ytd.quarter}同口径`),
       kpi("累计同比增减", signedWan(delta), priorTotal ? signedPct(delta / priorTotal * 100) : "—", classForValue(delta)),
       kpi("纳入同比矿山/矿组", `${ytd.rows.length}个`, `当年${currentMineCount} / 上年${priorMineCount}`),
     ].join("");
-    renderMineSeasonalScope();
-    renderYoyChart($("#mine-yoy-chart"), D.seasonal_totals);
+    renderSeasonalChart($("#mine-seasonal-chart"), scope.seasonalTotals, scope.period);
+    renderYoyChart($("#mine-yoy-chart"), scope.seasonalTotals);
     $("#mine-yoy-insights").innerHTML = [
       `<span><b>最新季度</b>${esc(signedWan(latest?.yoy_kt))}</span>`,
       `<span><b>最大增量矿山</b>${esc(strongest?.mine || "—")} ${esc(signedWan(strongest?.change_kt))}</span>`,
@@ -629,13 +628,28 @@
     $("#negative-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计同比减量后十大矿山`;
     renderMineList($("#positive-mines"), positives, false);
     renderMineList($("#negative-mines"), negatives, true);
+
+    button.disabled = !reportedAvailable;
+    button.setAttribute("aria-pressed", String(useReportedMineScope));
+    if (useReportedMineScope) {
+      meta.textContent = `${reported.period} · ${reported.company_count}家已披露 · ${reported.mine_source_company_count}家有矿山明细 · ${reported.latest_mine_count}个矿山/矿组`;
+      button.title = `当前整页采用${reported.period}已出季报矿山明细子样本`;
+    } else {
+      meta.textContent = `共同完整期 ${D.meta.as_of} · 单位：万吨`;
+      button.title = reportedAvailable
+        ? `整页切换至${reported.period}已出季报矿山明细子样本`
+        : "尚未形成已出季报企业子样本";
+    }
+  }
+
+  function setupMines() {
+    renderMineScope();
     $("#mine-scope-toggle").addEventListener("click", () => {
       useReportedMineScope = !useReportedMineScope;
-      renderMineSeasonalScope();
+      renderMineScope();
     });
     window.matchMedia("(max-width: 680px)").addEventListener("change", () => {
-      renderMineSeasonalScope();
-      renderYoyChart($("#mine-yoy-chart"), D.seasonal_totals);
+      renderMineScope();
     });
   }
 
