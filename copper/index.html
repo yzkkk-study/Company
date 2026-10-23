@@ -40,6 +40,7 @@
       <button type="button" class="tab-button is-active" id="tab-guidance" role="tab" aria-selected="true" aria-controls="panel-guidance" data-tab="guidance">产量指引与完成度</button>
       <button type="button" class="tab-button" id="tab-company" role="tab" aria-selected="false" aria-controls="panel-company" data-tab="company">企业</button>
       <button type="button" class="tab-button" id="tab-mine" role="tab" aria-selected="false" aria-controls="panel-mine" data-tab="mine">矿山</button>
+      <button type="button" class="tab-button" id="tab-capex" role="tab" aria-selected="false" aria-controls="panel-capex" data-tab="capex">资本开支</button>
     </nav>
 
     <main>
@@ -220,6 +221,46 @@
           </section>
         </div>
         <p class="method-note mine-note" id="mine-method-note">本页全部数据按共同完整季度统一计算。矿山100%含铜量按mine_id去重，并沿用固定优先来源、收购前回填和出售后剔除规则。</p>
+      </section>
+
+      <section class="tab-panel" id="panel-capex" role="tabpanel" aria-labelledby="tab-capex" hidden>
+        <div class="section-heading capex-heading">
+          <div>
+            <p class="section-kicker">CAPITAL DISCIPLINE</p>
+            <h2>企业总资本开支累计同比与指引</h2>
+          </div>
+          <p>原币种 · 公司总额口径</p>
+        </div>
+
+        <div class="kpi-grid" id="capex-summary"></div>
+
+        <div class="data-panel capex-panel">
+          <div class="table-toolbar">
+            <label class="search-field">
+              <span>企业筛选</span>
+              <input type="search" id="capex-search" placeholder="输入企业名称" autocomplete="off">
+            </label>
+            <span class="result-count" id="capex-count"></span>
+          </div>
+          <div class="table-scroll">
+            <table class="capex-table">
+              <thead>
+                <tr>
+                  <th><button type="button" class="sort-button capex-sort-button" data-sort="company">企业 <span aria-hidden="true">↕</span></button></th>
+                  <th><button type="button" class="sort-button capex-sort-button" data-sort="current">累计总资本开支 <span aria-hidden="true">↕</span></button></th>
+                  <th><button type="button" class="sort-button capex-sort-button" data-sort="prior">上年同期 <span aria-hidden="true">↕</span></button></th>
+                  <th><button type="button" class="sort-button capex-sort-button is-sorted" data-sort="delta">累计同比增减 <span aria-hidden="true">↓</span></button></th>
+                  <th><button type="button" class="sort-button capex-sort-button" data-sort="guidance">当前指引 <span aria-hidden="true">↕</span></button></th>
+                  <th><button type="button" class="sort-button capex-sort-button" data-sort="completion">指引完成度 <span aria-hidden="true">↕</span></button></th>
+                  <th>未来指引</th>
+                  <th><button type="button" class="sort-button capex-sort-button" data-sort="period">披露期与口径 <span aria-hidden="true">↕</span></button></th>
+                </tr>
+              </thead>
+              <tbody id="capex-body"></tbody>
+            </table>
+          </div>
+          <p class="method-note">仅使用公司总资本开支或公司披露的总投资/现金购建长期资产口径；不以单矿、铜板块、项目或维持性资本开支替代集团总额。同比按各公司同币种同期间计算，不跨币种汇总；实际与指引范围不一致时不计算完成度。</p>
+        </div>
       </section>
     </main>
   </div>

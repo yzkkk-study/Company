@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const D = window.DECK_DATA;
+  const D = window.DASHBOARD_DATA;
   if (!D) {
     document.body.innerHTML = '<div class="empty-state">看板数据未加载。</div>';
     return;
@@ -304,16 +304,34 @@
       const sorted = items.sort((a, b) => a.quarter.localeCompare(b.quarter));
       const points = sorted.map((row) => [x(row.quarter), y(Number(row.kt) / 10), row]);
       const latest = Number(year) === latestYear;
-      root.append(svg("path", {
-        d: smoothPath(points.map(([px, py]) => [px, py])),
-        fill: "none",
-        stroke: YEAR_COLORS[year] || "#64748B",
-        "stroke-width": latest ? 4 : 2,
-        "stroke-linecap": "round",
-        "stroke-linejoin": "round",
-      }));
+      const actualPoints = points.filter(([, , row]) => !row.is_forecast);
+      const forecastPoints = points.filter(([, , row]) => row.is_forecast);
+      if (actualPoints.length) {
+        root.append(svg("path", {
+          d: smoothPath(actualPoints.map(([px, py]) => [px, py])),
+          fill: "none",
+          stroke: YEAR_COLORS[year] || "#64748B",
+          "stroke-width": latest ? 4 : 2,
+          "stroke-linecap": "round",
+          "stroke-linejoin": "round",
+        }));
+      }
+      if (forecastPoints.length) {
+        const forecastPathPoints = actualPoints.length
+          ? [actualPoints[actualPoints.length - 1], ...forecastPoints]
+          : forecastPoints;
+        root.append(svg("path", {
+          d: smoothPath(forecastPathPoints.map(([px, py]) => [px, py])),
+          fill: "none",
+          stroke: YEAR_COLORS[year] || "#64748B",
+          "stroke-width": latest ? 4 : 2,
+          "stroke-dasharray": "10 7",
+          "stroke-linecap": "round",
+          "stroke-linejoin": "round",
+        }));
+      }
       if (latest) {
-        points.forEach(([px, py, row]) => {
+        actualPoints.forEach(([px, py, row]) => {
           const point = svg("circle", {
             cx: px,
             cy: py,
@@ -327,6 +345,28 @@
           point.append(title);
           root.append(point);
         });
+        forecastPoints.forEach(([px, py, row]) => {
+          const point = svg("circle", {
+            cx: px,
+            cy: py,
+            r: 4.5,
+            fill: "#FFFFFF",
+            stroke: YEAR_COLORS[year] || "#64748B",
+            "stroke-width": 2.5,
+          });
+          const title = svg("title");
+          title.textContent = `${row.period}E：${wan(row.kt)}（预估）`;
+          point.append(title);
+          root.append(point);
+          const label = svg("text", {
+            x: px,
+            y: py - 11,
+            "text-anchor": "middle",
+            class: "svg-forecast-label",
+          });
+          label.textContent = `${number(Number(row.kt) / 10, 1)}E`;
+          root.append(label);
+        });
       }
     });
     const unit = svg("text", { x: margin.left, y: 14, class: "svg-unit" });
@@ -337,7 +377,9 @@
     container.append(root);
     const legend = document.createElement("div");
     legend.className = "svg-legend";
-    legend.innerHTML = [...groups.keys()].sort().map((year) => `<span><i class="${Number(year) === latestYear ? "latest" : ""}" style="background:${YEAR_COLORS[year] || "#64748B"}"></i>${year}${Number(year) === latestYear ? "（最新）" : ""}</span>`).join("");
+    const hasForecast = rows.some((row) => row.is_forecast);
+    legend.innerHTML = [...groups.keys()].sort().map((year) => `<span><i class="${Number(year) === latestYear ? "latest" : ""}" style="background:${YEAR_COLORS[year] || "#64748B"}"></i>${year}${Number(year) === latestYear ? "（实绩）" : ""}</span>`).join("")
+      + (hasForecast ? `<span><i class="forecast" style="color:${YEAR_COLORS[latestYear] || "#64748B"}"></i>${latestYear}E（预估）</span>` : "");
     container.append(legend);
   }
 
@@ -364,7 +406,7 @@
     const x = (index) => margin.left + index * slotWidth + (slotWidth - barWidth) / 2;
     const y = (value) => margin.top + (max - value) / (max * 2) * plotHeight;
     const zero = y(0);
-    const root = svg("svg", { viewBox: `0 0 ${width} ${height}`, role: "img", "aria-label": "矿山季度同比增减量" });
+    const root = svg("svg", { viewBox: `0 0 ${width} ${height}`, role: "img", "aria-label": "公司整体季度同比增减量" });
 
     [-max, -max / 2, 0, max / 2, max].forEach((value) => {
       const yy = y(value);
@@ -573,6 +615,15 @@
     }).join("") || '<div class="empty-state">没有可比矿山。</div>';
   }
 
+  function computeCompanyAggregateYtd(rows, period) {
+    const year = Number(period.slice(0, 4));
+    const quarter = Number(period.slice(-1));
+    const sum = (targetYear) => rows
+      .filter((row) => Number(row.year) === targetYear && Number(String(row.quarter).replace("Q", "")) <= quarter)
+      .reduce((total, row) => total + (Number(row.kt) || 0), 0);
+    return { year, quarter, currentKt: sum(year), priorKt: sum(year - 1) };
+  }
+
   let useReportedMineScope = false;
 
   function renderMineScope() {
@@ -581,63 +632,66 @@
     const reported = D.reported_quarter_scope;
     const reportedAvailable = Boolean(
       reported?.seasonal_totals?.length
-      && reported?.mine_seasonal?.length
-      && Array.isArray(reported?.mine_yoy_contribution)
+      && Number(reported?.company_count) > 0
     );
     if (!reportedAvailable) useReportedMineScope = false;
     const scope = useReportedMineScope
       ? {
         period: reported.period,
         seasonalTotals: reported.seasonal_totals,
+        forecast: reported.forecast,
+        companyCount: reported.company_count,
         mineSeasonal: reported.mine_seasonal,
         mineYoyContribution: reported.mine_yoy_contribution,
       }
       : {
         period: D.meta.as_of,
         seasonalTotals: D.seasonal_totals,
+        forecast: null,
+        companyCount: D.meta.company_count,
         mineSeasonal: D.mine_seasonal,
         mineYoyContribution: D.mine_yoy_contribution,
       };
-    const ytd = computeMineYtd(scope.mineSeasonal, scope.period);
+    const mineYtd = computeMineYtd(scope.mineSeasonal, scope.period);
+    const aggregateYtd = computeCompanyAggregateYtd(scope.seasonalTotals, scope.period);
     const latest = scope.seasonalTotals.find((row) => row.period === scope.period);
-    const positives = ytd.rows.slice(0, 10);
-    const negatives = [...ytd.rows].sort((left, right) => left.change_kt - right.change_kt).slice(0, 10);
-    const currentTotal = ytd.rows.reduce((sum, row) => sum + row.current_kt, 0);
-    const priorTotal = ytd.rows.reduce((sum, row) => sum + row.prior_kt, 0);
+    const positives = mineYtd.rows.slice(0, 10);
+    const negatives = [...mineYtd.rows].sort((left, right) => left.change_kt - right.change_kt).slice(0, 10);
+    const currentTotal = aggregateYtd.currentKt;
+    const priorTotal = aggregateYtd.priorKt;
     const delta = currentTotal - priorTotal;
-    const currentMineCount = ytd.rows.filter((row) => row.current_present).length;
-    const priorMineCount = ytd.rows.filter((row) => row.prior_present).length;
     const strongest = scope.mineYoyContribution[0];
     const weakest = [...scope.mineYoyContribution].sort((left, right) => left.change_kt - right.change_kt)[0];
+    const forecastRows = scope.forecast?.seasonal_totals || [];
 
-    $("#mine-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计矿山贡献与季度趋势${useReportedMineScope ? " · 已出季报口径" : ""}`;
+    $("#mine-title").textContent = `${aggregateYtd.year}年截至Q${aggregateYtd.quarter}公司整体产量与矿山贡献${useReportedMineScope ? " · 已出季报口径" : ""}`;
     $("#mine-summary").innerHTML = [
-      kpi("当年累计产量", wan(currentTotal), `${ytd.year}Q1-Q${ytd.quarter}去重矿山合计`),
-      kpi("上年同期产量", wan(priorTotal), `${ytd.year - 1}Q1-Q${ytd.quarter}同口径`),
+      kpi("当年累计产量", wan(currentTotal), `${aggregateYtd.year}Q1-Q${aggregateYtd.quarter}公司主产量合计`),
+      kpi("上年同期产量", wan(priorTotal), `${aggregateYtd.year - 1}Q1-Q${aggregateYtd.quarter}同公司样本`),
       kpi("累计同比增减", signedWan(delta), priorTotal ? signedPct(delta / priorTotal * 100) : "—", classForValue(delta)),
-      kpi("纳入同比矿山/矿组", `${ytd.rows.length}个`, `当年${currentMineCount} / 上年${priorMineCount}`),
+      kpi("纳入公司", `${scope.companyCount}家`, "按company_id × quarter主槽位去重"),
     ].join("");
-    renderSeasonalChart($("#mine-seasonal-chart"), scope.seasonalTotals, scope.period);
+    renderSeasonalChart($("#mine-seasonal-chart"), [...scope.seasonalTotals, ...forecastRows], scope.period);
     renderYoyChart($("#mine-yoy-chart"), scope.seasonalTotals);
     $("#mine-yoy-insights").innerHTML = [
       `<span><b>最新季度</b>${esc(signedWan(latest?.yoy_kt))}</span>`,
       `<span><b>最大增量矿山</b>${esc(strongest?.mine || "—")} ${esc(signedWan(strongest?.change_kt))}</span>`,
       `<span><b>最大减量矿山</b>${esc(weakest?.mine || "—")} ${esc(signedWan(weakest?.change_kt))}</span>`,
     ].join("");
-    $("#positive-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计同比增量前十大矿山`;
-    $("#negative-title").textContent = `${ytd.year}年截至Q${ytd.quarter}累计同比减量后十大矿山`;
+    $("#positive-title").textContent = `${mineYtd.year}年截至Q${mineYtd.quarter}明细矿山累计同比增量前十`;
+    $("#negative-title").textContent = `${mineYtd.year}年截至Q${mineYtd.quarter}明细矿山累计同比减量后十`;
     renderMineList($("#positive-mines"), positives, false);
     renderMineList($("#negative-mines"), negatives, true);
 
     button.disabled = !reportedAvailable;
     button.setAttribute("aria-pressed", String(useReportedMineScope));
     if (useReportedMineScope) {
-      meta.textContent = `${reported.period} · ${reported.company_count}家已披露 · ${reported.mine_source_company_count}家有矿山明细 · ${reported.latest_mine_count}个矿山/矿组`;
-      button.title = `当前整页采用${reported.period}已出季报矿山明细子样本`;
+      meta.textContent = `${reported.period} · ${reported.company_count}家公司主产量 · 主槽位去重 · Q3/Q4预估`;
+      button.title = `当前总量采用${reported.period}已出季报公司主产量样本`;
     } else {
-      meta.textContent = `共同完整期 ${D.meta.as_of} · 单位：万吨`;
+      meta.textContent = `共同完整期 ${D.meta.as_of} · ${D.meta.company_count}家公司主产量 · 单位：万吨`;
       button.title = reportedAvailable
-        ? `整页切换至${reported.period}已出季报矿山明细子样本`
+        ? `总量切换至${reported.period}已出季报公司主产量样本`
         : "尚未形成已出季报企业子样本";
     }
   }

@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const D = window.DECK_DATA;
+  const D = window.DASHBOARD_DATA;
   if (!D) {
     document.body.innerHTML = '<div class="empty-state">看板数据未加载。</div>';
     return;
@@ -16,6 +16,7 @@
     2024: "#808080",
     2025: "#000000",
     2026: "#E60012",
+    2027: "#F28E2B",
   };
   const NS = "http://www.w3.org/2000/svg";
   const profiles = [...D.company_profiles];
@@ -193,13 +194,13 @@
   function setupGuidance() {
     renderGuidanceSummary();
     $("#guidance-search").addEventListener("input", renderGuidanceTable);
-    $$(".sort-button").forEach((button) => {
+    $$("#panel-guidance .sort-button").forEach((button) => {
       button.addEventListener("click", () => {
         const key = button.dataset.sort;
         guidanceSort = guidanceSort.key === key
           ? { key, direction: guidanceSort.direction * -1 }
           : { key, direction: key === "period" ? -1 : 1 };
-        $$(".sort-button").forEach((item) => {
+        $$("#panel-guidance .sort-button").forEach((item) => {
           const active = item.dataset.sort === key;
           item.classList.toggle("is-sorted", active);
           item.querySelector("span").textContent = active ? (guidanceSort.direction > 0 ? "↑" : "↓") : "↕";
@@ -208,6 +209,125 @@
       });
     });
     renderGuidanceTable();
+  }
+
+  const capexRows = [...(D.capex_dashboard || [])];
+  let capexSort = { key: "delta", direction: -1 };
+
+  function capexAmount(value, currency, signedValue = false) {
+    if (value == null || !currency) return "—";
+    const formatted = signedValue ? signed(value, 1) : number(value, 1);
+    return `${currency} ${formatted}m`;
+  }
+
+  function capexGuidanceRange(guidance) {
+    if (!guidance) return "未披露";
+    return Number(guidance.low_m) === Number(guidance.high_m)
+      ? capexAmount(guidance.low_m, guidance.currency)
+      : `${guidance.currency} ${number(guidance.low_m, 1)}-${number(guidance.high_m, 1)}m`;
+  }
+
+  function capexSortValue(row, key) {
+    return {
+      company: row.company,
+      current: row.current_m,
+      prior: row.prior_m,
+      delta: row.delta_pct,
+      guidance: row.current_guidance?.midpoint_m,
+      completion: row.completion,
+      period: row.period_label || row.current_guidance?.disclosed_period,
+    }[key];
+  }
+
+  function compareCapexRows(left, right) {
+    const a = capexSortValue(left, capexSort.key);
+    const b = capexSortValue(right, capexSort.key);
+    if (a == null && b == null) return left.company.localeCompare(right.company, "zh-CN");
+    if (a == null) return 1;
+    if (b == null) return -1;
+    const result = typeof a === "string" ? a.localeCompare(b, "zh-CN") : Number(a) - Number(b);
+    return result * capexSort.direction;
+  }
+
+  function capexSourceLink(url, label = "官方报告") {
+    return url
+      ? `<a class="source-link" href="${esc(url)}" target="_blank" rel="noreferrer">${esc(label)}</a>`
+      : "";
+  }
+
+  function renderCapexSummary() {
+    const summary = D.capex_dashboard_summary || {};
+    const unchanged = Number(summary.actual_company_count || 0)
+      - Number(summary.yoy_increase_count || 0)
+      - Number(summary.yoy_decrease_count || 0);
+    $("#capex-summary").innerHTML = [
+      kpi("连续跟踪企业", `${summary.company_count || capexRows.length}家`, `${summary.actual_company_count || 0}家已披露累计总额`),
+      kpi("累计同比方向", `${summary.yoy_increase_count || 0}增 / ${summary.yoy_decrease_count || 0}减`, `${unchanged}家持平；其余未披露`),
+      kpi("当前总额指引", `${summary.guidance_company_count || 0}家`, `${summary.completion_company_count || 0}家可计算完成度`),
+      kpi("未来总额指引", `${summary.future_company_count || 0}家`, "保留原币种、财年及方向性表述"),
+    ].join("");
+  }
+
+  function renderCapexTable() {
+    const query = $("#capex-search").value.trim().toLocaleLowerCase("zh-CN");
+    const filtered = capexRows
+      .filter((row) => !query || `${row.company} ${row.metric || ""}`.toLocaleLowerCase("zh-CN").includes(query))
+      .sort(compareCapexRows);
+    $("#capex-count").textContent = `显示 ${filtered.length} / ${capexRows.length} 家`;
+    $("#capex-body").innerHTML = filtered.map((row) => {
+      const guidance = row.current_guidance;
+      const guidanceNote = guidance
+        ? [guidance.target, guidance.note, guidance.metric].filter(Boolean).join(" · ")
+        : "未披露公司总资本开支指引";
+      const completionWidth = row.completion == null
+        ? 0
+        : Math.max(0, Math.min(Number(row.completion) * 100, 100));
+      const future = row.future_guidance?.length
+        ? row.future_guidance.map((item) => {
+          const value = item.low_m == null
+            ? item.metric
+            : `${item.target} ${capexGuidanceRange(item)}`;
+          const note = item.low_m == null ? item.note : item.metric;
+          return `<div class="future-capex-item"><strong>${esc(value)}</strong><span>${esc(note || "")}</span>${capexSourceLink(item.source_url)}</div>`;
+        }).join("")
+        : '<span class="cell-sub">未披露未来公司总额指引</span>';
+      const period = row.period_label || guidance?.disclosed_period || "—";
+      const sourceUrl = row.actual_source_url || guidance?.source_url;
+      return `<tr>
+        <td><strong class="cell-main">${esc(row.company)}</strong><span class="cell-sub">${esc(row.actual_available ? row.metric : "未披露公司总额")}</span></td>
+        <td><strong class="cell-main">${esc(capexAmount(row.current_m, row.currency))}</strong><span class="cell-sub">${esc(row.period_label || "暂无累计实际")}</span></td>
+        <td><strong class="cell-main">${esc(capexAmount(row.prior_m, row.currency))}</strong><span class="cell-sub">${esc(row.comparison_period_label || "暂无同口径基数")}</span></td>
+        <td><strong class="cell-main ${classForValue(row.delta_m)}">${esc(capexAmount(row.delta_m, row.currency, true))}</strong><span class="cell-sub ${classForValue(row.delta_pct)}">${esc(row.delta_pct == null ? "—" : signedPct(row.delta_pct))}</span></td>
+        <td><strong class="cell-main">${esc(capexGuidanceRange(guidance))}</strong><span class="cell-sub">${esc(guidanceNote)}</span>${capexSourceLink(guidance?.source_url, "指引来源")}</td>
+        <td>
+          <div class="completion-value"><span>${esc(pct(row.completion))}</span></div>
+          <div class="progress-track"><i style="width:${completionWidth}%"></i></div>
+          <span class="cell-sub">${esc(row.completion_note)}</span>
+        </td>
+        <td>${future}</td>
+        <td><span class="period-label">${esc(period)}</span><span class="cell-sub">${esc(row.actual_note || guidanceNote)}</span>${capexSourceLink(sourceUrl)}</td>
+      </tr>`;
+    }).join("") || '<tr><td colspan="8"><div class="empty-state">没有符合筛选条件的企业。</div></td></tr>';
+  }
+
+  function setupCapex() {
+    renderCapexSummary();
+    $("#capex-search").addEventListener("input", renderCapexTable);
+    $$("#panel-capex .capex-sort-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const key = button.dataset.sort;
+        capexSort = capexSort.key === key
+          ? { key, direction: capexSort.direction * -1 }
+          : { key, direction: key === "period" || key === "delta" ? -1 : 1 };
+        $$("#panel-capex .capex-sort-button").forEach((item) => {
+          const active = item.dataset.sort === key;
+          item.classList.toggle("is-sorted", active);
+          item.querySelector("span").textContent = active ? (capexSort.direction > 0 ? "↑" : "↓") : "↕";
+        });
+        renderCapexTable();
+      });
+    });
+    renderCapexTable();
   }
 
   function smoothPath(points) {
@@ -282,11 +402,15 @@
     container.append(root);
   }
 
-  function renderSeasonalChart(container, rows, latestPeriod) {
+  function renderSeasonalChart(container, rows, latestPeriod, forecast = null) {
     if (!rows.length) {
       container.innerHTML = '<div class="empty-state">未形成季度产量序列。</div>';
       return;
     }
+    const actualPeriods = new Set(rows.map((row) => row.period));
+    const forecastRows = (forecast?.seasonal_totals || [])
+      .filter((row) => row.is_forecast && !actualPeriods.has(row.period));
+    const chartRows = [...rows, ...forecastRows];
     const compact = window.matchMedia("(max-width: 680px)").matches;
     const width = compact ? 520 : 1040;
     const height = compact ? 390 : 350;
@@ -295,7 +419,7 @@
       : { top: 24, right: 34, bottom: 48, left: 62 };
     const plotWidth = width - margin.left - margin.right;
     const plotHeight = height - margin.top - margin.bottom;
-    const values = rows.map((row) => Number(row.kt) / 10).filter(Number.isFinite);
+    const values = chartRows.map((row) => Number(row.kt) / 10).filter(Number.isFinite);
     const rawMin = Math.min(...values);
     const rawMax = Math.max(...values);
     const rawRange = rawMax - rawMin;
@@ -311,7 +435,11 @@
     const xPadding = plotWidth * 0.04;
     const x = (quarter) => margin.left + xPadding + (Number(String(quarter).replace("Q", "")) - 1) * ((plotWidth - xPadding * 2) / 3);
     const y = (value) => margin.top + (max - value) / (max - min) * plotHeight;
-    const root = svg("svg", { viewBox: `0 0 ${width} ${height}`, role: "img", "aria-label": "季度产量季节性图" });
+    const root = svg("svg", {
+      viewBox: `0 0 ${width} ${height}`,
+      role: "img",
+      "aria-label": forecastRows.length ? "季度产量季节性图，虚线为预测" : "季度产量季节性图",
+    });
 
     for (let index = 0; index <= tickCount; index += 1) {
       const value = min + step * index;
@@ -328,30 +456,68 @@
     });
 
     const groups = new Map();
-    rows.forEach((row) => {
-      if (!groups.has(row.year)) groups.set(row.year, []);
-      groups.get(row.year).push(row);
+    chartRows.forEach((row) => {
+      const year = Number(row.year);
+      if (!groups.has(year)) groups.set(year, []);
+      groups.get(year).push(row);
     });
     const latestYear = Number(String(latestPeriod).slice(0, 4));
     [...groups.entries()].sort((a, b) => a[0] - b[0]).forEach(([year, items]) => {
       const sorted = items.sort((a, b) => a.quarter.localeCompare(b.quarter));
       const points = sorted.map((row) => [x(row.quarter), y(Number(row.kt) / 10), row]);
       const latest = Number(year) === latestYear;
-      root.append(svg("path", {
-        d: smoothPath(points.map(([px, py]) => [px, py])),
-        fill: "none",
-        stroke: YEAR_COLORS[year] || "#64748B",
-        "stroke-width": latest ? 4 : 2,
-        "stroke-linecap": "round",
-        "stroke-linejoin": "round",
-      }));
+      const color = YEAR_COLORS[year] || "#64748B";
+      const actualPoints = points.filter(([_px, _py, row]) => !row.is_forecast);
+      const predictedPoints = points.filter(([_px, _py, row]) => row.is_forecast);
+      if (actualPoints.length) {
+        root.append(svg("path", {
+          d: smoothPath(actualPoints.map(([px, py]) => [px, py])),
+          fill: "none",
+          stroke: color,
+          "stroke-width": latest ? 4 : 2,
+          "stroke-linecap": "round",
+          "stroke-linejoin": "round",
+          "data-year": year,
+          "data-series-kind": "actual",
+        }));
+      }
+      if (predictedPoints.length) {
+        const anchor = actualPoints.length ? actualPoints[actualPoints.length - 1] : null;
+        const dashedPoints = anchor ? [anchor, ...predictedPoints] : predictedPoints;
+        root.append(svg("path", {
+          d: smoothPath(dashedPoints.map(([px, py]) => [px, py])),
+          fill: "none",
+          stroke: color,
+          "stroke-width": latest ? 4 : 3,
+          "stroke-linecap": "round",
+          "stroke-linejoin": "round",
+          "stroke-dasharray": "10 7",
+          "data-year": year,
+          "data-series-kind": "forecast",
+        }));
+        predictedPoints.forEach(([px, py, row]) => {
+          const point = svg("circle", {
+            cx: px,
+            cy: py,
+            r: 4,
+            fill: "#FFFFFF",
+            stroke: color,
+            "stroke-width": 2,
+            "data-series-kind": "forecast",
+          });
+          const title = svg("title");
+          title.textContent = `${row.period}预测：${wan(row.kt)}`;
+          point.append(title);
+          root.append(point);
+        });
+      }
       if (latest) {
-        points.forEach(([px, py, row]) => {
+        actualPoints.forEach(([px, py, row]) => {
           const point = svg("circle", {
             cx: px,
             cy: py,
             r: 5,
-            fill: YEAR_COLORS[year] || "#64748B",
+            fill: color,
             stroke: "#FFFFFF",
             "stroke-width": 2,
           });
@@ -370,7 +536,14 @@
     container.append(root);
     const legend = document.createElement("div");
     legend.className = "svg-legend";
-    legend.innerHTML = [...groups.keys()].sort().map((year) => `<span><i class="${Number(year) === latestYear ? "latest" : ""}" style="background:${YEAR_COLORS[year] || "#64748B"}"></i>${year}${Number(year) === latestYear ? "（最新）" : ""}</span>`).join("");
+    legend.innerHTML = [...groups.entries()].sort((a, b) => a[0] - b[0]).map(([year, items]) => {
+      const hasActual = items.some((row) => !row.is_forecast);
+      const hasForecast = items.some((row) => row.is_forecast);
+      const kind = hasActual && hasForecast ? "mixed" : hasForecast ? "forecast" : "actual";
+      const label = kind === "mixed" ? `${year}（实际/预测）` : kind === "forecast" ? `${year}（预测）` : `${year}`;
+      const color = YEAR_COLORS[year] || "#64748B";
+      return `<span data-legend-year="${year}"><i class="${kind}" style="--legend-color:${color};${kind === "actual" ? `background:${color}` : ""}"></i>${label}</span>`;
+    }).join("");
     container.append(legend);
   }
 
@@ -461,12 +634,16 @@
   }
 
   function costMetricLabel(cost) {
-    const metric = String(cost?.metric || "");
+    const metric = `${cost?.cost_category || ""} ${cost?.metric || ""}`;
+    if (/before.by.?product|cash_cost_before_byproduct/i.test(metric)) return "副产品抵扣前现金成本";
+    if (/after.by.?product|net_cash/i.test(metric)) return "净现金成本";
+    if (/cost of sales|cost_of_sales/i.test(metric)) return "销售成本";
+    if (/AISC/i.test(metric)) return "AISC";
     if (/net(?: unit)? cash|净现金/i.test(metric)) return "净现金成本";
     if (/C1/i.test(metric)) return "C1成本";
     if (/site production and delivery/i.test(metric)) return "现场生产交付成本";
     if (/unit cost|单位成本|单位销售成本/i.test(metric)) return "单位成本";
-    if (/cash operating/i.test(metric)) return "现金运营成本";
+    if (/cash operating|cash cost/i.test(metric)) return "现金成本";
     return "成本";
   }
 
@@ -534,7 +711,7 @@
     const futureRows = profile.future_guidance || [];
     $("#future-guidance-list").innerHTML = futureRows.length
       ? futureRows.map((row) => {
-        const kind = row.kind === "成本" ? costMetricLabel(profile.cost_detail) : row.kind;
+        const kind = row.kind === "成本" ? costMetricLabel(row) : row.kind;
         return `<div class="guidance-line"><b>${esc(row.target)} · ${esc(kind)}</b><strong>${esc(futureGuidanceAmount(row))}</strong><span>${esc(shorten(row.metric, 46))}${row.note ? ` · ${esc(shorten(row.note, 38))}` : ""}</span></div>`;
       }).join("")
       : '<div class="empty-state">未提取到未来年度的产量、成本或资本开支指引。</div>';
@@ -636,6 +813,7 @@
 
     const render = () => {
       const view = reportedScope ? sample : common;
+      const forecast = view.seasonal_forecast;
       const ytd = view.mine_ytd_contribution?.length
         ? { year: view.summary.year, quarter: view.summary.quarter, rows: view.mine_ytd_contribution }
         : computeMineYtd(view);
@@ -667,9 +845,12 @@
         kpi("累计同比增减", signedWan(delta), priorTotal ? signedPct(delta / priorTotal * 100) : "—", classForValue(delta)),
         kpi("纳入同比矿山/矿组", `${comparisonMineCount}个`, `当年${currentMineCount} / 上年${priorMineCount}`),
       ].join("");
-      renderSeasonalChart($("#mine-seasonal-chart"), view.seasonal_totals, view.period);
+      renderSeasonalChart($("#mine-seasonal-chart"), view.seasonal_totals, view.period, forecast);
       renderYoyChart($("#mine-yoy-chart"), view.seasonal_totals);
-      $("#mine-seasonal-scope-note").textContent = `${sampleLabel} · ${latest?.mine_count || 0}个矿山/矿组`;
+      const forecastLabel = forecast?.seasonal_totals?.length
+        ? ` · ${forecast.actual_through}后至${forecast.forecast_through}为预测`
+        : "";
+      $("#mine-seasonal-scope-note").textContent = `${sampleLabel} · ${latest?.mine_count || 0}个矿山/矿组${forecastLabel}`;
       $("#mine-yoy-scope-note").textContent = `${sampleLabel} · 单季同比`;
       $("#mine-yoy-insights").innerHTML = [
         `<span><b>最新季度</b>${esc(signedWan(latest?.yoy_kt))}</span>`,
@@ -682,7 +863,10 @@
       $("#negative-scope-note").textContent = $("#positive-scope-note").textContent;
       renderMineList($("#positive-mines"), positives, false);
       renderMineList($("#negative-mines"), negatives, true);
-      $("#mine-method-note").textContent = `本页全部数据按${sampleLabel}统一计算；累计贡献榜、季度季节性和季度同比使用同一企业样本。矿山100%含铜量按mine_id去重，并沿用固定优先来源、收购前回填和出售后剔除规则。`;
+      const forecastMethod = forecast?.seasonal_totals?.length
+        ? ` 季节性图虚线为研究预测：2026年按最新公司指引中点和历史季节性分配，2027年按季报披露的主要复产、扩产和品位路径分季估算；预测不进入累计KPI、同比柱和贡献榜。`
+        : "";
+      $("#mine-method-note").textContent = `本页全部实绩按${sampleLabel}统一计算；矿山100%含铜量按mine_id去重，并沿用固定优先来源、收购前回填和出售后剔除规则。${forecastMethod}`;
       button.classList.toggle("is-active", reportedScope);
       button.setAttribute("aria-pressed", String(reportedScope));
       button.title = reportedScope ? "切换回共同完整季度口径" : "切换至最新一期已披露企业样本";
@@ -705,4 +889,5 @@
   setupGuidance();
   setupCompanies();
   setupMines();
+  setupCapex();
 })();

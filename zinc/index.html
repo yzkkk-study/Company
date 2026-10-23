@@ -39,7 +39,7 @@
     <nav class="tab-bar" aria-label="看板视图" role="tablist">
       <button type="button" class="tab-button is-active" id="tab-guidance" role="tab" aria-selected="true" aria-controls="panel-guidance" data-tab="guidance">产量指引与完成度</button>
       <button type="button" class="tab-button" id="tab-company" role="tab" aria-selected="false" aria-controls="panel-company" data-tab="company">企业</button>
-      <button type="button" class="tab-button" id="tab-mine" role="tab" aria-selected="false" aria-controls="panel-mine" data-tab="mine">矿山</button>
+      <button type="button" class="tab-button" id="tab-mine" role="tab" aria-selected="false" aria-controls="panel-mine" data-tab="mine">总量与矿山</button>
     </nav>
 
     <main>
@@ -157,9 +157,9 @@
         <div class="section-heading">
           <div>
             <p class="section-kicker">MINE CONTRIBUTION</p>
-            <h2 id="mine-title">矿山当年累计贡献与季度趋势</h2>
+            <h2 id="mine-title">公司整体产量与矿山贡献</h2>
           </div>
-          <p>矿山100%含锌量去重</p>
+          <p>公司总量按主槽位去重；矿山明细仅用于贡献拆分</p>
         </div>
 
         <div class="kpi-grid" id="mine-summary"></div>
@@ -169,7 +169,7 @@
             <div class="panel-heading">
               <div>
                 <p class="section-kicker">SAMPLE OUTPUT</p>
-                <h4>整体矿山季度产量</h4>
+                <h4>公司整体季度产量</h4>
               </div>
               <div class="mine-chart-actions">
                 <button type="button" class="scope-toggle" id="mine-scope-toggle" aria-pressed="false">已出季报口径</button>
@@ -183,7 +183,7 @@
             <div class="panel-heading">
               <div>
                 <p class="section-kicker">YEAR-ON-YEAR</p>
-                <h4>季度同比增减量</h4>
+                <h4>公司整体季度同比增减量</h4>
               </div>
               <span>单位：万吨</span>
             </div>
@@ -215,7 +215,7 @@
             <div class="contribution-list" id="negative-mines"></div>
           </section>
         </div>
-        <p class="method-note mine-note">已出季报口径以最新已结束季度确有矿山明细的矿山/矿组为固定队列，整页同步重算累计产量、季节性、季度同比和贡献榜；缺少矿山明细的公司不以公司总产量补齐。矿山100%含锌量按mine_id去重，并沿用固定优先来源、收购前回填和出售后剔除规则。</p>
+        <p class="method-note mine-note">累计产量、季度季节性和季度同比均汇总公司主产量，并按company_id × period去重；“已出季报口径”使用最新季度已有正式主产量的公司样本，Q3/Q4虚线为基于现有指引和财报的预估。矿山明细仅用于下方贡献榜，按mine_id × period去重，不参与公司总量曲线；缺少矿山明细不等于零产量。</p>
       </section>
     </main>
   </div>
